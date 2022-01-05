@@ -76,9 +76,14 @@ function showPast(visible) {
     }
     document.getElementById('showpast').checked = visible;
 }
+
+var viewpref = false;
 String(document.cookie).split('; ').forEach(function(x){
     x = x.split('=');
-    if (x[0] == 'viewmode') viewmode(x[1]);
+    if (x[0] == 'viewmode') {
+        viewmode(x[1]);
+        viewpref = true;
+    }
     else if (x[0] == 'showpast') showPast(x[1] == 'true');
     else if (x[0].startsWith('view_')) {
         let input = document.querySelector('input[name="show"][value="'+x[0].substr(5)+'"]');
@@ -88,3 +93,6 @@ String(document.cookie).split('; ').forEach(function(x){
         }
     }
 });
+if (!viewpref) {
+    viewmode('agenda');
+}
