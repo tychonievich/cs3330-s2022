@@ -37,8 +37,8 @@ lectures:
     - overview
     - assembly
     - assembly
-    - wires and gates
-    - bit fiddling
+    - compilation and C
+    - bitwise
     - caches
     - caches
     - caches
@@ -88,6 +88,24 @@ labs:
 reading: 
     setup:
         lnk: getc.html
+    overview:
+        txt: "CS:APP §1, 2.3"
+    assembly:
+        - txt: "CS:APP §3.4–3.6.3, 3.6.5, 3.6.7, 3.7.2–3.7.3"
+        - txt: assembly page written by Tychonievich
+          lnk: x86.html
+        - txt: assembly handout written by our textbook authors
+          lnk: https://www.cs.cmu.edu/~fp/courses/15213-s07/misc/asm64-handout.pdf
+    compilation and C:
+        txt: "CS:APP §7–7.3"
+    bitwise:
+        txt: "CS:APP §2.1.6–2.1.9"
+    caches:
+        - txt: "CS:APP §6.2–6.4"
+        - txt: Tree-PLRU writeup
+          lnk: tree-plru.html
+    virtual memory:
+        txt: "CS:APP §9–9.3.2"
 
 assignments:
     ".groups":
