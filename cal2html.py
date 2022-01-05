@@ -38,7 +38,7 @@ def parseReading(data,topic):
     """Given "git" or ["git","hex editor"] and parsed cal.yaml,
     returns list of (text,locallink,abslink) triples"""
     def localfix(text,link):
-        if '://' in link:
+        if not link or '://' in link:
             return (text,link,link)
         else:
             if link[0] == '/': return (text, link, data['meta']['home'][:data['meta']['home'].find('/',9)+1].rstrip('/')+'/'+link)
