@@ -92,7 +92,7 @@ reading:
         txt: "CS:APP §1, 2.3"
     assembly:
         - txt: "CS:APP §3.4–3.6.3, 3.6.5, 3.6.7, 3.7.2–3.7.3"
-        - txt: assembly page written by Tychonievich
+        - txt: assembly writeup
           lnk: x86.html
         - txt: assembly handout written by our textbook authors
           lnk: https://www.cs.cmu.edu/~fp/courses/15213-s07/misc/asm64-handout.pdf
