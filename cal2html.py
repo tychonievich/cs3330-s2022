@@ -106,7 +106,7 @@ def htmlDetailsOrflat(e, cls, flatten=False):
     generally a mix of <details>...</details> and <div>...</div>
     """
     glue = ' <small>and</small> '
-    deets = any((_[1] and _[0] not in e[False]) for _ in e[None])
+    deets = any((_[0] not in e[False]) for _ in e[None])
     links = {_[0]:_[1].replace('<','&lt;').replace('&','&amp;').replace('"','&quot;') for _ in e[None] if _[1]}
     ans = []
     if deets:
