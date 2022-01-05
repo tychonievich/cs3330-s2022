@@ -16,6 +16,7 @@ Complete the following C skeleton file:
 
 - Download: [cachesim1.c](files/cachesim1.c)
 - <details><summary>Or view:</summary>
+
     ````c
     typedef unsigned char u8;
     typedef unsigned long long u64;
@@ -52,6 +53,7 @@ Complete the following C skeleton file:
         return 0; // fix me
     }
     ````
+    
     </details>
 
 You may either work alone or with a buddy in this lab.
@@ -73,6 +75,7 @@ If you've correctly implemented `cachesim1.c`, you should be able to compile it 
 
 - Download: [cachesim1_test.c](files/cachesim1_test.c)
 - <details><summary>Or view:</summary>
+
     ```c
     #include <stdio.h>
     #include <stdarg.h>
@@ -174,6 +177,7 @@ If you've correctly implemented `cachesim1.c`, you should be able to compile it 
         printf("Passed %d / %d tests\n", correct, outof);
     }
     ```
+    
     </details>
 
 In case you've forgotten, you can compile two C files together and then run them using a command invocation like
