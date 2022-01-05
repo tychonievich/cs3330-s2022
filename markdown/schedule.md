@@ -97,6 +97,7 @@ summary { margin-left: -1em; }
 
 div.day.empty { background: rgba(0,0,0,0); padding: 0em; margin: 0em; border: none; border-radius: 0; }
 .calendar div.day.empty { min-height: 1.5em; }
+.agenda div.day.empty.Sun { border-top: thick solid gray; }
 
 </style>
 
