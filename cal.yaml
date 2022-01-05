@@ -1,0 +1,206 @@
+Special Dates:
+  Courses begin: 2022-01-19
+  Courses end: 2022-05-03
+  Add deadline: 2022-02-02
+  Drop deadline: 2022-03-02
+  Withdraw deadline: 2022-03-23
+  Spring recess:
+    start: 2022-03-05
+    end: 2022-03-13
+  Final exams:
+    CS3330-200: 2022-05-10 14:00:00
+
+meta:
+  timezone: America/New_York
+  name: CS 3330
+  home: https://kytos.cs.virginia.edu/cs3330/
+  lecture:
+    days: [Monday, Wednesday]
+    sections:
+      CS3330-200:
+        start: 15:30:00
+        duration: 75
+        location: Rice 130
+  lab:
+    days: [Wednesday]
+    sections:
+      CS3330-201:
+        start: 17:00:00
+        duration: 75
+        location: Olsson 018
+      CS3330-202:
+        start: 18:30:00
+        duration: 75
+        location: Olsson 018
+
+lectures:
+    - overview
+    - assembly
+    - assembly
+    - wires and gates
+    - bit fiddling
+    - caches
+    - caches
+    - caches
+    - virtual memory
+    - virtual memory
+    - virtual memory
+    - review
+    
+    - processors
+    - SIGCSE
+
+    - processors
+    - processors
+    - processors
+    - processors
+    - processors
+    - processors
+    - processors
+    - review
+
+    - performance
+    - performance
+    - performance
+    - performance
+    - performance
+    - performance
+    - review
+
+labs: 
+    - setup
+    - binary bomb
+    - bit-fiddling
+    - cache
+    - page table
+    - Exam 1
+    - hcl1
+    - hcl3
+    - hcl5
+    - hcl7
+    - Exam 2
+    - rotate
+    - simd
+    - TBA
+
+
+
+reading: 
+    setup:
+        lnk: getc.html
+
+assignments:
+    ".groups":
+        HW:
+            portion: 40
+            late-policy: [0.9, 0.9, 0.85]
+        Lab:
+            portion: 15
+            drop: 1
+            rubric: {"kind":"percentage"}
+        Exam:
+            portion: "40"
+            rubric: {"kind":"percentage"}
+        Quiz:
+            portion: "10"
+            drop: 2
+            rubric: {"kind":"percentage"}
+            link: https://kytos.cs.virginia.edu/cs3330/quizzes/
+
+    Quiz00:
+        due: 2022-01-24 15:00:00
+        weight: 0
+    Quiz01:
+        due: 2022-01-31 15:00:00
+        open: 2022-01-28 17:00:00
+    Quiz02:
+        due: 2022-02-07 15:00:00
+        open: 2022-02-04 17:00:00
+    Quiz03:
+        due: 2022-02-14 15:00:00
+        open: 2022-02-11 17:00:00
+    Quiz04:
+        due: 2022-02-21 15:00:00
+        open: 2022-02-18 17:00:00
+    Quiz05:
+        due: 2022-03-14 15:00:00
+        open: 2022-03-11 17:00:00
+    Quiz06:
+        due: 2022-03-21 15:00:00
+        open: 2022-03-18 17:00:00
+    Quiz07:
+        due: 2022-03-28 15:00:00
+        open: 2022-03-25 17:00:00
+    Quiz08:
+        due: 2022-04-04 15:00:00
+        open: 2022-04-01 17:00:00
+    Quiz09:
+        due: 2022-04-18 15:00:00
+        open: 2022-04-15 17:00:00
+    Quiz10:
+        due: 2022-04-25 15:00:00
+        open: 2022-04-22 17:00:00
+    Quiz11:
+        due: 2022-05-02 15:00:00
+        open: 2022-04-29 17:00:00
+
+    Exam 1:
+        open: 2022-02-23 17:00:00
+        due: 2022-02-23 20:45:00
+        link: review.html
+    Exam 2:
+        open: 2022-04-06 17:00:00
+        due: 2022-04-06 20:45:00
+        link: review.html
+      
+    Lab01:
+        due: 2022-01-26 20:45:00
+        title: Binary Bomb
+        link: bomb.html
+    HW01:
+        due: 2022-02-02 15:00:00
+        title: Binary Bomb
+        link: bomb.html
+    Lab02:
+        due: 2022-02-02 20:45:00
+        title: Bit Fiddling
+        link: bitfiddle.html
+    HW02:
+        due: 2022-02-09 15:00:00
+        title: Bit Fiddling
+        link: bitfiddle.html
+    Lab03:
+        due: 2022-02-09 20:45:00
+        title: Cache Simulator
+        link: cachesim1.html
+    HW03:
+        due: 2022-02-16 15:00:00
+        title: Cache Simulator
+    Lab04:
+        due: 2022-02-16 20:45:00
+        title: Page Table Simulator
+    HW04:
+        due: 2022-02-23 15:00:00
+        title: Page Table Simulator
+
+    Lab05:
+        due: 2022-03-02 20:45:00
+    Lab06:
+        due: 2022-03-16 20:45:00
+    Lab07:
+        due: 2022-03-23 20:45:00
+    Lab08:
+        due: 2022-03-30 20:45:00
+
+    Lab09:
+        due: 2022-04-13 20:45:00
+    Lab10:
+        due: 2022-04-20 20:45:00
+    Lab11:
+        due: 2022-04-27 20:45:00
+
+    Exam 3:
+        open: 2022-05-10 14:00:00
+        due: 2022-05-10 17:00:00
+        weight: 1.5
+        link: review.html
