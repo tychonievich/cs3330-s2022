@@ -49,8 +49,8 @@ footer { text-align: center; box-shadow: 0 0.0625ex 0.5ex rgba(0,0,0,.1); backgr
 details .nav-header:after { content: " ⏵"; }
 details[open] .nav-header:after { content: " ⏷"; }
 
-details.fileview { display: inline-block; }
-details.fileview[open] { display: block; }
+details.fileview { display: inline-block; border: thin solid #aaa; }
+details.fileview[open] { display: block; border: none; margin-right:1em; }
 
 
 /* TOC styles */
