@@ -12,10 +12,11 @@ In this lab and the subsequent homework you'll implement an Tree-PLRU cache simu
 
 # Task
 
-Complete the following C skeleton file:
-{#file files/cachesim1.c}
-and its associated header file
-{#file files/cachesim1.h}
+Complete the following C skeleton file (which has an associated header file, which is already completed):
+
+- {#file files/cachesim1.c}
+
+- {#file files/cachesim1.h}
 
 You may either work alone or with a buddy in this lab.
 Buddy programming is where two people work side-by-side,
@@ -34,12 +35,11 @@ You've done this before, as the `getbits` task from [the bit fiddling homework](
 
 If you've correctly implemented `cachesim1.c`, you should be able to compile it with `cachesim1_test.c` and run it to get the output `Passed 100/100 tests`.
 
-You can
-{#file files/cachesim1_test.c}
+-	{#file files/cachesim1_test.c}
 
-In case you've forgotten, you can compile two C files together and then run them using a command invocation like
+- 	build as
 
-```bash
-clang cachesim1.c cachesim1_test.c -o cachesim1_tester
-./cachesim1_tester
-```
+	```bash
+	clang cachesim1.c cachesim1_test.c -o cachesim1_tester
+	./cachesim1_tester
+	```
