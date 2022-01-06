@@ -35,11 +35,11 @@ You've done this before, as the `getbits` task from [the bit fiddling homework](
 
 If you've correctly implemented `cachesim1.c`, you should be able to compile it with `cachesim1_test.c` and run it to get the output `Passed 100/100 tests`.
 
--	{#file files/cachesim1_test.c}
+-   {#file files/cachesim1_test.c}
 
-- 	build as
+-   build as
 
-	```bash
-	clang cachesim1.c cachesim1_test.c -o cachesim1_tester
-	./cachesim1_tester
-	```
+    ```bash
+    clang cachesim1.c cachesim1_test.c -o cachesim1_tester
+    ./cachesim1_tester
+    ```
