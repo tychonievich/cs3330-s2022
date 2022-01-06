@@ -8,10 +8,12 @@ written by Richard Smith.
 """
 
 import sys, re
+import os.path
 
 tag_open = re.compile(r'^(\s*)\{\.([a-z]+)\s*(\.{3})?\}\s*(.*)', re.DOTALL)
 tag_close = re.compile(r'^(.*)\{/\}\s*$', re.DOTALL)
 tag_import = re.compile(r'^\{#include\s+(.*)\}$')
+tag_file = re.compile(r'^(.*)\{#file\s+(.*)\}$')
 
 def process(fname):
     with open(fname) as f:
@@ -57,8 +59,24 @@ def justimport(fname):
                 else:
                     process(i.group(1))
             else:
-                sys.stdout.write(line)
+                fn = tag_file.match(line)
+                if fn is not None:
+                    prefix,fname = fn.groups()
+                    path = os.path.join('markdown',fname)
+                    name = os.path.basename(fname)
+                    ftype = name[name.rfind('.')+1:]
+                    print(prefix+'[download `'+name+'`]('+fname+') <details class="fileview"><summary>or view `'+name+'` here:</summary>')
+                    gap = ' '*len(prefix)
+                    print('\n'+gap+'```'+ftype)
+                    with open(path) as f2:
+                        for line in f2:
+                            sys.stdout.write(gap + line)
+                    print(gap+'```')
+                    print('\n'+gap+'</details>')
+                else:
+                    sys.stdout.write(line)
             newp = line.isspace()
+
 
 for arg in sys.argv[1:]:
     justimport(arg)

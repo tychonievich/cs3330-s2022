@@ -1,16 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-
-typedef unsigned char u8;
-typedef unsigned long long u64;
-
-// forward declaration of functions defined in cachesim1.c
-void global_init();
-int newLRU(int oldLRU, int index);
-int idxFromLRU(int lru);
-int get_offset(u64 address);
-int get_index(u64 address);
-u64 get_tag(u64 address);
+#include "cachesim1.h"
 
 // the global variables we use to control cachesim1.c
 u8 block_bits, way_bits, sets_bits, address_bits;

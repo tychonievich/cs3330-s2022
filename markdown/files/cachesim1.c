@@ -1,8 +1,7 @@
-typedef unsigned char u8;
-typedef unsigned long long u64;
+#include "cachesim1.h"
 
-/// These will be defined in a different file
-extern u8 block_bits, way_bits, sets_bits, address_bits;
+// You will have access to the following globals:
+// u8 block_bits, way_bits, sets_bits, address_bits;
 
 /// Called once after each change to the defining extern values above.
 /// we won't test it, but you can use it to set globals like `tag_bits` if you wish.
