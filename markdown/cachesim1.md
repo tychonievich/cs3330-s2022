@@ -14,6 +14,8 @@ In this lab and the subsequent homework you'll implement an Tree-PLRU cache simu
 
 Complete the following C skeleton file:
 {#file files/cachesim1.c}
+and its associated header file
+{#file files/cachesim1.h}
 
 You may either work alone or with a buddy in this lab.
 Buddy programming is where two people work side-by-side,
