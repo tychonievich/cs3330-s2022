@@ -90,7 +90,7 @@ A copy of Bryant & O'Halleron's *Computer Systems: a Programmer's Perspective*, 
 
 <details><summary>
 This course is part of a program with The UVA Bookstore providing course material through Collab for a lesser fee.
-Click to see the full details from the bookstore, including how to opt out if you have your own print copy instead.
+Click to see the full details from the bookstore, <strong>including how to opt out</strong> if you have your own print copy instead.
 </summary>
 
 ALL students enrolled in the class will have immediate access to your digital course materials through UVA Collab for the first 2 weeks of class—for free. After February 2, your student account will be charged $29.18.
