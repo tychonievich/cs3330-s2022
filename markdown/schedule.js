@@ -77,6 +77,18 @@ function showPast(visible) {
     document.getElementById('showpast').checked = visible;
 }
 
+function showReading(visible) {
+    if (typeof(visible) != 'boolean') {
+        visible = /[Ss]how/i.test(visible.value);
+        saveCookie('showreading', visible);
+    }
+    if (visible) {
+        document.querySelectorAll('details').forEach(x => x.setAttribute('open','open'))
+    } else {
+        document.querySelectorAll('details').forEach(x => x.removeAttribute('open'))
+    }
+}
+
 var viewpref = false;
 String(document.cookie).split('; ').forEach(function(x){
     x = x.split('=');
@@ -85,6 +97,7 @@ String(document.cookie).split('; ').forEach(function(x){
         viewpref = true;
     }
     else if (x[0] == 'showpast') showPast(x[1] == 'true');
+    else if (x[0] == 'showreading') showReading(x[1] == 'true');
     else if (x[0].startsWith('view_')) {
         let input = document.querySelector('input[name="show"][value="'+x[0].substr(5)+'"]');
         if (input) {

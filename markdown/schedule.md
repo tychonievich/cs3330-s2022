@@ -107,7 +107,12 @@ div.day.empty { background: rgba(0,0,0,0); padding: 0em; margin: 0em; border: no
 or
 <label><input type="radio" name="viewmode" onchange="viewmode(this)" checked value="agenda" id="viewmode=agenda"> agenda</label>;
 <label><input type="checkbox" name="showpast" onclick="showPast(this)" checked id="showpast"> show past</label>;
+<!--
 readings can be <input type="button" value="shown" onclick="document.querySelectorAll('details').forEach(x => x.setAttribute('open','open'))"></input> or <input type="button" value="hidden" onclick="document.querySelectorAll('details').forEach(x => x.removeAttribute('open'))"></input> as a whole, or clicked on individually to toggle visibility.
+-->
+readings can be <input type="button" value="shown" onclick="showReading(this)"></input>
+or <input type="button" value="hidden" onclick="showReading(this)"></input>
+as a whole, or clicked on individually to toggle visibility.
 </p>
 
 
