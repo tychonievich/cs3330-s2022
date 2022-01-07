@@ -2,10 +2,8 @@
 #include <stdarg.h>
 #include "cachesim1.h"
 
-// the global variables we use to control cachesim1.c
 u8 block_bits, way_bits, sets_bits, address_bits;
 
-/// a wrapper function for displaying only one error message of a given type
 int errmsg(int idx, const char *msg, ...) {
     static u64 mask = 0;
     if (mask & (1<<idx)) return 0; // already reported one of these errors
@@ -18,14 +16,12 @@ int errmsg(int idx, const char *msg, ...) {
     return ret;
 }
 
-// a compact, if confusing, testing wrapper
 typedef struct {
     u8 bb, wb, sb, ab;
     u64 addr; int off, idx; u64 tag;
     int lru1, idx1, idx2, lru2;
 } tcase;
 
-// ditto
 int runTest(tcase *test) {
     block_bits = test->bb;
     sets_bits = test->sb;
@@ -53,7 +49,6 @@ int runTest(tcase *test) {
     return correct;
 }
 
-// example test cases with 30ish freebies
 tcase tests[] = {
     {6,3,8,48, 0x0,0x0,0x0,0x0, 0,0,7,0},
     {6,3,8,48, 0xFFFFFFFFFFFFFFFF,0x3F,0xFF,0x3FFFFFFFF, 0,0,0,0xB},
@@ -64,20 +59,19 @@ tcase tests[] = {
     {8,3,0,32, 0x0123456789ABCDEF,0xef,0x0,0x89abcd, 0x40,0,5,0x44},
     {8,3,20,48, 0x1abe1edadebac1e,0x1e,0xdebac,0xe1eda, 0x44,0,4,0x64},
     {1,3,12,30, 0x15bd5be1d,0x1,0xf0e,0xdead, 0x64,0,3,0x65},
-    {0,3,0,64, 0,0,0,0, 0x65,7,2,0x75},
-    {0,3,0,64, 0,0,0,0, 0x75,7,1,0x77},
-    {0,3,0,64, 0,0,0,0, 0x77,7,0,0x7F},
-    {0,2,0,64, 0,0,0,0, 0x7,3,1,0x5},
-    {0,2,0,64, 0,0,0,0, 0x6,1,1,0x5},
-    {0,2,0,64, 0,0,0,0, 0x5,3,1,0x5},
-    {0,2,0,64, 0,0,0,0, 0x4,0,1,0x5},
-    {0,2,0,64, 0,0,0,0, 0x3,2,1,0x1},
-    {0,2,0,64, 0,0,0,0, 0x2,1,1,0x1},
-    {0,2,0,64, 0,0,0,0, 0x1,2,1,0x1},
-    {0,2,0,64, 0,0,0,0, 0x0,0,1,0x1},
+    {0,3,8,55, 0x1abe1edf00d,0,0xd,0x1abe1edf0, 0x65,7,2,0x75},
+    {1,3,5,48, 0xb01dface,0,0x7,0x2c077eb, 0x75,7,1,0x77},
+    {2,3,2,4, 0xba11ad0fb100d,0x1,0x3,0x0, 0x77,7,0,0x7F},
+    {3,2,10,24, 0xacc01ade5,0x5,0x1bc,0xd, 0x7,3,1,0x5},
+    {4,2,7,34, 0x5eaf00d,0xd,0,0xbd5e, 0x6,1,1,0x5},
+    {5,2,4,44, 0xcea5e1e55,0x15,0x2,0x6752f0f, 0x5,3,1,0x5},
+    {6,2,1,54, 0xa1fa1fab10b,0xb,0,0x143f43f562, 0x4,0,1,0x5},
+    {7,2,9,60, 0xce110c1a55,0x55,0x34,0xce110c, 0x3,2,1,0x1},
+    {8,2,6,50, 0xdeca10f5e1f1e55,0x55,0x1e,0x2843d787c, 0x2,1,1,0x1},
+    {9,2,3,21, 0x5a1e5a1e5a1e5a1e,0x1e,0x5,0x1e5, 0x1,2,1,0x1},
+    {10,2,0,22, 0x8888888888888888,0x88,0,0x222, 0x0,0,1,0x1},
 };
 
-// testing harness wrapper
 int main(int argc, char *argv[]) {
     int correct = 0;
     int outof = 0;
