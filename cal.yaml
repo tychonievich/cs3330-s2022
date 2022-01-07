@@ -102,10 +102,16 @@ reading:
         txt: "CS:APP §2.1.6–2.1.9"
     caches:
         - txt: "CS:APP §6.2–6.4"
+        - txt: cache writeup
+          lnk: cache.html
         - txt: Tree-PLRU writeup
           lnk: tree-plru.html
     virtual memory:
-        txt: "CS:APP §9–9.3.2"
+        - txt: "CS:APP §9–9.3.2"
+        - txt: kernel mode writeup
+          lnk: kernel.html
+        - txt: virtual memory writeup
+          lnk: vmem.html
 
 assignments:
     ".groups":
