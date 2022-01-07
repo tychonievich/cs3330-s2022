@@ -98,7 +98,7 @@ blockquote q:after { font-size:200%; content:"”"; line-height:50%; vertical-al
 blockquote div { text-align: right; }
 
 figure { max-width: 100%; display: table; margin: auto; padding: 1em; }
-figcaption { text-align: center; font-weight: bold; margin-top: 1ex; }
+figcaption { text-align: center; font-style: italic; margin-top: 1ex; }
 .floater img, figure img { max-width: 100%; }
 
 pre,code { background: rgba(0,0,0,0.04); border: 0.125ex solid rgba(0,0,0,0.12); border-radius: 0.5ex; white-space: pre-wrap; hyphens:none; }
