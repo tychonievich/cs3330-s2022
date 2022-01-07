@@ -231,7 +231,7 @@ As of 2019, it is common for end-user computers to have a variety of caches.
 L1
 :   The L1 cache is the smallest and fastest cache.
     It is virtually always placed directly on the processor chip itself
-    and sized so that an access to L1 takes only a single cycle^[At least in a [pipelined](processors.html) sense. The goal is that an L1 hit does not slow down processing at all.].
+    and sized so that an access to L1 takes only a single cycle.
     It is often designed to work on virtual addresses rather than physical,
     or to have the set index be entirely within the page offset so that TLB lookup
     can be performed concurrently with L1 lookup.
