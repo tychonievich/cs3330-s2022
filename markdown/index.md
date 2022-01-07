@@ -88,6 +88,22 @@ As it is truly anonymous, responses to it, if needed, will be given during lectu
 
 A copy of Bryant & O'Halleron's *Computer Systems: a Programmer's Perspective*, third edition. The international third edition is okay. [The changes to chapters 3, 4, and 5](http://csapp.cs.cmu.edu/3e/changes3e.html) make the 2nd edition strongly discouraged. The first edition will not work.
 
+<details><summary>
+This course is part of a program with The UVA Bookstore providing course material through Collab for a lesser fee.
+Click to see the full details from the bookstore, including how to opt out if you have your own print copy instead.
+</summary>
+
+ALL students enrolled in the class will have immediate access to your digital course materials through UVA Collab for the first 2 weeks of class—for free. After February 2, your student account will be charged $29.18.
+
+Students will receive an email from UVA Inclusive Access with detailed information about accessing the materials, costs, and opting out.
+
+This program is optional for students but you must actively opt out by the deadline to not be charged. Additionally, you will lose access to your materials.
+
+Due to the special pricing, no refunds can be processed.
+
+This program aims to offer all students accessibility and affordability. If you have any questions regarding the program, please email us at [UVAInclusiveAccess@virginia.edu](mailto:UVAInclusiveAccess@virginia.edu). 
+</details>
+
 ## Time
 
 The intent is to meet policy [PROV-022](http://uvapolicy.virginia.edu/policy/PROV-022),

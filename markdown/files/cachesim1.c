@@ -10,21 +10,21 @@ void global_init() {
 }
 
 /// update Tree-PLRU tracking bits based on an access of the given line
-int newLRU(int oldLRU, int index) {
+u16 newLRU(u16 oldLRU, size_t index) {
     return 0; // fix me
 }
 
 /// Given Tree-PLRU tracking bits, return index of least-recently-used line
-int idxFromLRU(int lru) {
+size_t idxFromLRU(u16 lru) {
     return 0; // fix me
 }
 
 /// Given an address, return the block offset from it
-int get_offset(u64 address) {
+size_t get_offset(u64 address) {
     return 0; // fix me
 }
 /// Given an address, return the set index from it
-int get_index(u64 address) {
+size_t get_index(u64 address) {
     return 0; // fix me
 }
 /// Given an address, return the tag from it

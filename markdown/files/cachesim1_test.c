@@ -18,8 +18,8 @@ int errmsg(int idx, const char *msg, ...) {
 
 typedef struct {
     u8 bb, wb, sb, ab;
-    u64 addr; int off, idx; u64 tag;
-    int lru1, idx1, idx2, lru2;
+    u64 addr; u32 off, idx; u64 tag;
+    u32 lru1, idx1, idx2, lru2;
 } tcase;
 
 int runTest(tcase *test) {

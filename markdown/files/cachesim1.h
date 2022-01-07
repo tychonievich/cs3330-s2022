@@ -1,5 +1,9 @@
-typedef unsigned char u8;
-typedef unsigned long long u64;
+#include <stdint.h>
+typedef uint8_t u8;
+typedef uint16_t u16;
+typedef uint32_t u32;
+typedef uint64_t u64;
+typedef uintptr_t size_t;
 
 /// These will be defined in the tester file
 extern u8 block_bits, way_bits, sets_bits, address_bits;
@@ -9,16 +13,16 @@ extern u8 block_bits, way_bits, sets_bits, address_bits;
 void global_init();
 
 /// update Tree-PLRU tracking bits based on an access of the given line
-int newLRU(int oldLRU, int index);
+u16 newLRU(u16 oldLRU, size_t index);
 
 /// Given Tree-PLRU tracking bits, return index of least-recently-used line
-int idxFromLRU(int lru);
+size_t idxFromLRU(u16 lru);
 
 /// Given an address, return the block offset from it
-int get_offset(u64 address);
+size_t get_offset(u64 address);
 
 /// Given an address, return the set index from it
-int get_index(u64 address);
+size_t get_index(u64 address);
 
 /// Given an address, return the tag from it
 u64 get_tag(u64 address);
