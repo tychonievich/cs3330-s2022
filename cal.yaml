@@ -74,14 +74,14 @@ labs:
     - cache
     - page table
     - Exam 1
-    - hcl1
-    - hcl3
-    - hcl5
-    - hcl7
+    - hcl 1
+    - hcl 3
+    - hcl 5
+    - hcl 7
     - Exam 2
-    - rotate
-    - simd
-    - TBA
+    - performance 1
+    - performance 2
+    - performance 3
 
 
 
