@@ -44,14 +44,14 @@ typedef struct {
  * if (getLine(&mycache, 3, idxFromLRU(mycache.plru[3])).meta->tag == x) {...}
  */
 typedef struct _Cache_s {
-    size_t sets;
-    size_t way;
-    size_t blocksize;
-    u16 *plru;
+    u8 sets_bits;             // cache has pow(2,sets_bits) sets
+    u8 way_bits;              // each set is pow(2,way_bits) lines; way_bits <= 4
+    u8 block_bits;            // each line is pow(2, block_bits) bytes
+    u16 *plru;                // plru[i] is the LRU-tracking data for set i
+    struct _Cache_s *backing; // on a miss, go here; if NULL, go to RAM
+    u8 isWriteback;           // 1 if writeback, 0 if writethrough
     LineMetadata *_line_md;
     u8 *_blocks;
-    struct _Cache_s *backing;
-    u8 isWriteback;
 } Cache;
 
 
@@ -80,7 +80,7 @@ Line getLine(Cache *c, size_t setindex, size_t linenumber);
  * 
  * This function is implemented in cachesim2_lib.c
  */
-void makeCache(Cache *answer, size_t sets, size_t way, size_t blocksize);
+void makeCache(Cache *answer, u8 sets_bits, u8 way_bits, u8 block_bits);
 
 /**
  * Release the memory allocated by makeCache. Do not try to use the cache after

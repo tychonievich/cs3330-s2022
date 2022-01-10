@@ -217,25 +217,60 @@ assignments:
     Lab05:
         open: 2022-03-02 17:00:00
         due: 2022-03-02 20:45:00
+        title: HCL1 – SEQ part 1
+    HW05:
+        open: 2022-03-02 20:45:00
+        due: 2022-03-16 15:00:00
+        title: HCL2 – SEQ part 2
     Lab06:
         open: 2022-03-16 17:00:00
         due: 2022-03-16 20:45:00
+        title: HCL3 – SEQ part 3
+    HW06:
+        open: 2022-03-16 20:45:00
+        due: 2022-03-23 15:00:00
+        title: HCL4 – SEQ part 4
     Lab07:
         open: 2022-03-23 17:00:00
         due: 2022-03-23 20:45:00
+        title: HCL5 – PIPE part 1
+    HW07:
+        open: 2022-03-23 20:45:00
+        due: 2022-03-30 15:00:00
+        title: HCL6 – PIPE part 2
     Lab08:
         open: 2022-03-30 17:00:00
         due: 2022-03-30 20:45:00
+        title: HCL7 – PIPE part 3
+    HW07:
+        open: 2022-03-30 20:45:00
+        due: 2022-04-06 15:00:00
+        title: HCL8 – PIPE part 4
 
     Lab09:
         open: 2022-04-13 17:00:00
         due: 2022-04-13 20:45:00
+        title: cache lab
+    HW07:
+        open: 2022-04-13 20:45:00
+        due: 2022-04-20 15:00:00
+        title: cache programs
     Lab10:
         open: 2022-04-20 17:00:00
         due: 2022-04-20 20:45:00
+        title: loop lab
+    HW07:
+        open: 2022-04-20 20:45:00
+        due: 2022-04-27 15:00:00
+        title: rotate and smooth checkpoint
     Lab11:
         open: 2022-04-27 17:00:00
         due: 2022-04-27 20:45:00
+        title: SIMD lab
+    HW07:
+        open: 2022-04-27 20:45:00
+        due: 2022-05-03 23:59:59
+        title: rotate and smooth
 
     Exam 3:
         open: 2022-05-10 14:00:00

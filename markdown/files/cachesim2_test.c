@@ -22,7 +22,7 @@ static u8 _RAM_multiplier = 37;
  * sequence of bytes instead of any actual model of RAM.
  */
 void readFromRAM(u64 address, size_t bytes, u8* data) {
-    printf("... = RAM[%lx..%lx]\n", address, (address-1+bytes));
+    printf("fetched RAM[%lx..%lx]\n", address, (address-1+bytes));
     for(size_t i=0; i<bytes; i+=1) {
         u64 a = (address + i)*_RAM_multiplier;
         a += (a>>8)*_RAM_multiplier;
@@ -36,12 +36,12 @@ void readFromRAM(u64 address, size_t bytes, u8* data) {
 
 /// Display the full cache
 void showCache(FILE *out, Cache *c) {
-    for(size_t si = 0; si < c->sets; si+=1) {
-        if (c->way > 1) fprintf(out, "┌─ set%3zx ─ PLRU %4x ─┬──┈\n", si, c->plru[si]);
-        for(size_t li = 0; li < c->way; li+=1) {
+    for(size_t si = 0; si < (1uL<<c->sets_bits); si+=1) {
+        if (c->way_bits > 0) fprintf(out, "┌─ set%3zx ─ PLRU %4x ─┬──┈\n", si, c->plru[si]);
+        for(size_t li = 0; li < (1uL << c->way_bits); li+=1) {
             Line line = getLine(c, si, li);
             fprintf(out, "│ %d %d %16zx │", line.meta->live, line.meta->dirty, line.meta->tag);
-            for(size_t bi = 0; bi < c->blocksize; bi+=1)
+            for(size_t bi = 0; bi < (1<<c->block_bits); bi+=1)
                 fprintf(out, " %02x", line.block[bi]);
             fprintf(out, "\n");
         }
@@ -81,21 +81,21 @@ void runTestFile(FILE *src, FILE *dst) {
                 break;
             }
             global_init();
-            makeCache(tmp, 1uL<<sets_bits, 1uL<<way_bits, 1uL<<block_bits);
+            makeCache(tmp, sets_bits, way_bits, block_bits);
             tmp->backing = c;
             tmp->isWriteback = fun == 'b';
             c = tmp;
         } else if (code == 'r') {
             u64 addr;
             if (1 != fscanf(src, "%lx\n", &addr)) { fprintf(stderr, "Error: `r%c` missing address\n", fun); break; }
-            if (fun == '1') fprintf(dst, "read %02x from cache[%zx]\n", getByte(c, addr), addr);
-            else if (fun == '8') fprintf(dst, "read %016lx from cache[%zx]\n", getLong(c, addr), addr);
+            if (fun == '1') fprintf(dst, "got %02x from cache[%zx]\n", getByte(c, addr), addr);
+            else if (fun == '8') fprintf(dst, "got %016lx from cache[%zx]\n", getLong(c, addr), addr);
             else if (fun == 'b') {
-                if (!buffer) buffer = calloc(c->blocksize, sizeof(u8));
-                if (addr % c->blocksize != 0) { fprintf(stderr, "Error: `rb %lx` not block-aligned\n", addr); break; }
-                getBlock(c, addr, buffer, c->blocksize);
-                fprintf(dst, "read [");
-                for(size_t i=0; i<c->blocksize; i+=1) fprintf(dst, " %02x", buffer[i]);
+                if (!buffer) buffer = calloc((1<<c->block_bits), sizeof(u8));
+                if (addr % (1<<c->block_bits) != 0) { fprintf(stderr, "Error: `rb %lx` not block-aligned\n", addr); break; }
+                getBlock(c, addr, buffer, (1<<c->block_bits));
+                fprintf(dst, "got [");
+                for(size_t i=0; i<(1<<c->block_bits); i+=1) fprintf(dst, " %02x", buffer[i]);
                 fprintf(dst, " ] from cache[%zx]\n", addr);
             }
         } else if (code == 'w') {
@@ -112,11 +112,11 @@ void runTestFile(FILE *src, FILE *dst) {
                 if (verbosity >= 2) fprintf(dst, "setLong(c, 0x%lx, 0x%lx)\n", addr, value);
                 setLong(c, addr, value);
             } else if (fun == 'b') {
-                if (!buffer) buffer = calloc(c->blocksize, sizeof(u8));
+                if (!buffer) buffer = calloc((1<<c->block_bits), sizeof(u8));
                 size_t i;
-                for(i=0; i<c->blocksize; i+=1)
+                for(i=0; i<(1<<c->block_bits); i+=1)
                     if (1 != fscanf(src, " %hhx", buffer+i)) break;
-                if (addr / c->blocksize != (addr+i-1)/c->blocksize) { fprintf(stderr, "Error: `wb %lx` overlaps two blocks\n", addr); break; }
+                if (addr / (1<<c->block_bits) != (addr+i-1)/(1<<c->block_bits)) { fprintf(stderr, "Error: `wb %lx` overlaps two blocks\n", addr); break; }
                 if (verbosity >= 2) fprintf(dst, "setBlock(c, 0x%lx, buffer, 0x%zx)\n", addr, i);
                 setBlock(c, addr, buffer, i);
             }
