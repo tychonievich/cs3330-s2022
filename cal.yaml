@@ -178,7 +178,6 @@ assignments:
         link: review.html
       
     Lab01:
-        open: 2022-01-26 17:00:00
         due: 2022-01-26 20:45:00
         title: Binary Bomb
         link: bomb.html
@@ -187,7 +186,6 @@ assignments:
         title: Binary Bomb
         link: bomb.html
     Lab02:
-        open: 2022-02-02 17:00:00
         due: 2022-02-02 20:45:00
         title: Bit Fiddling
         link: bitfiddle.html
