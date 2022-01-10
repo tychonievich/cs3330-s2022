@@ -197,10 +197,12 @@ assignments:
         due: 2022-02-09 20:45:00
         title: Cache Simulator
         link: cachesim1.html
+        files: [cachesim1.c]
     HW03:
         due: 2022-02-16 15:00:00
         title: Cache Simulator
         link: cachesim2.html
+        files: [cachesim2.c]
     Lab04:
         due: 2022-02-16 20:45:00
         title: Page Table Simulator
