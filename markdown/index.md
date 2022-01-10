@@ -54,7 +54,7 @@ There is another section of CS 3330 being offered this semester. The two cover t
     <br/>Telephone: 434-243-3789
 
 **TAs**
-:   TBA
+:   Andrew, Austin, Hongyan, Ishaan, Karan, Kathryn, Lukas, Mike, Nathaniel, Noah, Sidhardh, and Yulun.
     
     Please respect the fact that our TAs are also students in other classes, with assignments and so on of their own,
     and limit your 3330-related contact with them to the times they have scheduled to act as TAs.
