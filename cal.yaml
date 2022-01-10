@@ -178,6 +178,7 @@ assignments:
         link: review.html
       
     Lab01:
+        open: 2022-01-26 17:00:00
         due: 2022-01-26 20:45:00
         title: Binary Bomb
         link: bomb.html
@@ -186,6 +187,7 @@ assignments:
         title: Binary Bomb
         link: bomb.html
     Lab02:
+        open: 2022-02-02 17:00:00
         due: 2022-02-02 20:45:00
         title: Bit Fiddling
         link: bitfiddle.html
@@ -194,6 +196,7 @@ assignments:
         title: Bit Fiddling
         link: bitfiddle.html
     Lab03:
+        open: 2022-02-09 17:00:00
         due: 2022-02-09 20:45:00
         title: Cache Simulator
         link: cachesim1.html
@@ -204,6 +207,7 @@ assignments:
         link: cachesim2.html
         files: [cachesim2.c]
     Lab04:
+        open: 2022-02-16 17:00:00
         due: 2022-02-16 20:45:00
         title: Page Table Simulator
     HW04:
@@ -211,19 +215,26 @@ assignments:
         title: Page Table Simulator
 
     Lab05:
+        open: 2022-03-02 17:00:00
         due: 2022-03-02 20:45:00
     Lab06:
+        open: 2022-03-16 17:00:00
         due: 2022-03-16 20:45:00
     Lab07:
+        open: 2022-03-23 17:00:00
         due: 2022-03-23 20:45:00
     Lab08:
+        open: 2022-03-30 17:00:00
         due: 2022-03-30 20:45:00
 
     Lab09:
+        open: 2022-04-13 17:00:00
         due: 2022-04-13 20:45:00
     Lab10:
+        open: 2022-04-20 17:00:00
         due: 2022-04-20 20:45:00
     Lab11:
+        open: 2022-04-27 17:00:00
         due: 2022-04-27 20:45:00
 
     Exam 3:
