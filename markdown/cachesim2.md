@@ -75,4 +75,6 @@ You can run the full suite of tests with `make test`.
 To get only summary information, not full details, run `make test >/dev/null`.
 If you want to run your own test, try `./cachsim2_test yourinputfile`.
 
-There 
+The tests we provide cover many cases, but not all.
+For example, there's no test with an L3 cache, nor a writeback L2 and writethrough L1, nor multibyte accesses in a multitier cache.
+For 100% credit, you'll need to make sure your cache works for all of those cases too.
