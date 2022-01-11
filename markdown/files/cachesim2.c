@@ -41,6 +41,7 @@ void setBlock(Cache *c, u64 address, const u8 *src, size_t bytes) {
  */
 void getBlock(Cache *c, u64 address, u8 *dst, size_t bytes) {
     readFromRAM(address, bytes, dst); // FIX ME
+}
 
 /**
  * Read 8 bytes as a little-endian unsigned integer, similar to `getBlock` except
@@ -50,7 +51,7 @@ void getBlock(Cache *c, u64 address, u8 *dst, size_t bytes) {
  * You may assume that `c.block_size` >= 8.
  */
 u64 getLong(Cache *c, u64 address) {
-    u64 value; readFromRAM(address, sizeof(value), &value); // FIX ME
+    u64 value; readFromRAM(address, sizeof(value), (u8*)&value); return value; // FIX ME
 }
 
 /**
@@ -61,5 +62,5 @@ u64 getLong(Cache *c, u64 address) {
  * You may assume that `c.block_size` >= 8.
  */
 void setLong(Cache *c, u64 address, u64 value) {
-    writeToRAM(address, sizeof(value), dst); // FIX ME
+    writeToRAM(address, sizeof(value), (u8*)&value); // FIX ME
 }
