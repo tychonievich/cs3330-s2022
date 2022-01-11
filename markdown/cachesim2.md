@@ -62,7 +62,7 @@ please access the smaller-address line first so that you can match our test case
 
 Also support non-`NULL` `backing` caches.
 
-- You may assume that `c->backing->blocksize >= c->blocksize`.
+- You may assume that `c->backing->block_bits >= c->block_bits`.
 - If you are using the global variables from cachesim1 to parse addresses, make sure you change them appropriately when moving from one cache level to another.
 - We will test all combinations of writing policy (all -through, all -back, -through backed by -back, -back backed by -through).
 
