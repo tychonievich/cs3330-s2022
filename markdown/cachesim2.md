@@ -72,4 +72,7 @@ Also support non-`NULL` `backing` caches.
 We've provided a testing program that reads test case input files and prints results,
 along with example test cases and results.
 You can run the full suite of tests with `make test`.
+To get only summary information, not full details, run `make test >/dev/null`.
 If you want to run your own test, try `./cachsim2_test yourinputfile`.
+
+There 
