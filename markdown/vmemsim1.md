@@ -21,7 +21,7 @@ Page table entries will by 16 bits (2 bytes) which are
 <rect x="240" y="10" width="20" height="20" fill="none" stroke="black"/>
 <text x="250" y="24">A</text>
 <rect x="260" y="10" width="20" height="20" fill="none" stroke="black"/>
-<text x="270" y="24">K</text>
+<text x="270" y="24">U</text>
 <rect x="280" y="10" width="20" height="20" fill="none" stroke="black"/>
 <text x="290" y="24">W</text>
 <rect x="300" y="10" width="20" height="20" fill="none" stroke="black"/>
@@ -44,7 +44,7 @@ where
 
 - `P` is 1 if the page is **p**resent, i.e. allocated for this process. If `P` is 0, the other bits in the page table entry are not used by the hardware (they can be used by the OS, but we won't simulate that in this assignment).
 - `W` is 1 if the page is **w**ritable (else it's read-only).
-- `K` is 1 if the page is **k**ernel-only (else it's user-mode).
+- `U` is 1 if the page is **u**ser-mode (else it's kernel-only).
 - `A` (accessed) is set to 1 each time a read or write goes to the page.
 - `D` (dirty) is set to 1 each time a write goes to the page.
 - `X` is 1 if the bytes on the page may be e**x**ecuted as code.
