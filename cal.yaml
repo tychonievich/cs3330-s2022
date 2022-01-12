@@ -242,7 +242,7 @@ assignments:
         open: 2022-03-30 17:00:00
         due: 2022-03-30 20:45:00
         title: HCL7 – PIPE part 3
-    HW07:
+    HW08:
         open: 2022-03-30 20:45:00
         due: 2022-04-05 23:59:00
         title: HCL8 – PIPE part 4
@@ -251,7 +251,7 @@ assignments:
         open: 2022-04-13 17:00:00
         due: 2022-04-13 20:45:00
         title: cache lab
-    HW07:
+    HW09:
         open: 2022-04-13 20:45:00
         due: 2022-04-19 23:59:00
         title: cache programs
@@ -259,7 +259,7 @@ assignments:
         open: 2022-04-20 17:00:00
         due: 2022-04-20 20:45:00
         title: loop lab
-    HW07:
+    HW10:
         open: 2022-04-20 20:45:00
         due: 2022-04-26 23:59:00
         title: rotate and smooth checkpoint
@@ -267,7 +267,7 @@ assignments:
         open: 2022-04-27 17:00:00
         due: 2022-04-27 20:45:00
         title: SIMD lab
-    HW07:
+    HW11:
         open: 2022-04-27 20:45:00
         due: 2022-05-03 23:59:59
         title: rotate and smooth
