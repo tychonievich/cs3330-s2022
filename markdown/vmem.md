@@ -17,21 +17,21 @@ a. an efficient mechanism for communicating with processes
 A **process** is a software-only operating system construct
 that roughly parallels the end-user idea of a running program.
 Each process has its own virtual address space.
-The hardware knows the difference between user and kernel mode,
-but not the difference between a web browser and a text editor.
 
 The operating system maintains a variety of data structures
 inside kernel-only memory to help track different processes.
-Portions of those structures relating to one process at a time^[or one per processor depending on the multiprocessor design]
+Portions of those structures relating to the current process
 are loaded into hardware-accessible registers and memory
 so that the hardware mechanisms will cause running code to interact with the appropriate process's memory
 and other state.
 
-Changing which process's state is currently loaded is called a **context switch**.
-All major user operating systems (but not all embedded-system operating systems)
-use a hardware timer to create an exception every few dozen milliseconds
-to enabled automated context switching and facilitate the illusion that
-more processes are running at a time than there are processors in the computer.
+Memory is split into two parts:
+user-mode memory for the currently running process
+and kernel-mode memory shared by all processes but inaccessible by them.
+The processor can switch from user-mode, only accessing user-mode memory and code,
+to kernel-mode, running code in the kernel-mode part of memory.
+Typically code residing in kernel-mode memory is called an [operating system](kernel.html)
+and is responsible to set up virtual memory and switch between processes.
 
 # Regions of Memory
 
@@ -74,7 +74,7 @@ struct segment_node {
     void *high_address;
     unsigned int permissions_flags;
     struct segment_node *next;
-}
+};
 ```
 :::
 
@@ -179,14 +179,14 @@ so that no two programs can see the contents of the other's memory
 unless they have both asked the operating system to enable that.
 
 Since 2017, it has become known that these protections
-are not quite a complete as they were once thought.
+are not quite as complete as they were once thought.
 Although these protections do ensure that one process cannot directly access another's memory,
-they does not guarantee the absence of side-effects of memory access
+they do not guarantee the absence of side-effects of memory access
 that another process can detect.
 For example, many hardware accelerations are based on the principle
 that what happens once is likely to happen again,
 so timing how long a memory access takes
-can leak some information about what other memory accesses other processes may have made.
+can leak some information about what memory accesses other processes may have made in the recent past.
 
 This is one example of how a side channel might exist,
 and why it is challenging to reason about their absence.
