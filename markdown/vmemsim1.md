@@ -48,3 +48,5 @@ where
 - `A` (accessed) is set to 1 each time a read or write goes to the page.
 - `D` (dirty) is set to 1 each time a write goes to the page.
 - `X` is 1 if the bytes on the page may be e**x**ecuted as code.
+
+and the physical address is the concatenation of the PPN from the page table entry and the page offset from the virtual address.
