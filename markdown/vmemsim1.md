@@ -42,9 +42,9 @@ Page table entries will by 16 bits (2 bytes) which are
 
 where
 
-- `P` is 1 if the page is **p**resent, i.e. allocated for this process
-- `W` is 1 if the page is **w**ritable (else it's read-only)
-- `K` is 1 if the page is **k**ernel-only (else it's user-mode)
-- `A` (accessed) is set to 1 each time a read or write goes to the page
-- `D` (dirty) is set to 1 each time a write goes to the page
-- `X` is 1 if the bytes on the page may be e**x**ecuted as code
+- `P` is 1 if the page is **p**resent, i.e. allocated for this process. If `P` is 0, the meaning of the rest of the bits in the page table entry are defined by the OS and are not used by the hardware.
+- `W` is 1 if the page is **w**ritable (else it's read-only).
+- `K` is 1 if the page is **k**ernel-only (else it's user-mode).
+- `A` (accessed) is set to 1 each time a read or write goes to the page.
+- `D` (dirty) is set to 1 each time a write goes to the page.
+- `X` is 1 if the bytes on the page may be e**x**ecuted as code.
