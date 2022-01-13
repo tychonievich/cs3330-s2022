@@ -4,13 +4,13 @@ Write a single-level page table simulator. You'll have
     The high-order 11 bits are a virtual page number;
     the low-order 13 are a page offset.
     
-    `typedef struct __attribute__((packed)) { int po:13, vpn:11; } va;`{.c}
+    `typedef struct __attribute__((packed)) { unsigned po:13, vpn:11; } va;`{.c}
 
 
 - 20-bit physical addresses, for a 1MB physical address space.
     We'll provide this as a `void *` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
 
-    `typedef struct __attribute__((packed)) { int po:13, ppn:7; } pa;`{.c}
+    `typedef struct __attribute__((packed)) { unsigned po:13, ppn:7; } pa;`{.c}
 
 
 Page table entries will by 16 bits (2 bytes) which are
@@ -48,7 +48,7 @@ Page table entries will by 16 bits (2 bytes) which are
 
 ```c
 typedef struct __attribute__((packed)) {
-    int P:1, W:1, U:1, A:1, D:1, unused:3, PPN:7, X:1;
+    unsigned P:1, W:1, U:1, A:1, D:1, unused:3, PPN:7, X:1;
 } pte;
 ```
 
