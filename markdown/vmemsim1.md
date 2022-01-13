@@ -10,7 +10,7 @@ Write a single-level page table simulator. You'll have
 - 20-bit physical addresses, for a 1MB physical address space.
     We'll provide this as a `void *` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
 
-    `struct pa __attribute__((packed)) { int po:13, vpn:7; }`{.c}
+    `struct pa __attribute__((packed)) { int po:13, ppn:7; }`{.c}
 
 
 Page table entries will by 16 bits (2 bytes) which are
