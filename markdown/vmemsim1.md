@@ -79,7 +79,7 @@ You will complete the following function that simulates an MMU:
  * or NULL if it is not present or not accessible in that way. Also
  * update the A bit, and the D bit if writing.
  */
-void *translate(void *ram, unsigned char ptbr, unsigned addr, unsigned char mode);
+void *translate(void *ram, unsigned char ptbr, va addr, unsigned char mode);
 ```
 
 We provide the following simple page-allocation simulator with no deallocation possible
