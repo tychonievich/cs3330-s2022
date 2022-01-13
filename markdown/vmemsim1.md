@@ -4,13 +4,13 @@ Write a single-level page table simulator. You'll have
     The high-order 11 bits are a virtual page number;
     the low-order 13 are a page offset.
     
-    `struct va __attribute__((packed)) { int po:13, vpn:11; }`{.c}
+    `typedef struct __attribute__((packed)) { int po:13, vpn:11; } va;`{.c}
 
 
 - 20-bit physical addresses, for a 1MB physical address space.
     We'll provide this as a `void *` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
 
-    `struct pa __attribute__((packed)) { int po:13, ppn:7; }`{.c}
+    `typedef struct __attribute__((packed)) { int po:13, ppn:7; } pa;`{.c}
 
 
 Page table entries will by 16 bits (2 bytes) which are
@@ -47,9 +47,9 @@ Page table entries will by 16 bits (2 bytes) which are
 </svg>
 
 ```c
-struct pte __attribute__((packed)) {
+typedefe struct __attribute__((packed)) {
     int P:1, W:1, U:1, A:1, D:1, unused:3, PPN:7, X:1;
-}
+} pte;
 ```
 
 where
@@ -85,9 +85,9 @@ void *translate(void *ram, unsigned char ptbr, unsigned addr, unsigned char mode
 We provide the following simple page-allocation simulator with no deallocation possible
 
 ```c
-void allocate(void *ram, unsigned char *ptbr, struct va addr, unsigned char mode) {
+void allocate(void *ram, unsigned char *ptbr, va addr, unsigned char mode) {
     static nextPage = 1;
-    struct pte *pt = (struct pte *)(ram+((*ptbr)<<13));
+    pte *pt = (pte *)(ram+((*ptbr)<<13));
     if (!pt[addr.vpn].P) {
         pt[addr.vpn].PPN = nextPage++;
         pt[addr.vpn].P = 1;
