@@ -132,40 +132,40 @@ assignments:
             link: https://kytos.cs.virginia.edu/cs3330/quizzes/
 
     Quiz00:
-        due: 2022-01-24 15:00:00
+        due: 2022-01-24 14:30:00
         weight: 0
     Quiz01:
-        due: 2022-01-31 15:00:00
+        due: 2022-01-31 14:30:00
         open: 2022-01-28 17:00:00
     Quiz02:
-        due: 2022-02-07 15:00:00
+        due: 2022-02-07 14:30:00
         open: 2022-02-04 17:00:00
     Quiz03:
-        due: 2022-02-14 15:00:00
+        due: 2022-02-14 14:30:00
         open: 2022-02-11 17:00:00
     Quiz04:
-        due: 2022-02-21 15:00:00
+        due: 2022-02-21 14:30:00
         open: 2022-02-18 17:00:00
     Quiz05:
-        due: 2022-03-14 15:00:00
+        due: 2022-03-14 14:30:00
         open: 2022-03-11 17:00:00
     Quiz06:
-        due: 2022-03-21 15:00:00
+        due: 2022-03-21 14:30:00
         open: 2022-03-18 17:00:00
     Quiz07:
-        due: 2022-03-28 15:00:00
+        due: 2022-03-28 14:30:00
         open: 2022-03-25 17:00:00
     Quiz08:
-        due: 2022-04-04 15:00:00
+        due: 2022-04-04 14:30:00
         open: 2022-04-01 17:00:00
     Quiz09:
-        due: 2022-04-18 15:00:00
+        due: 2022-04-18 14:30:00
         open: 2022-04-15 17:00:00
     Quiz10:
-        due: 2022-04-25 15:00:00
+        due: 2022-04-25 14:30:00
         open: 2022-04-22 17:00:00
     Quiz11:
-        due: 2022-05-02 15:00:00
+        due: 2022-05-02 14:30:00
         open: 2022-04-29 17:00:00
 
     Exam 1:
@@ -182,7 +182,7 @@ assignments:
         title: Binary Bomb
         link: bomb.html
     HW01:
-        due: 2022-02-01 23:59:00
+        due: 2022-02-02 14:30:00
         title: Binary Bomb
         link: bomb.html
     Lab02:
@@ -190,7 +190,7 @@ assignments:
         title: Bit Fiddling
         link: bitfiddle.html
     HW02:
-        due: 2022-02-08 23:59:00
+        due: 2022-02-09 14:30:00
         title: Bit Fiddling
         link: bitfiddle.html
     Lab03:
@@ -200,7 +200,7 @@ assignments:
         link: cachesim1.html
         files: [cachesim1.c]
     HW03:
-        due: 2022-02-15 23:59:00
+        due: 2022-02-16 14:30:00
         open: 2022-02-09 20:45:00
         title: Cache Simulator
         link: cachesim2.html
@@ -210,7 +210,7 @@ assignments:
         due: 2022-02-16 20:45:00
         title: Page Table Simulator
     HW04:
-        due: 2022-02-22 23:59:00
+        due: 2022-02-23 14:30:00
         open: 2022-02-16 20:45:00
         title: Page Table Simulator
 
@@ -220,7 +220,7 @@ assignments:
         title: HCL1 – SEQ part 1
     HW05:
         open: 2022-03-02 20:45:00
-        due: 2022-03-15 23:59:00
+        due: 2022-03-16 14:30:00
         title: HCL2 – SEQ part 2
     Lab06:
         open: 2022-03-16 17:00:00
@@ -228,7 +228,7 @@ assignments:
         title: HCL3 – SEQ part 3
     HW06:
         open: 2022-03-16 20:45:00
-        due: 2022-03-22 23:59:00
+        due: 2022-03-23 14:30:00
         title: HCL4 – SEQ part 4
     Lab07:
         open: 2022-03-23 17:00:00
@@ -236,7 +236,7 @@ assignments:
         title: HCL5 – PIPE part 1
     HW07:
         open: 2022-03-23 20:45:00
-        due: 2022-03-29 23:59:00
+        due: 2022-03-30 14:30:00
         title: HCL6 – PIPE part 2
     Lab08:
         open: 2022-03-30 17:00:00
@@ -244,7 +244,7 @@ assignments:
         title: HCL7 – PIPE part 3
     HW08:
         open: 2022-03-30 20:45:00
-        due: 2022-04-05 23:59:00
+        due: 2022-04-06 14:30:00
         title: HCL8 – PIPE part 4
 
     Lab09:
@@ -253,7 +253,7 @@ assignments:
         title: cache lab
     HW09:
         open: 2022-04-13 20:45:00
-        due: 2022-04-19 23:59:00
+        due: 2022-04-20 14:30:00
         title: cache programs
     Lab10:
         open: 2022-04-20 17:00:00
@@ -261,7 +261,7 @@ assignments:
         title: loop lab
     HW10:
         open: 2022-04-20 20:45:00
-        due: 2022-04-26 23:59:00
+        due: 2022-04-27 14:30:00
         title: rotate and smooth checkpoint
     Lab11:
         open: 2022-04-27 17:00:00
