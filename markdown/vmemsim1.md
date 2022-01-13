@@ -47,7 +47,7 @@ Page table entries will by 16 bits (2 bytes) which are
 </svg>
 
 ```c
-typedefe struct __attribute__((packed)) {
+typedef struct __attribute__((packed)) {
     int P:1, W:1, U:1, A:1, D:1, unused:3, PPN:7, X:1;
 } pte;
 ```
