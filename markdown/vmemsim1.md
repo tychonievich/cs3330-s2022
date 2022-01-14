@@ -3,9 +3,15 @@ Write a single-level page table simulator. You'll have
 - 24-bit virtual addresses, for a 16MB virtual address space.
     The high-order 11 bits are a virtual page number;
     the low-order 13 are a page offset.
+    
+    `typedef struct __attribute__((packed)) { unsigned po:13, vpn:11; } VA;`{.c}
+
 
 - 20-bit physical addresses, for a 1MB physical address space.
     We'll provide this as a `void *` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
+
+    `typedef struct __attribute__((packed)) { unsigned po:13, ppn:7; } PA;`{.c}
+
 
 Page table entries will by 16 bits (2 bytes) which are
 
@@ -40,6 +46,12 @@ Page table entries will by 16 bits (2 bytes) which are
 </g>
 </svg>
 
+```c
+typedef struct __attribute__((packed)) {
+    unsigned p:1, w:1, u:1, a:1, d:1, unused:3, ppn:7, x:1;
+} PTE;
+```
+
 where
 
 - `P` is 1 if the page is **p**resent, i.e. allocated for this process. If `P` is 0, the other bits in the page table entry are not used by the hardware (they can be used by the OS, but we won't simulate that in this assignment).
@@ -50,3 +62,50 @@ where
 - `X` is 1 if the bytes on the page may be e**x**ecuted as code.
 
 and the physical address is the concatenation of the PPN from the page table entry and the page offset from the virtual address.
+
+We'll also use a special mode flag
+
+```c
+typedef struct __attribute__((packed)) {
+    unsigned writing:1;
+    unsigned user:1;
+    unsigned executing:1;
+} Mode;
+```
+
+
+You will complete the following function that simulates an MMU:
+
+```c
+/**
+ * Given 
+ * 
+ * ram    a pointer to the "RAM" (which will always be 1MB-aligned)
+ * ptbr   the physical page number of the page table
+ * addr   the virtual address to be accessed
+ * mode   the access type: mode&1 write, mode&2 user, mode&4 execute
+ *
+ * either return a pointer to the part of RAM containing that address
+ * or NULL if it is not present or not accessible in that way. Also
+ * update the A bit, and the D bit if writing.
+ */
+void *translate(void *ram, unsigned char ptbr, VA addr, Mode mode);
+```
+
+We provide the following simple page-allocation simulator with no deallocation possible
+
+```c
+void allocate(void *ram, unsigned char ptbr, VA addr, Mode mode) {
+    static unsigned nextPage = 1;
+    pte *pt = (pte *)(ram+(ptbr<<13));
+    if (!pt[addr.vpn].P) {
+        pt[addr.vpn].PPN = nextPage++;
+        pt[addr.vpn].P = 1;
+    }
+    pt[addr.vpn].X = mode.executing;
+    pt[addr.vpn].D = 0;
+    pt[addr.vpn].A = 0;
+    pt[addr.vpn].U = mode.user;
+    pt[addr.vpn].W = mode.writing;
+}
+```
