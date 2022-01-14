@@ -192,34 +192,43 @@ class CourseSchedule:
         d = self.start
         while d <= self.stop:
             empty = True
+            idx=len(ans)
+            isExam = False
             if d in self.extra:
                 if empty:
                     ans.append('<div class="day {0:%a}" date="{0:%Y-%m-%d}"><span class="date w{0:%w}">{0:%d %b}</span><div class="events">'.format(d))
                     empty = False
                 ans.append('<div class="special">{}</div>'.format(self.extra[d]))
+                if 'Exam ' in ans[-1]: isExam = True
             if d in self.lects:
                 if empty:
                     ans.append('<div class="day {0:%a}" date="{0:%Y-%m-%d}"><span class="date w{0:%w}">{0:%d %b}</span><div class="events">'.format(d))
                     empty = False
                 ans.extend(htmlDetailsOrflat(self.lects[d],'lecture'))
+                if 'Exam ' in ans[-1]: isExam = True
             if d in self.labs:
                 if empty:
                     ans.append('<div class="day {0:%a}" date="{0:%Y-%m-%d}"><span class="date w{0:%w}">{0:%d %b}</span><div class="events">'.format(d))
                     empty = False
                 ans.extend(htmlDetailsOrflat(self.labs[d],'lab'))
+                if 'Exam ' in ans[-1]: isExam = True
             for task in self.tasks.get(d,[]):
                 if empty:
                     ans.append('<div class="day {0:%a}" date="{0:%Y-%m-%d}"><span class="date w{0:%w}">{0:%d %b}</span><div class="events">'.format(d))
                     empty = False
                 ans.extend(htmlDetailsOrflat(task,'task',True))
+                if 'Exam ' in ans[-1]: isExam = True
             for s,d2 in self.final.items():
                 if d2.date() == d:
                     if empty:
                         ans.append('<div class="day {0:%a}" date="{0:%Y-%m-%d}"><span class="date w{0:%w}">{0:%d %b}</span><div class="events">'.format(d))
                         empty = False
                     ans.append('<div class="special">Final for {} at {:%H:%M}</div>'.format(s,d2))
+                    isExam = True
             if not empty: ans.append('</div></div>')
             else: ans.append('<div class="empty day {0:%a}" date="{0:%Y-%m-%d}"></div>'.format(d))
+            if isExam:
+                ans[idx] = ans[idx].replace('class="day','class="exam day')
             d += timedelta(1)
         ans.append('</div>')
         return '\n'.join(ans)
