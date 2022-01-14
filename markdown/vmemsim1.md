@@ -1,5 +1,5 @@
 ---
-Title: Virtual Memory Simulator
+title: Virtual Memory Simulator
 ...
 
 
