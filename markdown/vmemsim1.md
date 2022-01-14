@@ -100,20 +100,20 @@ You will complete the following function that simulates an MMU:
 void *translate(void *ram, unsigned char ptbr, VA addr, Mode mode);
 ```
 
-We provide the following simple page-allocation simulator with no deallocation possible
+We provide the following simple page-allocation simulator (with no deallocation possible) in our testing files, copied here in case it helps you understand how we are accessing pages:
 
 ```c
 void allocate(void *ram, unsigned char ptbr, VA addr, Mode mode) {
     static unsigned nextPage = 1;
-    pte *pt = (pte *)(ram+(ptbr<<13));
-    if (!pt[addr.vpn].P) {
-        pt[addr.vpn].PPN = nextPage++;
-        pt[addr.vpn].P = 1;
+    PTE *pt = (PTE *)(ram+(ptbr<<13));
+    if (!pt[addr.vpn].p) {
+        pt[addr.vpn].ppn = nextPage++;
+        pt[addr.vpn].p = 1;
     }
-    pt[addr.vpn].X = mode.executing;
-    pt[addr.vpn].D = 0;
-    pt[addr.vpn].A = 0;
-    pt[addr.vpn].U = mode.user;
-    pt[addr.vpn].W = mode.writing;
+    pt[addr.vpn].x = mode.executing;
+    pt[addr.vpn].d = 0;
+    pt[addr.vpn].a = 0;
+    pt[addr.vpn].u = mode.user;
+    pt[addr.vpn].w = mode.writing;
 }
 ```
