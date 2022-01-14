@@ -162,7 +162,7 @@ class CourseSchedule:
         self.lects = {}
         self.labs = {}
         self.tasks = {}
-        b = self.start
+        b = d['Courses begin']
         while b <= end:
             if b in self.breaks: 
                 b += timedelta(1)
