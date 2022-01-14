@@ -1,10 +1,18 @@
+---
+Title: Virtual Memory Simulator
+...
+
+
 Write a single-level page table simulator. You'll have
 
 - 24-bit virtual addresses, for a 16MB virtual address space.
     The high-order 11 bits are a virtual page number;
     the low-order 13 are a page offset.
     
-    `typedef struct __attribute__((packed)) { unsigned po:13, vpn:11; } VA;`{.c}
+    `typedef struct __attribute__((packed)) { unsigned po:13, vpn:11; } VA;`{.c}^[
+        This (and other code on this pace) uses packed bitfields.
+        We have a [short writeup](packed_struct.html) explaining that usage.
+    ]
 
 
 - 20-bit physical addresses, for a 1MB physical address space.
