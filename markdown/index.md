@@ -104,6 +104,14 @@ Due to the special pricing, no refunds can be processed.
 This program aims to offer all students accessibility and affordability. If you have any questions regarding the program, please email us at [UVAInclusiveAccess@virginia.edu](mailto:UVAInclusiveAccess@virginia.edu). 
 </details>
 
+## Meetings
+
+Lectures meet each Monday and Wednesday at 3:30pm in Rice 130. They will be recorded and posted on the schedule a few hours after each class. Attendance is not required, but past experience suggests attendance is strongly correlated with success.
+
+Labs meet each Wednesday at either 5:00pm or 6:30pm, depending on your section, in Olsson 018. They are not recorded and should be attended in person. You should always attend your assigned section; exceptions can be made in advance by the TAs in your lab section.
+
+If you are unable to attend lab in person, you should submit work before your appointed lab time; if the lab describes in-person check-off, that can also be done during office hours.
+
 ## Time
 
 The intent is to meet policy [PROV-022](http://uvapolicy.virginia.edu/policy/PROV-022),
