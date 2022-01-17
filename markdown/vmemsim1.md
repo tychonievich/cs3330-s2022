@@ -16,7 +16,7 @@ Write a single-level page table simulator. You'll have
 
 
 - 20-bit physical addresses, for a 1MB physical address space.
-    We'll provide this as a `void *` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
+    We'll simulate the physical address space using a `void *` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
 
     `typedef struct __attribute__((packed)) { unsigned po:13, ppn:7; } PA;`{.c}
 
@@ -104,10 +104,10 @@ We provide the following simple page-allocation simulator (with no deallocation 
 
 ```c
 void allocate(void *ram, unsigned char ptbr, VA addr, Mode mode) {
-    static unsigned nextPage = 1;
+    static unsigned nextPage = 0;
     PTE *pt = (PTE *)(ram+(ptbr<<13));
     if (!pt[addr.vpn].p) {
-        pt[addr.vpn].ppn = nextPage++;
+        pt[addr.vpn].ppn = (nextPage += 0x31);
         pt[addr.vpn].p = 1;
     }
     pt[addr.vpn].x = mode.executing;
