@@ -49,18 +49,28 @@ In most cases, this means you'll want to start each session by calling
 ```bash
 module load clang-llvm gcc git python3
 ```
-    
+
 There are other packages available, including a few non-`vi` command-line editors like `emacs` and `nano`; see `module avail` for a list.
+
+:::aside
+As of 2022-01-18, module `clang-llvm` is clang version 6.0.
+Clang version 14 can be loaded using `module load WIP-clang-llvm-14.0.0`;
+the changes to clang's build process have made our systems staff less than fully confident that version 14 was completely properly installed, hence the WIP (Work In Progress) tag.
+I tried it and it worked for me, with the updated performance and nicer error messages that version 14 offers over version 6.
+That last message I had from our systems staff said
+
+> Once your students have confirmed its functionality, I’ll remove the “WIP”.
+
+so if you use the version 14 module and it works (or doesn't), please let me know.
+:::
 
 # Alternative paths
 
-1. Go native. Install a Linux distro (there are many; perhaps try a [popular](https://ubuntu.com/), [stable](https://www.centos.org/), or [cutting-edge](https://archlinux.org/) version)
-
-For how to do this from home, see how to use remote desktop, ssh and scp. These machines come with a version of gcc by default, but you can access a more recent C compiler by running module load gcc (for gcc) or module load clang (for clang). (See also this guide to modules on the department machines.)
+1. Go native. Install a Linux distro (there are many; perhaps try a [popular](https://ubuntu.com/), [stable](https://www.centos.org/), or [advanced](https://archlinux.org/) version)
 
 2. Use virtualization, such as virtualbox. Note, you’ll need a 64-bit image of Linux, like the one 2150 has used recently. Virtualization occasionally messes up timing, so it might not be good for the last part of the course, but it should work until then.
 
-3. Use and online IDE. There are many web-based IDEs that run an appropriate version of Linux under the hood.
+3. Use an online IDE. There are many web-based IDEs that run an appropriate version of Linux under the hood.
     [Cloud9](https://aws.amazon.com/cloud9/), [Codio](https://www.codio.com/), [ideone](https://ideone.com/), and [ShiftEdit](https://shiftedit.net/) all might work.
 
 4. Use your OS's POSIX-like interface.
@@ -77,15 +87,11 @@ C files can be compiled on any Linux system using `gcc -x c filename.c`, `clang 
 
 If you have no `main` method or otherwise want to produce an object file instead of a final executable, add `-c` to the command line.
 
-### Recent compilers on the department machines
-
-On the department machines, the default `gcc` is pretty old, but you can get access to more recent one by running `module load gcc`. Similarly, a recent version of `clang` is available with `module load clang-llvm`.
-
 ## 2150's Unix Tutorial
 
 You might refer to [CS 2150's Unix tutorial](https://uva-cs.github.io/pdr/tutorials/01-intro-unix/index.html) for information about how to use Unix. Alternatively, we provide an extremely brief introduction below.
 
-This tutorial includes instructions for using the native Unix enviornment on OS X in addition to more Linux-like environments. As noted above, we need a x86-64 Linux environment for certain assignments, including the first one (bomb lab/HW). So, although the native OS X environment may be most convenient for future assignments, if you are using OS X, we recommend following the tutorial [on the department machines](#the -officially-supported-solution).
+This tutorial includes instructions for using the native Unix enviornment on OS X in addition to more Linux-like environments. As noted above, we need a x86-64 Linux environment for certain assignments, including the first one (bomb lab/HW). So, although the native OS X environment may be most convenient for future assignments, if you are using OS X, we recommend following the tutorial [on the department machines](#the-officially-supported-solution).
 
 ## Linux Lite
 
