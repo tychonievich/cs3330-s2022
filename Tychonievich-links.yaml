@@ -1,7 +1,8 @@
 2022-01-19:
   video:
-    - lectures/63
+    - lectures/2022-01-19-recording-1.webm
   audio:
-    - lectures/22
+    - lectures/2022-01-19-audio-1.mp3
   files:
-    - lectures/38
+    - lectures/2022-01-19-qa.txt
+    - lectures/2022-01-19-slides.pdf
