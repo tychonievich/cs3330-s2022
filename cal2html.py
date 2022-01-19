@@ -73,7 +73,7 @@ def parseReading(data,topic):
 
 bettername = re.compile(r'lectures/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-')
 def parseLinks(entry,name=None):
-    if type(entry) is str: return [(bettername.sub(entry,'') if name is None else name,entry,entry)]
+    if type(entry) is str: return [(bettername.sub('',entry) if name is None else name,entry,entry)]
     if type(entry) is dict:
         lnk = entry.get('lnk',entry.get('link',None))
         if lnk: return [(entry.get('txt',entry.get('text',lnk if name is None else name)), lnk, lnk)]
