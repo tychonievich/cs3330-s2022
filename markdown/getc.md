@@ -47,7 +47,7 @@ Because it's shared with many users, these machines use [modules](http://modules
 In most cases, this means you'll want to start each session by calling
 
 ```bash
-module load clang-llvm gcc git python3
+module load clang-llvm gcc git python3-3.9.9
 ```
 
 There are other packages available, including a few non-`vi` command-line editors like `emacs` and `nano`; see `module avail` for a list.
