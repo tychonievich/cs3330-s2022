@@ -35,7 +35,7 @@ Two ways of using these machines are supported:
 
 1. Use the NoMachine remote desktop and the NX cluster, composing code directly on the servers. See [the department's documentation](https://www.cs.virginia.edu/wiki/doku.php?id=nx_lab) for more.
 
-2. Use [SSH](//www.cs.virginia.edu/luther/tips/ssh.html), with either [Git](//www.cs.virginia.edu/luther/tips/git.html), [SFTP, or SCP](//www.cs.virginia.edu/luther/tips/ssh.html#copying-files) to move files to and from the servers.
+2. Use [SSH](//www.cs.virginia.edu/luther/tips/ssh.html), with either [Git](https:////www.cs.virginia.edu/luther/tips/git.html), [SFTP, or SCP](https://www.cs.virginia.edu/luther/tips/ssh.html#copying-files) to move files to and from the servers.
 
     <div class="aside">Warning: Do not submit files by copy-paste from ssh terminals without looking at them first! Copy-paste can introduce line breaks, backslashes, and so on where they do not belong.</div>
 
@@ -47,7 +47,7 @@ Because it's shared with many users, these machines use [modules](http://modules
 In most cases, this means you'll want to start each session by calling
 
 ```bash
-module load clang-llvm gcc git python3-3.9.9
+module load clang-llvm gcc git python3
 ```
 
 There are other packages available, including a few non-`vi` command-line editors like `emacs` and `nano`; see `module avail` for a list.
