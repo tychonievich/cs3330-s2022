@@ -109,8 +109,8 @@ void allocate(void *ram, unsigned char ptbr, unsigned addr, unsigned char mode) 
     PTE *pt = (PTE *)(ram+(ptbr<<13));
     pt[addr.vpn] = (nextPage += 0x31)<<8; // PPN
     pt[addr.vpn] |= 1; // present
-    pt[addr.vpn] |= (mode&2)<<13; // executable
-    pt[addr.vpn] |= (mode&1)<<1; // user-mode
-    pt[addr.vpn] |= (mode&0)<<1; // writeable
+    pt[addr.vpn] |= (mode&4)<<13; // executable
+    pt[addr.vpn] |= (mode&2)<<1; // user-mode
+    pt[addr.vpn] |= (mode&1)<<1; // writeable
 }
 ```
