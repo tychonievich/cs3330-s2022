@@ -69,7 +69,7 @@ We'll also use a special mode bitvector
 <text x="150" y="24">U</text>
 <g font-size="8">
 <text x="5" y="8">7</text>
-<text x="105" y="8">3</text>
+<text x="95" y="8">3</text>
 <text x="110" y="8">2</text>
 <text x="130" y="8">1</text>
 <text x="150" y="8">0</text>
