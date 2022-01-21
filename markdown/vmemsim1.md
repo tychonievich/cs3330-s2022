@@ -9,17 +9,8 @@ Write a single-level page table simulator. You'll have
     The high-order 11 bits are a virtual page number;
     the low-order 13 are a page offset.
     
-    `typedef struct __attribute__((packed)) { unsigned po:13, vpn:11; } VA;`{.c}^[
-        This (and other code on this pace) uses packed bitfields.
-        We have a [short writeup](packed_struct.html) explaining that usage.
-    ]
-
-
 - 20-bit physical addresses, for a 1MB physical address space.
-    We'll simulate the physical address space using a `void *` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
-
-    `typedef struct __attribute__((packed)) { unsigned po:13, ppn:7; } PA;`{.c}
-
+    We'll simulate the RAM chip using a `void *ram` that is aligned to a 1MB boundary (i.e.,  `0 == (ram & 0xFFFFF)`).
 
 Page table entries will by 16 bits (2 bytes) which are
 
@@ -54,12 +45,6 @@ Page table entries will by 16 bits (2 bytes) which are
 </g>
 </svg>
 
-```c
-typedef struct __attribute__((packed)) {
-    unsigned p:1, w:1, u:1, a:1, d:1, unused:3, ppn:7, x:1;
-} PTE;
-```
-
 where
 
 - `P` is 1 if the page is **p**resent, i.e. allocated for this process. If `P` is 0, the other bits in the page table entry are not used by the hardware (they can be used by the OS, but we won't simulate that in this assignment).
@@ -71,15 +56,25 @@ where
 
 and the physical address is the concatenation of the PPN from the page table entry and the page offset from the virtual address.
 
-We'll also use a special mode flag
+We'll also use a special mode bitvector
 
-```c
-typedef struct __attribute__((packed)) {
-    unsigned writing:1;
-    unsigned user:1;
-    unsigned executing:1;
-} Mode;
-```
+<svg viewBox="-1 -1 162 32" font-size="12" text-anchor="middle" style="max-width:24em">
+<rect x="0" y="10" width="100" height="20" fill="none" stroke="black"/>
+<text x="50" y="24">unused</text>
+<rect x="100" y="10" width="20" height="20" fill="none" stroke="black"/>
+<text x="110" y="24">X</text>
+<rect x="120" y="10" width="20" height="20" fill="none" stroke="black"/>
+<text x="130" y="24">W</text>
+<rect x="140" y="10" width="20" height="20" fill="none" stroke="black"/>
+<text x="150" y="24">U</text>
+<g font-size="8">
+<text x="5" y="8">7</text>
+<text x="105" y="8">3</text>
+<text x="110" y="8">2</text>
+<text x="130" y="8">1</text>
+<text x="150" y="8">0</text>
+</g>
+</svg>
 
 
 You will complete the following function that simulates an MMU:
