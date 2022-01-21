@@ -64,9 +64,9 @@ We'll also use a special mode bitvector
 <rect x="100" y="10" width="20" height="20" fill="none" stroke="black"/>
 <text x="110" y="24">X</text>
 <rect x="120" y="10" width="20" height="20" fill="none" stroke="black"/>
-<text x="130" y="24">W</text>
+<text x="130" y="24">U</text>
 <rect x="140" y="10" width="20" height="20" fill="none" stroke="black"/>
-<text x="150" y="24">U</text>
+<text x="150" y="24">W</text>
 <g font-size="8">
 <text x="5" y="8">7</text>
 <text x="95" y="8">3</text>
@@ -75,6 +75,12 @@ We'll also use a special mode bitvector
 <text x="150" y="8">0</text>
 </g>
 </svg>
+
+where
+
+- `W` is 1 if the page is being **w**ritten to (else it's being read).
+- `U` is 1 if the process is **u**ser-mode (else it's in kernel mode).
+- `X` is 1 if the code on the page will be e**x**ecuted.
 
 
 You will complete the following function that simulates an MMU:
@@ -86,29 +92,25 @@ You will complete the following function that simulates an MMU:
  * ram    a pointer to the "RAM" (which will always be 1MB-aligned)
  * ptbr   the physical page number of the page table
  * addr   the virtual address to be accessed
- * mode   the access type: mode&1 write, mode&2 user, mode&4 execute
+ * mode   the access type bitvector
  *
  * either return a pointer to the part of RAM containing that address
  * or NULL if it is not present or not accessible in that way. Also
  * update the A bit, and the D bit if writing.
  */
-void *translate(void *ram, unsigned char ptbr, VA addr, Mode mode);
+void *translate(void *ram, unsigned char ptbr, unsigned addr, unsigned char mode);
 ```
 
-We provide the following simple page-allocation simulator (with no deallocation possible) in our testing files, copied here in case it helps you understand how we are accessing pages:
+We provide the following simple page-allocation simulator (which does not support deallocation) in our testing files, copied here in case it helps you understand how we are accessing pages:
 
 ```c
-void allocate(void *ram, unsigned char ptbr, VA addr, Mode mode) {
+void allocate(void *ram, unsigned char ptbr, unsigned addr, unsigned char mode) {
     static unsigned nextPage = 0;
     PTE *pt = (PTE *)(ram+(ptbr<<13));
-    if (!pt[addr.vpn].p) {
-        pt[addr.vpn].ppn = (nextPage += 0x31);
-        pt[addr.vpn].p = 1;
-    }
-    pt[addr.vpn].x = mode.executing;
-    pt[addr.vpn].d = 0;
-    pt[addr.vpn].a = 0;
-    pt[addr.vpn].u = mode.user;
-    pt[addr.vpn].w = mode.writing;
+    pt[addr.vpn] = (nextPage += 0x31)<<8; // PPN
+    pt[addr.vpn] |= 1; // present
+    pt[addr.vpn] |= (mode&2)<<13; // executable
+    pt[addr.vpn] |= (mode&1)<<1; // user-mode
+    pt[addr.vpn] |= (mode&0)<<1; // writeable
 }
 ```
