@@ -49,9 +49,10 @@ where
 
 - `P` is 1 if the page is **p**resent, i.e. allocated for this process. If `P` is 0, the other bits in the page table entry are not used by the hardware (they can be used by the OS, but we won't simulate that in this assignment).
 - `W` is 1 if the page is **w**ritable (else it's read-only).
-- `U` is 1 if the page is **u**ser-mode (else it's kernel-only).
+- `U` is 1 if the page is accessible in **u**ser-mode (else it's kernel-only).
 - `A` (accessed) is set to 1 each time a read or write goes to the page.
 - `D` (dirty) is set to 1 each time a write goes to the page.
+- `PPN` is the physical page number.
 - `X` is 1 if the bytes on the page may be e**x**ecuted as code.
 
 and the physical address is the concatenation of the PPN from the page table entry and the page offset from the virtual address.
@@ -107,10 +108,9 @@ We provide the following simple page-allocation simulator (which does not suppor
 void allocate(void *ram, unsigned char ptbr, unsigned addr, unsigned char mode) {
     static unsigned nextPage = 0;
     PTE *pt = (PTE *)(ram+(ptbr<<13));
-    pt[addr.vpn] = (nextPage += 0x31)<<8; // PPN
+    pt[addr.vpn] = ((nextPage += 0x31)&0x7F)<<8; // PPN; 0x31 for randomish allocations
     pt[addr.vpn] |= 1; // present
     pt[addr.vpn] |= (mode&4)<<13; // executable
-    pt[addr.vpn] |= (mode&2)<<1; // user-mode
-    pt[addr.vpn] |= (mode&1)<<1; // writeable
+    pt[addr.vpn] |= (mode&3)<<1; // user-mode and writeable
 }
 ```
