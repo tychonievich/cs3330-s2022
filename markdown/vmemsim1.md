@@ -107,7 +107,7 @@ We provide the following simple page-allocation simulator (which does not suppor
 ```c
 void allocate(void *ram, unsigned char ptbr, unsigned addr, unsigned char mode) {
     static unsigned nextPage = 0;
-    PTE *pt = (PTE *)(ram+(ptbr<<13));
+    unsigned short *pt = (unsigned short *)(ram+(ptbr<<13));
     pt[addr.vpn] = ((nextPage += 0x31)&0x7F)<<8; // PPN; 0x31 for randomish allocations
     pt[addr.vpn] |= 1; // present
     pt[addr.vpn] |= (mode&4)<<13; // executable
