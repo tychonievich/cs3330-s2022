@@ -38,17 +38,19 @@ and then terminating.
 
 Phases diffuses     Grade           Notes
 -----------------   ---------       -----------
-Phase 1             Lab 80%         May work with others
-Phase 2             Lab 100%        May work with others
-Phase 3             HW 75%          Do on your own
-Phase 4             HW 90%          Do on your own
-Phase $n\ge 5$      HW $88 + 2n$%   Do on your own; extra credit if more than 6 phases diffused
+Phase 1             Lab 85%         May work with others in lab
+Phase 2             Lab 100%        May work with others in lab
+Phase 3             HW 90%          Do on your own
+Phase 4             HW 100%         Do on your own
+More phases         +1% each        Do on your own; extra credit
 
 The first 10 explosions are free. After that, $-1$ per explosion.
 
 # Tips
 
 1. Extract the bomb using `tar -xvf bomb#.tar`{.bash} where `#` is your bomb number.
+    
+    If you downloaded the bomb with `curl` instead of a browser, do `tar -xvf bomb.tar`{.bash} instead: curl saves the tarball without the number in the filename.
 2. `cd bomb#` (again, where `#` is your bomb number).
 3. Read the `README`
 4. You are welcome to look at `bomb.c` -- it isn't very interesting, though
@@ -63,5 +65,7 @@ If you run your bomb with a command line argument, for example, `./bomb psol.txt
 Because you want to avoid explosions, you'll want to set a breakpoint *before* you run the program so that you can stop the program before it gets to a the function that does the exploding.
 
 You might find it useful to run, `objdump --syms bomb` to get a list of all symbols in the bomb file, including all function names, as a starting point on where you want your breakpoint.
+
+Once you hit a breakpoint in GDB or LLDB, `disassemble` will show you the assembly near the breakpoint and `up` step out of the current function into the calling function so you can `disassemble` it too.
 
 Each phase is doing a different kind of algorithm under the hood, ranging from simple string comparison to recursive data structure traversal.
