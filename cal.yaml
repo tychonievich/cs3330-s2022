@@ -169,15 +169,15 @@ assignments:
 
     Exam 1:
         open: 2022-02-23 17:00:00
-        due: 2022-02-23 20:45:00
+        due: 2022-02-23 19:45:00
         link: review.html
     Exam 2:
         open: 2022-04-06 17:00:00
-        due: 2022-04-06 20:45:00
+        due: 2022-04-06 19:45:00
         link: review.html
       
     Lab01:
-        due: 2022-01-26 20:45:00
+        due: 2022-01-26 23:59:00
         title: Binary Bomb
         link: bomb.html
     HW01:
@@ -185,7 +185,7 @@ assignments:
         title: Binary Bomb
         link: bomb.html
     Lab02:
-        due: 2022-02-02 20:45:00
+        due: 2022-02-02 23:59:00
         title: Bit Fiddling
         link: bitfiddle.html
     HW02:
@@ -194,80 +194,80 @@ assignments:
         link: bitfiddle.html
     Lab03:
         open: 2022-02-09 17:00:00
-        due: 2022-02-09 20:45:00
+        due: 2022-02-09 23:59:00
         title: Cache Simulator
         link: cachesim1.html
         files: [cachesim1.c]
     HW03:
         due: 2022-02-16 14:30:00
-        open: 2022-02-09 20:45:00
+        open: 2022-02-09 23:59:00
         title: Cache Simulator
         link: cachesim2.html
         files: [cachesim2.c]
     Lab04:
         open: 2022-02-16 17:00:00
-        due: 2022-02-16 20:45:00
+        due: 2022-02-16 23:59:00
         title: Page Table Simulator
     HW04:
         due: 2022-02-23 14:30:00
-        open: 2022-02-16 20:45:00
+        open: 2022-02-16 23:59:00
         title: Page Table Simulator
 
     Lab05:
         open: 2022-03-02 17:00:00
-        due: 2022-03-02 20:45:00
+        due: 2022-03-02 23:59:00
         title: HCL1 – SEQ part 1
     HW05:
-        open: 2022-03-02 20:45:00
+        open: 2022-03-02 23:59:00
         due: 2022-03-16 14:30:00
         title: HCL2 – SEQ part 2
     Lab06:
         open: 2022-03-16 17:00:00
-        due: 2022-03-16 20:45:00
+        due: 2022-03-16 23:59:00
         title: HCL3 – SEQ part 3
     HW06:
-        open: 2022-03-16 20:45:00
+        open: 2022-03-16 23:59:00
         due: 2022-03-23 14:30:00
         title: HCL4 – SEQ part 4
     Lab07:
         open: 2022-03-23 17:00:00
-        due: 2022-03-23 20:45:00
+        due: 2022-03-23 23:59:00
         title: HCL5 – PIPE part 1
     HW07:
-        open: 2022-03-23 20:45:00
+        open: 2022-03-23 23:59:00
         due: 2022-03-30 14:30:00
         title: HCL6 – PIPE part 2
     Lab08:
         open: 2022-03-30 17:00:00
-        due: 2022-03-30 20:45:00
+        due: 2022-03-30 23:59:00
         title: HCL7 – PIPE part 3
     HW08:
-        open: 2022-03-30 20:45:00
+        open: 2022-03-30 23:59:00
         due: 2022-04-06 14:30:00
         title: HCL8 – PIPE part 4
 
     Lab09:
         open: 2022-04-13 17:00:00
-        due: 2022-04-13 20:45:00
+        due: 2022-04-13 23:59:00
         title: cache lab
     HW09:
-        open: 2022-04-13 20:45:00
+        open: 2022-04-13 23:59:00
         due: 2022-04-20 14:30:00
         title: cache programs
     Lab10:
         open: 2022-04-20 17:00:00
-        due: 2022-04-20 20:45:00
+        due: 2022-04-20 23:59:00
         title: loop lab
     HW10:
-        open: 2022-04-20 20:45:00
+        open: 2022-04-20 23:59:00
         due: 2022-04-27 14:30:00
         title: rotate and smooth checkpoint
     Lab11:
         open: 2022-04-27 17:00:00
-        due: 2022-04-27 20:45:00
+        due: 2022-04-27 23:59:00
         title: SIMD lab
     HW11:
-        open: 2022-04-27 20:45:00
+        open: 2022-04-27 23:59:00
         due: 2022-05-03 23:59:59
         title: rotate and smooth
 
