@@ -15,9 +15,9 @@ Tuesday 2:30–10pm
     
     4–6pm, [TA in Person] – Nat
     
-    6–8pm, [Online] – Yulun; Karan at 6:30
+    6–8pm, [Online] – Yulun, Hongyan, Karan
 
-    8–10pm, [Online] – Lukas, Karan
+    8–10pm, [Online] – Lukas, Hongyan, Karan
 
 Wednesday
 :   No office hours
