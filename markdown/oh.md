@@ -2,9 +2,43 @@
 title: Office Hours
 ...
 
+Sunday
+:   1–3pm, [Online] – Noah, Andrew
+
+    3–5pm, [Online] – Katie, Sidhardh
+
+Monday
+:   6–8pm, [Online] – Austin, Sehoan
+
+Tuesday
+:   2:30–4pm, [Professor in Person]
+    
+    4–6pm, [TA in Person] – Nat
+    
+    6–8pm, [Online] – Yulun; Karan at 6:30
+
+    8–10pm, [Online] – Lukas, Karan
+
+Wednesday
+:   No office hours
+
+Thursday
+:   9–11am, [Professor in Person] with [Online] only if no student present in person
+    
+    5–7pm, [Online] – Ishaan
+
+Friday
+:   2–4pm, [TA in Person] – Nat, Noah
+    
+Saturday
+:   1–3, [Online] – Katie, Sidhardh
+
+    3–5, [Online] – Lukas
+
 <div style="display:table; font-size:200%; margin: 1em auto; padding:1ex; box-shadow: 0 1px 10px rgba(0,0,0,.1); border: thin solid #eee; border-radius:1ex; background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);">
 <a href="https://kytos.cs.virginia.edu/ohq/?c=cso1">Join the Help Queue</a>
 </div>
+
 
 # Online
 
@@ -22,7 +56,7 @@ title: Office Hours
 
 # Professor in Person
 
-- Occur in the professor's office.
+- Occur in the professor's office (Rice 208).
 - Usually, there is no queue: simply show up.
     - If the professor is not helping someone else, come in
     - Otherwise, make sure the professor knows you are waiting
