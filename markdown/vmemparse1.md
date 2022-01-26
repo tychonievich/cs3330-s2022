@@ -24,13 +24,11 @@ There are multiple file reading APIs; we'll use C's standard `FILE *` API declar
         fread(&result, 4, 1, fp);
         ````
     
-    - To read an array of twenty-five 2-byte big-endian unsigned integers
+    - To read an array of twenty-five 2-byte little-endian unsigned integers
     
         ````c
         unsgned short result[25];
         fread(result, 2, 25, fp);
-        for(int i=0; i<25; i+=1)
-            result[i] = (result[i]<<8)&0xFF00|(result[i]>>8)&0x00FF;
         ````
 
     If necessary, you can also jump around the file using `fseek` and `ftell` and detect the end with `feof`:
@@ -54,8 +52,8 @@ There are multiple file reading APIs; we'll use C's standard `FILE *` API declar
 The files you will be given will have the following structure:
 
 Name   |Bytes  |Format     |Meaning
--------|-------|-----------|----------
-magic  |11     |ASCII      |The exact string "3330 VMEM\n\0"
+-------|:-----:|:---------:|----------
+magic  |11     |ASCII      |The exact string `"3330 VMEM\n\0"`
 levels |1      |unsigned   |The number of levels in the page table
 pob    |1      |unsigned   |The number of bits per page offset
 procs  |1      |unsigned   |The number of processes in the file
@@ -64,7 +62,7 @@ pages  |1      |unsigned   |The number of pages of physical memory in the file
 ram    |$2^{\text{pob}} \times (\text{pages})$|raw bytes  |The entire contents of physical memory
 
 For lab, we will only provide files where *pob* = 13, *procs* = 1, and *levels* = 1.
-The code we provide checks *magic* for you, leaving just *pages*, *ptbrs*\[0], and *ram* to handle.
+The [code we provide](#startercode) checks *magic* for you, leaving just *pages*, *ptbrs*\[0], and *ram* to handle.
 
 For homework, all numbers may vary.
 
@@ -82,7 +80,7 @@ Page table entries will by 16 bits (2 bytes) which are
 
 <svg viewBox="-1 -1 322 32" font-size="12" text-anchor="middle" style="max-width:48em">
 <rect x="0" y="10" width="240" height="20" fill="none" stroke="black"/>
-<text x="120" y="24">PPN</text>
+<text x="120" y="24">zero-padded PPN</text>
 <rect x="240" y="10" width="20" height="20" fill="none" stroke="black"/>
 <text x="250" y="24">X</text>
 <rect x="260" y="10" width="20" height="20" fill="none" stroke="black"/>
@@ -93,7 +91,6 @@ Page table entries will by 16 bits (2 bytes) which are
 <text x="310" y="24">P</text>
 <g font-size="8">
 <text x="5" y="8">15</text>
-<text x="25" y="8">14</text>
 <text x="235" y="8">4</text>
 <text x="250" y="8">3</text>
 <text x="270" y="8">2</text>
@@ -113,7 +110,7 @@ where
 and the physical address is the concatenation of the PPN from the page table entry and the page offset from the virtual address.
 
 
-## Getting a file name from the command line
+## Getting a file name from the command line {#startercode}
 
 You'll write a program that accepts a filename as a command line argument. Command line argument parsing is not the point of this assignment, so we give that code below:
 
