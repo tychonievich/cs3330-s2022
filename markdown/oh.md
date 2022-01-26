@@ -11,7 +11,7 @@ Monday 6–8pm
 :   6–8pm, [Online] – Austin, Sehoan
 
 Tuesday 2:30–10pm
-:   2:30–4pm, [Professor in Person]
+:   2:30–4pm, [Professor in Person] – Tychonievich
     
     4–6pm, [TA in Person] – Nat
     
@@ -23,7 +23,7 @@ Wednesday
 :   No office hours
 
 Thursday 9–11am and 5–7pm
-:   9–11am, [Professor in Person] with [Online] only if no student present in person
+:   9–11am, [Professor in Person] – Tychonievich (also [Online] iff no students are present in person)
     
     5–7pm, [Online] – Ishaan
 
