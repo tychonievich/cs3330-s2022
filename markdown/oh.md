@@ -2,15 +2,15 @@
 title: Office Hours
 ...
 
-Sunday
+Sunday 1–5pm
 :   1–3pm, [Online] – Noah, Andrew
 
     3–5pm, [Online] – Katie, Sidhardh
 
-Monday
+Monday 6–8pm
 :   6–8pm, [Online] – Austin, Sehoan
 
-Tuesday
+Tuesday 2:30–10pm
 :   2:30–4pm, [Professor in Person]
     
     4–6pm, [TA in Person] – Nat
@@ -22,15 +22,15 @@ Tuesday
 Wednesday
 :   No office hours
 
-Thursday
+Thursday 9–11am and 5–7pm
 :   9–11am, [Professor in Person] with [Online] only if no student present in person
     
     5–7pm, [Online] – Ishaan
 
-Friday
+Friday 2–4pm
 :   2–4pm, [TA in Person] – Nat, Noah
     
-Saturday
+Saturday 1–5pm
 :   1–3, [Online] – Katie, Sidhardh
 
     3–5, [Online] – Lukas
