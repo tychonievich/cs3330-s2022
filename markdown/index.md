@@ -70,11 +70,7 @@ Access [via Collab](https://collab.itc.virginia.edu/) or piazza.com.
 
 ## Office hours
 
-- Office hours may use [this office hour queue](https://kytos.cs.virginia.edu/ohq/?c=cs3330).
-
-- Some office hours will be remote; some will be in person. The location will be indicated on the schedule below. Remote office hours will use a Discord server whose invite will be available via Collab.
-
-- See [the Help page](oh.html) for more
+See [the help page](oh.html).
 
 ## Anonymous Feedback
 
