@@ -27,8 +27,10 @@ There are multiple file reading APIs; we'll use C's standard `FILE *` API declar
     - To read an array of twenty-five 2-byte little-endian unsigned integers
     
         ````c
-        unsgned short result[25];
+        unsigned short *result = malloc(sizeof(short)*25);
         fread(result, 2, 25, fp);
+        // ... use result here ...
+        free(result);
         ````
 
     If necessary, you can also jump around the file using `fseek` and `ftell` and detect the end with `feof`:
@@ -57,9 +59,9 @@ magic  |11     |ASCII      |The exact string `"3330 VMEM\n\0"`
 levels |1      |unsigned   |The number of levels in the page table
 pob    |1      |unsigned   |The number of bits per page offset
 procs  |1      |unsigned   |The number of processes in the file
-ptbrs  |1×procs|unsigned\[]|The physical page number of the page table of each process
+ptbrs  |1 × procs|unsigned\[]|The physical page number of the page table of each process
 pages  |1      |unsigned   |The number of pages of physical memory in the file
-ram    |$2^{\text{pob}} \times (\text{pages})$|raw bytes  |The entire contents of physical memory
+ram    |2^pob^ × pages|raw bytes  |The entire contents of physical memory
 
 For lab, we will only provide files where *pob* = 13, *procs* = 1, and *levels* = 1.
 The [code we provide](#startercode) checks *magic* for you, leaving just *pages*, *ptbrs*\[0], and *ram* to handle.
@@ -123,7 +125,7 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "USAGE: %s filenametoparse\n", argv[0]);
         return 1;
     }
-    FILE *fp = fopen(argv[1]);
+    FILE *fp = fopen(argv[1], "rb");
     if (!fp) { // verify that the argument was a file
         fprintf(stderr, "Cannot open \"%s\" for parsing\n", argv[1]);
         return 1;
