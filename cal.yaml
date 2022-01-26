@@ -37,13 +37,13 @@ lectures:
     - overview
     - assembly
     - assembly
-    - compilation and C
     - bitwise
     - caches
     - caches
+    - kernel mode
     - virtual memory
-    - virtual memory
-    - virtual memory
+    - [page tables, tlb]
+    - multi-level page tables
     - review
     
     - processors
@@ -105,12 +105,26 @@ reading:
           lnk: cache.html
         - txt: Tree-PLRU writeup
           lnk: tree-plru.html
-    virtual memory:
-        - txt: "CS:APP §9–9.3.2"
+    kernel mode:
+        - txt: "CS:APP §8.1–8.2"
         - txt: kernel mode writeup
           lnk: kernel.html
-        - txt: virtual memory writeup
+    virtual memory:
+        - txt: "CS:APP §9–9.2"
+        - txt: virtual memory writeup §1–2, 4 
           lnk: vmem.html
+    page tables:
+        - txt: "CS:APP §9.3.2"
+        - txt: virtual memory writeup §3.1
+          lnk: vmem.html#page-tables
+    tlb:
+        - txt: "CS:APP §9.6.2"
+        - txt: virtual memory writeup §3.3
+          lnk: vmem.html#translation-lookaside-buffer
+    multi-level page tables:
+        - txt: "CS:APP §9.6.3–9.6.4"
+        - txt: virtual memory writeup §3.2
+          lnk: vmem.html#multi-level-page-tables
 
 assignments:
     ".groups":
