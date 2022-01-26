@@ -40,10 +40,10 @@ lectures:
     - bitwise
     - caches
     - caches
-    - kernel mode
     - virtual memory
     - [page tables, tlb]
     - multi-level page tables
+    - kernel mode
     - review
     
     - processors
