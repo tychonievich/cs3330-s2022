@@ -204,7 +204,7 @@ Each phase is doing a different kind of algorithm under the hood, ranging from s
     :   set a breakpoint at the specified memory address (0x...).
 
     `(gdb) b function_name.`
-    :   set a breakpoint at the beginning of the specificed function.
+    :   set a breakpoint at the beginning of the specified function.
 
     `(gdb) nexti`
     :   step forward by one instruction, skipping any called function.
