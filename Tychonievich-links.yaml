@@ -25,3 +25,10 @@
     - lectures/2022-01-26ex1.s
     - lectures/2022-01-26-qa.txt
     - lectures/2022-01-26-slides.pdf
+2022-01-31:
+  video:
+    - lectures/2022-01-31-recording-1.webm
+  audio:
+    - lectures/2022-01-31-audio-1.mp3
+  files:
+    - lectures/2022-01-31-slides.pdf
