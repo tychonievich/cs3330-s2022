@@ -355,3 +355,37 @@ Create code that, when given [`linux.ram`](files/linux.ram), creates the followi
 </svg>
 <figcaption>Correct output image for input linux.ram</figcaption>
 </figure>
+
+Recommended steps:
+
+1. The starter code already checks the magic number.
+    You should read the levels and so on from the rest of the header.
+    
+    We recommend reading the entirety of the `ram` field into a `malloc`-allocated array.
+    
+2. Call `startImage`
+
+3. Call `drawPPNPage` to put a `T` on the physical page of the first (and for the lab only) PTBR.
+
+4. Read each PTE in the page indicated by the PTBR and for each
+    
+    a. Check if the page is present; if not, skip it
+    
+    b. The index of this PTE is the VPN to draw; read the other flag bits and call `drawVPNPage`
+    
+    c. Also call `drawPPNPage` using the PPN in the PTE.
+
+5. Call `endImage`
+
+6. `free` anything you `malloc`ed
+
+
+# Homework Task
+
+Also make your code work for any input where `levels == 1` and `procs >= 1`.
+
+Note: if there are 2+ processors, it is possible they might both allocate the same page of physical RAM.
+This is called "shared memory" and is used for kernel code, shared libraries, and some types of inter-process communication.
+when that happens in an input file, label the given physical page multiple times;
+the numbers will overlap in the image, showing the shared state of the page.
+
