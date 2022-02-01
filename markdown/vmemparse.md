@@ -73,8 +73,8 @@ The files you will be given will have the following structure:
 
 Name   |Bytes  |Format     |Meaning
 -------|:-----:|:---------:|----------
-magic  |11     |ASCII      |The exact string `"3330 VMEM\n\0"`
-levels |1      |unsigned   |The number of levels in the page table
+magic  |11     |ASCII      |The exact string `"3330 VMEM\n\0"`^[Many file formats begin with some quasi-unique set of bytes called the file format's "magic number". This can help tools recognize file formats even if they are provided without other identifying information.]
+levels |1      |unsigned   |The number of levels in the page table; always 1 in this assignment
 pob    |1      |unsigned   |The number of bits per page offset
 procs  |1      |unsigned   |The number of processes in the file
 ptbrs  |1 × procs|unsigned\[]|The physical page number of the page table of each process
