@@ -24,13 +24,21 @@ There are multiple file reading APIs; we'll use C's standard `FILE *` API declar
         fread(&result, 4, 1, fp);
         ````
     
-    - To read an array of twenty-five 2-byte little-endian unsigned integers
+    - To read an array of twenty-five 2-byte little-endian unsigned integers:
     
         ````c
         unsigned short *result = malloc(sizeof(short)*25);
         fread(result, 2, 25, fp);
         // ... use result here ...
         free(result);
+        ````
+    
+    - To read a single byte you can use either `fread` or `fgetc`:
+        
+        ````c
+        unsigned char a, b;
+        fread(&a, 1, 1, fp);
+        b = fgetc(fp);
         ````
 
     If necessary, you can also jump around the file using `fseek` and `ftell` and detect the end with `feof`:
@@ -47,6 +55,9 @@ There are multiple file reading APIs; we'll use C's standard `FILE *` API declar
     We do not expect most students to use these commands in this assignment, but some approaches might benefit from them.
 
 3. Close the file with `fclose(fp)`{.c}.
+    
+    Closing files is polite (it returns resources to the OS before the program finishes), but not technically necessary when reading a file.
+    When writing to a file, closing it is necessary: the OS reserves the right to delay actually putting data on disk until the file is closed.
 
 
 ## File Format
@@ -78,7 +89,7 @@ We'll use 16-bit (2-byte) page table entries.
 Because a (level of a) virtual page number is an index into a page table entry,
 (each) VPN is *pob* − 1 bits, meaning the usable part of a virtual address is its low-order *levels* × (*pob* − 1) + *pob* bits.
 
-Page table entries will by 16 bits (2 bytes) which are
+Page table entries will be 16 bits (2 bytes) which are
 
 <svg viewBox="-1 -1 322 32" font-size="12" text-anchor="middle" style="max-width:48em">
 <rect x="0" y="10" width="240" height="20" fill="none" stroke="black"/>
@@ -150,3 +161,194 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 ```
+
+
+# Drawing the contents of memory
+
+Your task in both the lab and homework
+is to make a program that can read a binary file describing the contents of RAM, as outlined above
+and output an SVG file providing an illustration of both physical and virtual memory layout.
+SVG is a convenient graphics format because
+
+- It is [viewable by all major web browsers](https://caniuse.com/?search=svg)
+- It is textual, not binary, making it easier to learn to write
+- It contains descriptions of shapes to draw rather than pixels to color
+
+That said, we provide the actual SVG creation code for you. In particular, we provide four functions:
+
+- `void startImage(FILE *dst, unsigned char pages, unsigned char vpnbits, unsigned char processes)`
+    
+    This creates the SVG header, sizes the image, and creates the background shapes and labels. Call it on a newly-opened writable file (e.g., created by `fopen("filename.svg", "w")` before calling the other image functions we provide.
+
+- `void drawVPNPage(FILE *dst, unsigned process, unsigned page, int isKernel, int isCode, int isWriteable)`
+
+    This draws a stripe of color representing the given virtual address.
+    Kernel pages are drawn darker than user pages.
+    Code is shown in green, read/write data in blue, read-only data in gray or white.
+
+- `void drawPPNPage(FILE *dst, unsigned page, char label)`
+
+    This puts a single-character label in the given page of physical memory.
+    Use digits for pages owned a given process (i.e., `'1' + processId`)
+    and `'T'` for page tables.
+
+- `void endImage(FILE *dst)`
+
+    This creates the SVG trailer. Call it after you're done filling the image file with content, but before calling `fclose`.
+
+
+# Lab Task
+
+Create code that, when given [`linux.ram`](files/linux.ram), creates the following image:
+
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 277' font-size='8' text-anchor='middle' height='20em'>
+<defs><linearGradient id='unused' x1='0' y1='0' x2='0.5%' y2='3%' spreadMethod='repeat'><stop stop-color='#eee' offset='0%'/><stop stop-color='#ddd' offset='50%'/><stop stop-color='#eee' offset='100%'/></linearGradient></defs><rect width='40' height='256' x='50' y='20' fill='url(#unused)'/><text x='70' y='15'>virt 1</text>
+<g id='ram' fill='none' stroke='black'>
+<rect x='0' y='20' width='10' height='10'/>
+<rect x='10' y='20' width='10' height='10'/>
+<rect x='20' y='20' width='10' height='10'/>
+<rect x='30' y='20' width='10' height='10'/>
+<rect x='0' y='30' width='10' height='10'/>
+<rect x='10' y='30' width='10' height='10'/>
+<rect x='20' y='30' width='10' height='10'/>
+<rect x='30' y='30' width='10' height='10'/>
+<rect x='0' y='40' width='10' height='10'/>
+<rect x='10' y='40' width='10' height='10'/>
+<rect x='20' y='40' width='10' height='10'/>
+<rect x='30' y='40' width='10' height='10'/>
+<rect x='0' y='50' width='10' height='10'/>
+<rect x='10' y='50' width='10' height='10'/>
+<rect x='20' y='50' width='10' height='10'/>
+<rect x='30' y='50' width='10' height='10'/>
+<rect x='0' y='60' width='10' height='10'/>
+<rect x='10' y='60' width='10' height='10'/>
+<rect x='20' y='60' width='10' height='10'/>
+<rect x='30' y='60' width='10' height='10'/>
+<rect x='0' y='70' width='10' height='10'/>
+<rect x='10' y='70' width='10' height='10'/>
+<rect x='20' y='70' width='10' height='10'/>
+<rect x='30' y='70' width='10' height='10'/>
+<rect x='0' y='80' width='10' height='10'/>
+<rect x='10' y='80' width='10' height='10'/>
+<rect x='20' y='80' width='10' height='10'/>
+<rect x='30' y='80' width='10' height='10'/>
+<rect x='0' y='90' width='10' height='10'/>
+<rect x='10' y='90' width='10' height='10'/>
+<rect x='20' y='90' width='10' height='10'/>
+<rect x='30' y='90' width='10' height='10'/>
+<rect x='0' y='100' width='10' height='10'/>
+<rect x='10' y='100' width='10' height='10'/>
+<rect x='20' y='100' width='10' height='10'/>
+<rect x='30' y='100' width='10' height='10'/>
+<rect x='0' y='110' width='10' height='10'/>
+<rect x='10' y='110' width='10' height='10'/>
+<rect x='20' y='110' width='10' height='10'/>
+<rect x='30' y='110' width='10' height='10'/>
+<rect x='0' y='120' width='10' height='10'/>
+<rect x='10' y='120' width='10' height='10'/>
+<rect x='20' y='120' width='10' height='10'/>
+<rect x='30' y='120' width='10' height='10'/>
+<rect x='0' y='130' width='10' height='10'/>
+<rect x='10' y='130' width='10' height='10'/>
+<rect x='20' y='130' width='10' height='10'/>
+<rect x='30' y='130' width='10' height='10'/>
+<rect x='0' y='140' width='10' height='10'/>
+<rect x='10' y='140' width='10' height='10'/>
+<rect x='20' y='140' width='10' height='10'/>
+<rect x='30' y='140' width='10' height='10'/>
+<rect x='0' y='150' width='10' height='10'/>
+<rect x='10' y='150' width='10' height='10'/>
+<rect x='20' y='150' width='10' height='10'/>
+<rect x='30' y='150' width='10' height='10'/>
+<rect x='0' y='160' width='10' height='10'/>
+<rect x='10' y='160' width='10' height='10'/>
+<rect x='20' y='160' width='10' height='10'/>
+<rect x='30' y='160' width='10' height='10'/>
+<rect x='0' y='170' width='10' height='10'/>
+<rect x='10' y='170' width='10' height='10'/>
+<rect x='20' y='170' width='10' height='10'/>
+<rect x='30' y='170' width='10' height='10'/>
+</g>
+<text x='20' y='15'>RAM</text>
+<text x='35' y='178'>T</text>
+<text x='25' y='178'>1</text>
+<rect width='40' height='1.1' x='50' y='267' fill='#0f3'/>
+<text x='15' y='178'>1</text>
+<rect width='40' height='1.1' x='50' y='266' fill='#0f3'/>
+<text x='5' y='178'>1</text>
+<rect width='40' height='1.1' x='50' y='265' fill='#3af'/>
+<text x='35' y='168'>1</text>
+<rect width='40' height='1.1' x='50' y='264' fill='#3af'/>
+<text x='25' y='168'>1</text>
+<rect width='40' height='1.1' x='50' y='263' fill='#3af'/>
+<text x='15' y='168'>1</text>
+<rect width='40' height='1.1' x='50' y='262' fill='#fff'/>
+<text x='5' y='168'>1</text>
+<rect width='40' height='1.1' x='50' y='261' fill='#fff'/>
+<text x='35' y='148'>1</text>
+<rect width='40' height='1.1' x='50' y='260' fill='#3af'/>
+<text x='15' y='148'>1</text>
+<rect width='40' height='1.1' x='50' y='259' fill='#3af'/>
+<text x='5' y='148'>1</text>
+<rect width='40' height='1.1' x='50' y='258' fill='#3af'/>
+<text x='35' y='138'>1</text>
+<rect width='40' height='1.1' x='50' y='257' fill='#3af'/>
+<text x='35' y='158'>1</text>
+<rect width='40' height='1.1' x='50' y='211' fill='#fff'/>
+<text x='25' y='158'>1</text>
+<rect width='40' height='1.1' x='50' y='210' fill='#fff'/>
+<text x='25' y='148'>1</text>
+<rect width='40' height='1.1' x='50' y='150' fill='#3af'/>
+<text x='5' y='158'>1</text>
+<rect width='40' height='1.1' x='50' y='149' fill='#3af'/>
+<text x='15' y='158'>1</text>
+<rect width='40' height='1.1' x='50' y='148' fill='#3af'/>
+<text x='5' y='28'>1</text>
+<rect width='40' height='1.1' x='50' y='147' fill='#071'/>
+<text x='25' y='28'>1</text>
+<rect width='40' height='1.1' x='50' y='146' fill='#071'/>
+<text x='5' y='38'>1</text>
+<rect width='40' height='1.1' x='50' y='145' fill='#071'/>
+<text x='25' y='38'>1</text>
+<rect width='40' height='1.1' x='50' y='144' fill='#071'/>
+<text x='5' y='48'>1</text>
+<rect width='40' height='1.1' x='50' y='143' fill='#071'/>
+<text x='25' y='48'>1</text>
+<rect width='40' height='1.1' x='50' y='142' fill='#071'/>
+<text x='5' y='58'>1</text>
+<rect width='40' height='1.1' x='50' y='141' fill='#071'/>
+<text x='25' y='58'>1</text>
+<rect width='40' height='1.1' x='50' y='140' fill='#071'/>
+<text x='5' y='68'>1</text>
+<rect width='40' height='1.1' x='50' y='139' fill='#071'/>
+<text x='25' y='68'>1</text>
+<rect width='40' height='1.1' x='50' y='138' fill='#071'/>
+<text x='15' y='28'>1</text>
+<rect width='40' height='1.1' x='50' y='131' fill='#157'/>
+<text x='35' y='28'>1</text>
+<rect width='40' height='1.1' x='50' y='130' fill='#157'/>
+<text x='15' y='38'>1</text>
+<rect width='40' height='1.1' x='50' y='129' fill='#157'/>
+<text x='35' y='38'>1</text>
+<rect width='40' height='1.1' x='50' y='128' fill='#157'/>
+<text x='15' y='48'>1</text>
+<rect width='40' height='1.1' x='50' y='127' fill='#157'/>
+<text x='35' y='48'>1</text>
+<rect width='40' height='1.1' x='50' y='126' fill='#157'/>
+<text x='15' y='58'>1</text>
+<rect width='40' height='1.1' x='50' y='125' fill='#157'/>
+<text x='35' y='58'>1</text>
+<rect width='40' height='1.1' x='50' y='124' fill='#157'/>
+<text x='15' y='68'>1</text>
+<rect width='40' height='1.1' x='50' y='123' fill='#157'/>
+<text x='35' y='68'>1</text>
+<rect width='40' height='1.1' x='50' y='122' fill='#157'/>
+<text x='5' y='78'>1</text>
+<rect width='40' height='1.1' x='50' y='35' fill='#777'/>
+<text x='15' y='78'>1</text>
+<rect width='40' height='1.1' x='50' y='34' fill='#777'/>
+<text x='25' y='78'>1</text>
+<rect width='40' height='1.1' x='50' y='33' fill='#777'/>
+<text x='35' y='78'>1</text>
+<rect width='40' height='1.1' x='50' y='32' fill='#777'/>
+</svg>
