@@ -222,10 +222,14 @@ assignments:
         open: 2022-02-16 17:00:00
         due: 2022-02-16 23:59:00
         title: Page Table Simulator
+        link: vmemparse.html
+        files: [vmemparse.c]
     HW04:
         due: 2022-02-23 14:30:00
         open: 2022-02-16 23:59:00
         title: Page Table Simulator
+        link: vmemparse.html
+        files: [vmemparse.c]
 
     Lab05:
         open: 2022-03-02 17:00:00
