@@ -4,6 +4,13 @@ title: Virtual Memory Parser
 
 In this lab and its homework pair you will read files containing the entire contents of small physical memory, parse the page tables, and display the resulting memory usage.
 
+- Starter code: [vmemparse.c](files/vmemparse.c)
+- Lab input file [linux.ram](files/linux.ram) and its [reference output](files/linix.ram.svg)
+- Additional files for homework:
+    - [blank.ram](files/blank.ram) [blank.ram.svg](files/blank.ram.svg) -- no allocated pages
+    - [linux2.ram](files/linux2.ram) [linux2.ram.svg](files/linux2.ram.svg) -- two processes
+    - [smallvm.ram](files/smallvm.ram) [smallvm.ram.svg](files/smallvm.ram.svg) -- different memory sizes
+
 # Binary File Format
 
 Many real file formats are "binary" formats, meaning that they are not textual and cannot be viewed in a text editor.
