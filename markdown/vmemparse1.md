@@ -201,7 +201,7 @@ That said, we provide the actual SVG creation code for you. In particular, we pr
 
 Create code that, when given [`linux.ram`](files/linux.ram), creates the following image:
 
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 277' font-size='8' text-anchor='middle' height='20em'>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 277' font-size='8' text-anchor='middle' height='30em'>
 <defs><linearGradient id='unused' x1='0' y1='0' x2='0.5%' y2='3%' spreadMethod='repeat'><stop stop-color='#eee' offset='0%'/><stop stop-color='#ddd' offset='50%'/><stop stop-color='#eee' offset='100%'/></linearGradient></defs><rect width='40' height='256' x='50' y='20' fill='url(#unused)'/><text x='70' y='15'>virt 1</text>
 <g id='ram' fill='none' stroke='black'>
 <rect x='0' y='20' width='10' height='10'/>
