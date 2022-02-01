@@ -132,8 +132,9 @@ and the physical address is the concatenation of the PPN from the page table ent
 
 ## Getting a file name from the command line {#startercode}
 
-You'll write a program that accepts a filename as a command line argument. Command line argument parsing is not the point of this assignment, so we give that code below:
+You'll write a program that accepts a filename as a command line argument. Command line argument parsing is not the point of this assignment, so we give that code in the [starter file](files/vmemparse.c).
 
+<details><summary>The argument parsing code</sumamry>
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -168,7 +169,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 ```
-
+</details>
 
 # Drawing the contents of memory
 
@@ -181,7 +182,7 @@ SVG is a convenient graphics format because
 - It is textual, not binary, making it easier to learn to write
 - It contains descriptions of shapes to draw rather than pixels to color
 
-That said, we provide the actual SVG creation code for you. In particular, we provide four functions:
+That said, we provide the actual SVG creation code for you in the [starter file](files/vmemparse.c). In particular, we provide four functions:
 
 - `void startImage(FILE *dst, unsigned char pages, unsigned char vpnbits, unsigned char processes)`
     
@@ -208,160 +209,7 @@ That said, we provide the actual SVG creation code for you. In particular, we pr
 
 Create code that, when given [`linux.ram`](files/linux.ram), creates the following image:
 
-<figure>
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 277' font-size='8' text-anchor='middle' width='20em'>
-<defs><linearGradient id='unused' x1='0' y1='0' x2='0.5%' y2='3%' spreadMethod='repeat'><stop stop-color='#eee' offset='0%'/><stop stop-color='#ddd' offset='50%'/><stop stop-color='#eee' offset='100%'/></linearGradient></defs><rect width='40' height='256' x='50' y='20' fill='url(#unused)'/><text x='70' y='15'>virt 1</text>
-<g id='ram' fill='none' stroke='black'>
-<rect x='0' y='20' width='10' height='10'/>
-<rect x='10' y='20' width='10' height='10'/>
-<rect x='20' y='20' width='10' height='10'/>
-<rect x='30' y='20' width='10' height='10'/>
-<rect x='0' y='30' width='10' height='10'/>
-<rect x='10' y='30' width='10' height='10'/>
-<rect x='20' y='30' width='10' height='10'/>
-<rect x='30' y='30' width='10' height='10'/>
-<rect x='0' y='40' width='10' height='10'/>
-<rect x='10' y='40' width='10' height='10'/>
-<rect x='20' y='40' width='10' height='10'/>
-<rect x='30' y='40' width='10' height='10'/>
-<rect x='0' y='50' width='10' height='10'/>
-<rect x='10' y='50' width='10' height='10'/>
-<rect x='20' y='50' width='10' height='10'/>
-<rect x='30' y='50' width='10' height='10'/>
-<rect x='0' y='60' width='10' height='10'/>
-<rect x='10' y='60' width='10' height='10'/>
-<rect x='20' y='60' width='10' height='10'/>
-<rect x='30' y='60' width='10' height='10'/>
-<rect x='0' y='70' width='10' height='10'/>
-<rect x='10' y='70' width='10' height='10'/>
-<rect x='20' y='70' width='10' height='10'/>
-<rect x='30' y='70' width='10' height='10'/>
-<rect x='0' y='80' width='10' height='10'/>
-<rect x='10' y='80' width='10' height='10'/>
-<rect x='20' y='80' width='10' height='10'/>
-<rect x='30' y='80' width='10' height='10'/>
-<rect x='0' y='90' width='10' height='10'/>
-<rect x='10' y='90' width='10' height='10'/>
-<rect x='20' y='90' width='10' height='10'/>
-<rect x='30' y='90' width='10' height='10'/>
-<rect x='0' y='100' width='10' height='10'/>
-<rect x='10' y='100' width='10' height='10'/>
-<rect x='20' y='100' width='10' height='10'/>
-<rect x='30' y='100' width='10' height='10'/>
-<rect x='0' y='110' width='10' height='10'/>
-<rect x='10' y='110' width='10' height='10'/>
-<rect x='20' y='110' width='10' height='10'/>
-<rect x='30' y='110' width='10' height='10'/>
-<rect x='0' y='120' width='10' height='10'/>
-<rect x='10' y='120' width='10' height='10'/>
-<rect x='20' y='120' width='10' height='10'/>
-<rect x='30' y='120' width='10' height='10'/>
-<rect x='0' y='130' width='10' height='10'/>
-<rect x='10' y='130' width='10' height='10'/>
-<rect x='20' y='130' width='10' height='10'/>
-<rect x='30' y='130' width='10' height='10'/>
-<rect x='0' y='140' width='10' height='10'/>
-<rect x='10' y='140' width='10' height='10'/>
-<rect x='20' y='140' width='10' height='10'/>
-<rect x='30' y='140' width='10' height='10'/>
-<rect x='0' y='150' width='10' height='10'/>
-<rect x='10' y='150' width='10' height='10'/>
-<rect x='20' y='150' width='10' height='10'/>
-<rect x='30' y='150' width='10' height='10'/>
-<rect x='0' y='160' width='10' height='10'/>
-<rect x='10' y='160' width='10' height='10'/>
-<rect x='20' y='160' width='10' height='10'/>
-<rect x='30' y='160' width='10' height='10'/>
-<rect x='0' y='170' width='10' height='10'/>
-<rect x='10' y='170' width='10' height='10'/>
-<rect x='20' y='170' width='10' height='10'/>
-<rect x='30' y='170' width='10' height='10'/>
-</g>
-<text x='20' y='15'>RAM</text>
-<text x='35' y='178'>T</text>
-<text x='25' y='178'>1</text>
-<rect width='40' height='1.1' x='50' y='267' fill='#0f3'/>
-<text x='15' y='178'>1</text>
-<rect width='40' height='1.1' x='50' y='266' fill='#0f3'/>
-<text x='5' y='178'>1</text>
-<rect width='40' height='1.1' x='50' y='265' fill='#3af'/>
-<text x='35' y='168'>1</text>
-<rect width='40' height='1.1' x='50' y='264' fill='#3af'/>
-<text x='25' y='168'>1</text>
-<rect width='40' height='1.1' x='50' y='263' fill='#3af'/>
-<text x='15' y='168'>1</text>
-<rect width='40' height='1.1' x='50' y='262' fill='#fff'/>
-<text x='5' y='168'>1</text>
-<rect width='40' height='1.1' x='50' y='261' fill='#fff'/>
-<text x='35' y='148'>1</text>
-<rect width='40' height='1.1' x='50' y='260' fill='#3af'/>
-<text x='15' y='148'>1</text>
-<rect width='40' height='1.1' x='50' y='259' fill='#3af'/>
-<text x='5' y='148'>1</text>
-<rect width='40' height='1.1' x='50' y='258' fill='#3af'/>
-<text x='35' y='138'>1</text>
-<rect width='40' height='1.1' x='50' y='257' fill='#3af'/>
-<text x='35' y='158'>1</text>
-<rect width='40' height='1.1' x='50' y='211' fill='#fff'/>
-<text x='25' y='158'>1</text>
-<rect width='40' height='1.1' x='50' y='210' fill='#fff'/>
-<text x='25' y='148'>1</text>
-<rect width='40' height='1.1' x='50' y='150' fill='#3af'/>
-<text x='5' y='158'>1</text>
-<rect width='40' height='1.1' x='50' y='149' fill='#3af'/>
-<text x='15' y='158'>1</text>
-<rect width='40' height='1.1' x='50' y='148' fill='#3af'/>
-<text x='5' y='28'>1</text>
-<rect width='40' height='1.1' x='50' y='147' fill='#071'/>
-<text x='25' y='28'>1</text>
-<rect width='40' height='1.1' x='50' y='146' fill='#071'/>
-<text x='5' y='38'>1</text>
-<rect width='40' height='1.1' x='50' y='145' fill='#071'/>
-<text x='25' y='38'>1</text>
-<rect width='40' height='1.1' x='50' y='144' fill='#071'/>
-<text x='5' y='48'>1</text>
-<rect width='40' height='1.1' x='50' y='143' fill='#071'/>
-<text x='25' y='48'>1</text>
-<rect width='40' height='1.1' x='50' y='142' fill='#071'/>
-<text x='5' y='58'>1</text>
-<rect width='40' height='1.1' x='50' y='141' fill='#071'/>
-<text x='25' y='58'>1</text>
-<rect width='40' height='1.1' x='50' y='140' fill='#071'/>
-<text x='5' y='68'>1</text>
-<rect width='40' height='1.1' x='50' y='139' fill='#071'/>
-<text x='25' y='68'>1</text>
-<rect width='40' height='1.1' x='50' y='138' fill='#071'/>
-<text x='15' y='28'>1</text>
-<rect width='40' height='1.1' x='50' y='131' fill='#157'/>
-<text x='35' y='28'>1</text>
-<rect width='40' height='1.1' x='50' y='130' fill='#157'/>
-<text x='15' y='38'>1</text>
-<rect width='40' height='1.1' x='50' y='129' fill='#157'/>
-<text x='35' y='38'>1</text>
-<rect width='40' height='1.1' x='50' y='128' fill='#157'/>
-<text x='15' y='48'>1</text>
-<rect width='40' height='1.1' x='50' y='127' fill='#157'/>
-<text x='35' y='48'>1</text>
-<rect width='40' height='1.1' x='50' y='126' fill='#157'/>
-<text x='15' y='58'>1</text>
-<rect width='40' height='1.1' x='50' y='125' fill='#157'/>
-<text x='35' y='58'>1</text>
-<rect width='40' height='1.1' x='50' y='124' fill='#157'/>
-<text x='15' y='68'>1</text>
-<rect width='40' height='1.1' x='50' y='123' fill='#157'/>
-<text x='35' y='68'>1</text>
-<rect width='40' height='1.1' x='50' y='122' fill='#157'/>
-<text x='5' y='78'>1</text>
-<rect width='40' height='1.1' x='50' y='35' fill='#777'/>
-<text x='15' y='78'>1</text>
-<rect width='40' height='1.1' x='50' y='34' fill='#777'/>
-<text x='25' y='78'>1</text>
-<rect width='40' height='1.1' x='50' y='33' fill='#777'/>
-<text x='35' y='78'>1</text>
-<rect width='40' height='1.1' x='50' y='32' fill='#777'/>
-</svg>
-<figcaption>Correct output image for input linux.ram</figcaption>
-</figure>
+![Correct image for `linux.ram`](files/linux.ram.svg)
 
 Recommended steps:
 
