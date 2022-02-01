@@ -209,7 +209,7 @@ That said, we provide the actual SVG creation code for you in the [starter file]
 
 Create code that, when given [`linux.ram`](files/linux.ram), creates the following image:
 
-![Correct image for `linux.ram`](files/linux.ram.svg){width="25em"}
+![Correct image for `linux.ram`](files/linux.ram.svg){width="15em"}
 
 Recommended steps:
 
