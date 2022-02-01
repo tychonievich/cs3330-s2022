@@ -134,7 +134,7 @@ and the physical address is the concatenation of the PPN from the page table ent
 
 You'll write a program that accepts a filename as a command line argument. Command line argument parsing is not the point of this assignment, so we give that code in the [starter file](files/vmemparse.c).
 
-<details><summary>The argument parsing code</sumamry>
+<details><summary>The argument parsing code</summary>
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -209,7 +209,7 @@ That said, we provide the actual SVG creation code for you in the [starter file]
 
 Create code that, when given [`linux.ram`](files/linux.ram), creates the following image:
 
-![Correct image for `linux.ram`](files/linux.ram.svg)
+![Correct image for `linux.ram`](files/linux.ram.svg){width="25em"}
 
 Recommended steps:
 
