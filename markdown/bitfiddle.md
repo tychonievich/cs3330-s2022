@@ -23,7 +23,7 @@ while others are techniques you'll likely find useful in several subsequent assi
 
 # Homework
 
-**on your own**, solve
+**on your own**, solve at least three of
 
 e. getbits
 f. anybit
