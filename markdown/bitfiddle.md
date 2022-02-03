@@ -2,6 +2,12 @@
 title: Bit fiddling Lab and HW
 ...
 
+> Due to server problems on the day of the lab, we have made the following changes:
+>
+> - The lab due-date has been pushed back to the same time as the homework due-date
+> - You may still collaborate on the lab tasks, but not on the homework tasks
+> - For full credit, you only need to do the 4 lab tasks and any 3 of the 4 homework tasks
+
 This will help you get used to using bitwise operators to do more complicated tasks.
 Some of these are designed to help you reinforce your understanding of binary operations,
 while others are techniques you'll likely find useful in several subsequent assignments.
