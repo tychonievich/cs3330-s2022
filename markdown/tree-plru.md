@@ -186,7 +186,7 @@ In our fist example tree, that is
 </svg>
 </center>
 
-In a sense, the "1 violation" leaves are all lumped into one equivalence class of "next-to-least recently used"
+In a sense, the "1 change needed" leaves are all lumped into one equivalence class of "next-to-least recently used"
 and any of them can become the next PLRU with a single access.
 :::
 
