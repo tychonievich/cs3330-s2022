@@ -120,7 +120,7 @@ with the new PLRU being line number 6.
 Suppose the bits of an 8-way Tree-PLRU are all 0s,
 meaning the PLRU line is number 0,
 and we access line number 0.
-What is the shorted possible access sequence that will again make line number 0 the PLRU line?
+What is the shortest possible access sequence that will again make line number 0 the PLRU line?
 
 The answer is in a footnote.[^minswap]
 :::
