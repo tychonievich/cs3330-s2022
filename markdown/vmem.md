@@ -124,10 +124,10 @@ This translation involves the following steps:
     (see [Page Tables]).
     Conceptually this is what Java would call a `Map<VirtualPageNumber, PageTableEntry>`{.java}.
     It is stored in memory,
-    using physical not virtual addresses
-    and its location is stored in a register
-    that is changed on each context switch
-    so that the operating system maintain a different page table for each process.
+    using physical not virtual addresses.
+    Its location in memory is stored in a register
+    that is changed on each context switch,
+    allowing the operating system to maintain a different page table for each process.
 
 2. The **page table entry**
     contains a variety of protection or flag bits.
