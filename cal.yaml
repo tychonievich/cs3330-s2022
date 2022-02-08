@@ -111,6 +111,8 @@ reading:
           lnk: kernel.html
     virtual memory:
         - txt: "CS:APP §9–9.2"
+        - txt: kernel mode writeup §1
+          lnk: kernel.html
         - txt: virtual memory writeup §1–2, 4 
           lnk: vmem.html
     page tables:

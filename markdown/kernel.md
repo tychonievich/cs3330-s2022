@@ -66,7 +66,7 @@ Each protected instruction then checks the contents of that register and, if it 
 A special protected instruction is added to change the contents of this mode register,
 meaning kernel-mode code can become user-mode, but no vice versa.
 
-Modern processors often have more than one operating mode with more than one level of privilege,
+Modern processors often have more than two operating modes with several levels of privilege,
 which (among other benefits) can help make virtualization efficient;
 the details of these additional modes are beyond the scope of this course.
 
