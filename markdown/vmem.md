@@ -443,7 +443,7 @@ but the more time and space is devoted to the page table.
 
 At one extreme, 16-byte pages (2 PTE per node)
 means almost no unused allocated memory
-but also means 44 intermediate page table nodes separate the PTBR and the PTE.
+but also means 44 intermediate page table nodes separate the PTBR and the data.
 
 At the other extreme, 2^26^-byte pages (a single-level page table
 filling half a page with 2^22^ PTE)
@@ -613,7 +613,7 @@ with operating system intervention if needed,
 virtual memory lets code act beyond the constraints of available memory.
 This is traditionally handled by the operating system
 storing some pages on the disk instead of in memory.
-moving these pages between disk and memory is called "swapping".
+Moving these pages between disk and memory is called "swapping".
 
 Because disks are *vastly* slower than memory,
 there is a desire to make this happen rarely,
@@ -642,8 +642,8 @@ As memory has become less expensive and more plentiful,
 swap is arguably[^arguably] less important than it once was,
 but it is still a part of every major end-user OS.
 
-[^arguably]: Arguably as in, I have heard friendly arguments
-    between people who know about this than I on this topic.
+[^arguably]: Arguably as in, I have heard friendly arguments on this topic
+    between people who know more about it than I.
 
 ## Shared Memory
 
