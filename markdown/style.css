@@ -168,7 +168,7 @@ img.face { height:14.2em; display:float; float:right; margin:1em; margin-right:0
     background: inherit;
 }
 
-.example:not(.long):before, .example.long > :first-child:before {
+.example > :first-child:before {
     content: "Example \2014  ";
     font-style: italic;
     color: #005A9C;
@@ -181,7 +181,7 @@ img.face { height:14.2em; display:float; float:right; margin:1em; margin-right:0
     padding: 0.5em 1em;
 }
 
-.exercise:not(.long):before, .exercise.long > :first-child:before {
+.exercise > :first-child:before {
     content: "Exercise \2014  ";
     font-style: italic;
     color: red;
@@ -195,7 +195,7 @@ img.face { height:14.2em; display:float; float:right; margin:1em; margin-right:0
     padding: 0.5em 1em;
 }
 
-.aside:not(.long):before, .aside.long > :first-child:before {
+.aside > :first-child:before {
     content: "Aside \2014  ";
     font-style: italic;
 }
