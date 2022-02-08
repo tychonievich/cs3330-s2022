@@ -642,8 +642,8 @@ As memory has become less expensive and more plentiful,
 swap is arguably[^arguably] less important than it once was,
 but it is still a part of every major end-user OS.
 
-[^arguably]: Arguably as in, I have heard friendly arguments on this topic
-    between people who know more about it than I.
+[^arguably]: "Arguably" as in "I have heard friendly arguments on this topic
+    between people who know more about it than I."
 
 ## Shared Memory
 
