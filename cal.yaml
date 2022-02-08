@@ -125,6 +125,8 @@ reading:
         - txt: "CS:APP §9.6.3–9.6.4"
         - txt: virtual memory writeup §3.2
           lnk: vmem.html#multi-level-page-tables
+    review:
+        lnk: https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html
 
 assignments:
     ".groups":
@@ -184,11 +186,11 @@ assignments:
     Exam 1:
         open: 2022-02-23 17:00:00
         due: 2022-02-23 19:45:00
-        link: review.html
+        link: https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html
     Exam 2:
         open: 2022-04-06 17:00:00
         due: 2022-04-06 19:45:00
-        link: review.html
+        link: https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html
       
     Lab01:
         due: 2022-01-27 23:59:00
@@ -199,7 +201,7 @@ assignments:
         title: Binary Bomb
         link: bomb.html
     Lab02:
-        due: 2022-02-09 14:30:00
+        due: 2022-02-02 23:59:00
         title: Bit Fiddling
         link: bitfiddle.html
     HW02:
@@ -293,4 +295,4 @@ assignments:
         open: 2022-05-10 14:00:00
         due: 2022-05-10 17:00:00
         weight: 1.5
-        link: review.html
+        link: https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html
