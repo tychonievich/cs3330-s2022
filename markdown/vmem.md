@@ -663,7 +663,7 @@ Shared libraries.
     shared in each process's virtual address space.
     
     Not all libraries are linked in as shared memory.
-    because shared memory must come in in full page chunks,
+    Because shared memory must come in in full page chunks,
     shared memory library linkage can be inefficient if library code is small
     or not shared by several running processes.
     Additionally, sharing library code requires all processes that use it

@@ -17,7 +17,7 @@ Tuesday 2:30–10pm
     
     6–8pm, [Online] – Yulun, Hongyan, Karan
 
-    8–10pm, [Online] – Lukas, Hongyan, Karan
+    8–10pm, [Online] – Lukas, Karan
 
 Wednesday
 :   No office hours
