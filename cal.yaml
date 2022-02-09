@@ -212,7 +212,7 @@ assignments:
         link: bitfiddle.html
     Lab03:
         open: 2022-02-09 17:00:00
-        due: 2022-02-09 23:59:00
+        due: 2022-02-10 23:59:00
         title: Cache Simulator
         link: cachesim1.html
         files: [cachesim1.c]
@@ -224,7 +224,7 @@ assignments:
         files: [cachesim2.c]
     Lab04:
         open: 2022-02-16 17:00:00
-        due: 2022-02-16 23:59:00
+        due: 2022-02-17 23:59:00
         title: Page Table Simulator
         link: vmemparse.html
         files: [vmemparse.c]
@@ -237,7 +237,7 @@ assignments:
 
     Lab05:
         open: 2022-03-02 17:00:00
-        due: 2022-03-02 23:59:00
+        due: 2022-03-03 23:59:00
         title: HCL1 – SEQ part 1
     HW05:
         open: 2022-03-02 23:59:00
@@ -245,7 +245,7 @@ assignments:
         title: HCL2 – SEQ part 2
     Lab06:
         open: 2022-03-16 17:00:00
-        due: 2022-03-16 23:59:00
+        due: 2022-03-17 23:59:00
         title: HCL3 – SEQ part 3
     HW06:
         open: 2022-03-16 23:59:00
@@ -253,7 +253,7 @@ assignments:
         title: HCL4 – SEQ part 4
     Lab07:
         open: 2022-03-23 17:00:00
-        due: 2022-03-23 23:59:00
+        due: 2022-03-24 23:59:00
         title: HCL5 – PIPE part 1
     HW07:
         open: 2022-03-23 23:59:00
@@ -261,7 +261,7 @@ assignments:
         title: HCL6 – PIPE part 2
     Lab08:
         open: 2022-03-30 17:00:00
-        due: 2022-03-30 23:59:00
+        due: 2022-03-31 23:59:00
         title: HCL7 – PIPE part 3
     HW08:
         open: 2022-03-30 23:59:00
@@ -270,7 +270,7 @@ assignments:
 
     Lab09:
         open: 2022-04-13 17:00:00
-        due: 2022-04-13 23:59:00
+        due: 2022-04-14 23:59:00
         title: cache lab
     HW09:
         open: 2022-04-13 23:59:00
@@ -278,7 +278,7 @@ assignments:
         title: cache programs
     Lab10:
         open: 2022-04-20 17:00:00
-        due: 2022-04-20 23:59:00
+        due: 2022-04-21 23:59:00
         title: loop lab
     HW10:
         open: 2022-04-20 23:59:00
@@ -286,7 +286,7 @@ assignments:
         title: rotate and smooth checkpoint
     Lab11:
         open: 2022-04-27 17:00:00
-        due: 2022-04-27 23:59:00
+        due: 2022-04-28 23:59:00
         title: SIMD lab
     HW11:
         open: 2022-04-27 23:59:00
