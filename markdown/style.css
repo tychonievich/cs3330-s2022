@@ -1,7 +1,8 @@
 /* Overall look-and-feel */
 body { margin:1em; font-family: serif; color: #333333; background: #ffffff; line-height: 130%; }
 p { margin: 0em; }
-p + p, p + table, table + p, table + table, details + p, .container li + li p { margin-top: 1ex; }
+p + p, p + table, table + p, table + table, details + p, li + li p { margin-top: 1ex; }
+.navbar li + li p { margin-top: 0; }
 a { color: #0088cc; text-decoration: none; }
 a:hover, a:focus { color: #005580; text-decoration: underline; }
 
