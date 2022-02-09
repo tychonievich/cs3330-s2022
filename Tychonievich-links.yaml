@@ -46,3 +46,11 @@
     - lectures/2022-02-07-audio-1.mp3
   files:
     - lectures/2022-02-07-slides.pdf
+2022-02-09:
+  video:
+    - lectures/2022-02-09-recording-1.webm
+  audio:
+    - lectures/2022-02-09-audio-1.mp3
+  files:
+    - lectures/2022-02-09-qa.txt
+    - lectures/2022-02-09-slides.pdf
