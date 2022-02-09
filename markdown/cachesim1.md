@@ -18,6 +18,13 @@ Complete the following C skeleton file (which has an associated header file, whi
 
 - {#file files/cachesim1.h}
 
+The code has four global variables which control the design of the cache and are set in the tester program. These are
+
+- `block_bits` = the number of bits needed to store the index of a byte in a block; i.e. $\log_2(\text{bytes per block})$.
+- `way_bits` = the number of bits needed to store the index of a line in a set; i.e. $\log_2(\text{lines per set})$.
+- `sets_bits` = the number of bits needed to store the index of a set in a cache; i.e. $\log_2(\text{sets per cache})$.
+- `address_bits` = the number of bits used in each address; i.e. $\text{bits per tag} + \text{bits per set index} + \text{bits per block offset}$. This will always be less than or equal to 64. If less than 64, higher-order bits of a supplied address should be ignored to only use this many bits.
+
 You may either work alone or with a buddy in this lab.
 Buddy programming is where two people work side-by-side,
 each creating similar programs while talking together to help one another out.
