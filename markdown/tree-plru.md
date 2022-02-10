@@ -370,7 +370,7 @@ Consider
 =
 0b0100011.
 
-We start at bit 0, where we find a 1 (0b010011**1**);
+We start at bit 0, where we find a 1 (0b010001**1**);
 then bit 2×0+1+1 = 2, where we find a 0 (0b0100**0**11);
 then bit 2×2+1+0 = 5, where we find a 1 (0b0**1**00011).
 :::
