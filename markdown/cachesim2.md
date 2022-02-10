@@ -4,6 +4,8 @@ title: Cache Simulator Homework
 
 This homework builds off of the [associated lab](cachesim1.html) and cannot be completed without completing that lab first.
 
+If you are unsure of your cachesim1 code, my solution can be downloaded as a compiled Linux binary [cachesim1.o](files/cachesim1.o)
+
 # Task
 
 You must work alone on this homework.
