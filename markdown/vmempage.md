@@ -13,7 +13,7 @@ together with some additional information about the page table, page table entri
 
 Your task is to parse the memory and answer a set of 9 questions about this memory.
 
-You can submit as often as you like. If you submit a mix of blank fields and correct answers, you will be able to continue with the same memory. But to prevent guess-and-check, if you submit an incorrect answer too many times, memory will be changed and you'll have to work through the answer with the new contents of memory.
+You can submit as often as you like. If you submit a mix of blank fields and correct answers, you will be able to continue with the same memory. But to prevent guess-and-check, if you submit an *incorrect* (but non-blank) answer too many times, memory will be changed and you'll have to work through the answer with the new contents of memory.
 
 ## Lab
 
