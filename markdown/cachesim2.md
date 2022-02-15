@@ -10,6 +10,7 @@ title: Cache Simulator Homework
 > - <small>2022-02-15 10:05</small> updated `cachesim2.tar` to have more forgiving tests for oversized addresses
 > - <small>2022-02-15 11:51</small> added more coding help
 > - <small>2022-02-15 13:41</small> that referred to a field `valid` when it should have been `live` instead
+> - <small>2022-02-15 17:35</small> updated `cachesim2.tar` to fix mistakes introduced in previous update
 
 This homework builds off of the [associated lab](cachesim1.html) and cannot be completed without completing that lab first.
 
@@ -32,11 +33,12 @@ There are several levels of completion possible:
 
 | Percentage | Functionality |
 |:----------:|---------------|
-| 70%        | Basics |
+| 90%        | Basics |
 | 10%        | Writeback vs writethrough |
-| 10%        | Multi-byte reads and writes |
-| 10%        | Multi-tier caches |
+| 5%        | Multi-byte reads and writes |
+| 5%        | Multi-tier caches |
 
+Note: earning 110% is possible if you do them all
 
 ## Basics
 
