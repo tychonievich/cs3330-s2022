@@ -153,7 +153,7 @@ How do I use `void writeToRAM(u64 address, size_t bytes, const u8* data)`{.c}?
     4. And `address` being the starting address of the block
         - This is like the given address, except the unused and block offset bits are zero.
 
-What should `u8 getByte(Cache *c, u64 address)` do?
+What should `u8 getByte(Cache *c, u64 address)`{.c} do?
 :   1. parse out the parts of the address, like in the lab
     2. check every line of the appropriate set to see if there's a cache hit
     3. if there is a cache miss,
@@ -163,29 +163,29 @@ What should `u8 getByte(Cache *c, u64 address)` do?
     4. mark the line (either the hit line or the new line) as the most-recently used, using the lab code
     5. return the appropriate byte of the block of the line (either the hit line or the new line)
 
-What should `void setBlock(Cache *c, u64 address, u8 value)` do?
+What should `void setBlock(Cache *c, u64 address, u8 value)`{.c} do?
 :   What `getByte` does, except:
     
     - modify the byte of the block instead of returning it
     - either mark the line as dirty (write-back) or write the entire block to the backing (write-through)
 
-What should `void getBlock(Cache *c, u64 address, u8 *dst, size_t bytes)` do?
+What should `void getBlock(Cache *c, u64 address, u8 *dst, size_t bytes)`{.c} do?
 :   What `getByte` does, except:
 
     - instead of returning one byte, copy `bytes` bytes from the line's block into the `dst` array
 
-What should `void setBlock(Cache *c, u64 address, const u8 *src, size_t bytes)` do?
+What should `void setBlock(Cache *c, u64 address, const u8 *src, size_t bytes)`{.c} do?
 :   What `setByte` does, except:
     
     - instead of modifying one byte, modify `bytes` bytes from the `src` array
 
-What should `u64 getLong(Cache *c, u64 address)` do?
+What should `u64 getLong(Cache *c, u64 address)`{.c} do?
 :   It's like `getBlock`, but
     
     - the 8 bytes it reads are a (little-endian) `u64` that is returned
     - the bytes might span two lines instead of just one
 
-What should `void setLong(Cache *c, u64 address, u64 value)` do?
+What should `void setLong(Cache *c, u64 address, u64 value)`{.c} do?
 :   It's like `setBlock`, but
     
     - the 8 bytes it writes are from a (little-endian) `u64`
