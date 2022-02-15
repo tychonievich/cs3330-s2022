@@ -2,6 +2,13 @@
 title: Cache Simulator Homework
 ...
 
+
+> Change log
+>
+> - <small>2022-02-10 12:59</small> added `cachesim1.o` file
+> - <small>2022-02-15 09:40</small> added debugging section and more coding help
+> - <small>2022-02-15 10:05</small> updated `cachesim2.tar` to have more forgiving tests for oversized addresses
+
 This homework builds off of the [associated lab](cachesim1.html) and cannot be completed without completing that lab first.
 
 If you are unsure of your cachesim1 code, my solution can be downloaded as a compiled Linux binary [cachesim1.o](files/cachesim1.o)
