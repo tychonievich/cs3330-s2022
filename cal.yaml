@@ -232,7 +232,7 @@ assignments:
         link: cachesim1.html
         files: [cachesim1.c]
     HW03:
-        due: 2022-02-16 14:30:00
+        due: 2022-03-02 14:30:00
         open: 2022-02-09 23:59:00
         title: Cache Simulator
         link: cachesim2.html
