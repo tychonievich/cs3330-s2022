@@ -82,6 +82,19 @@ For example, there's no test with an L3 cache, nor a writeback L2 and writethrou
 For 100% credit, you'll need to make sure your cache works for all of those cases too.
 
 
+## Debugging
+
+If `make test` is saying something like `WRONG keys/basic-01.txt` you probably want to try that test by running `./cachesim2_test tests/basic-01.txt` to see what your code is doing. 
+
+The output of the tester is
+
+- One line for each RAM action and cache access return value from your cache
+- A printout of the entire cache
+
+You can compare this to the expected output in the corresponding `keys/` file.
+
+
+
 # Coding help
 
 The `Cache` structure is doing some fancy things under the hood to be able to handle multiple cache sizes with a single structure. You are welcome to read how that is happening in `cachesim2_lib.c` if you want, but we recommend just using it instead.
@@ -112,3 +125,21 @@ How do I find a byte in a block of a line of a set of a `Cache *c`{.c}?
     so I'd use `myLine.block[block_offset]` to get a particular byte out of it.
     Note that this array's length is determined by `c->block_bits`.
 
+How do I use `void readFromRAM(u64 address, size_t bytes, u8* data)`{.c}?
+:   1. Call it at most once per cache access
+        - only on a cache miss
+        - and only if `backing == NULL`, otherwise use `getBlock(backing, ...)` instead
+    2. With `bytes` being the number of bytes per block
+    3. And `data` being where you want to store the result -- i.e., `myline.block`
+    4. And `address` being the starting address of the block
+        - This is like the given address, except the unused and block offset bits are zero.
+
+How do I use `void writeToRAM(u64 address, size_t bytes, const u8* data)`{.c}?
+:   1. Call it at most once per cache access
+        - for write-through, immediately after modifying a block
+        - for write-back, immediately before evicting a dirty live line
+        - and only if `backing == NULL`, otherwise use `setBlock(backing, ...)` instead
+    2. With `bytes` being the number of bytes per block
+    3. And `data` being where you want to copy to RAM -- i.e., `myline.block`
+    4. And `address` being the starting address of the block
+        - This is like the given address, except the unused and block offset bits are zero.
