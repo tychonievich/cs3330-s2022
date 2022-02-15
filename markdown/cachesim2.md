@@ -163,7 +163,7 @@ What should `u8 getByte(Cache *c, u64 address)`{.c} do?
     4. mark the line (either the hit line or the new line) as the most-recently used, using the lab code
     5. return the appropriate byte of the block of the line (either the hit line or the new line)
 
-What should `void setBlock(Cache *c, u64 address, u8 value)`{.c} do?
+What should `void setByte(Cache *c, u64 address, u8 value)`{.c} do?
 :   What `getByte` does, except:
     
     - modify the byte of the block instead of returning it
