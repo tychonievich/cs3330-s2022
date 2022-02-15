@@ -9,6 +9,7 @@ title: Cache Simulator Homework
 > - <small>2022-02-15 09:40</small> added debugging section and more coding help
 > - <small>2022-02-15 10:05</small> updated `cachesim2.tar` to have more forgiving tests for oversized addresses
 > - <small>2022-02-15 11:51</small> added more coding help
+> - <small>2022-02-15 13:41</small> that referred to a field `valid` when it should have been `live` instead
 
 This homework builds off of the [associated lab](cachesim1.html) and cannot be completed without completing that lab first.
 
@@ -123,7 +124,7 @@ What is the tag of a line in `Cache *c`{.c}?
     so I'd get the tag as `myLine.meta->tag`{.c}
     and set it as `myLine.meta->tag = newTag;`{.c}
     
-    In addition to `tag`, the `meta` structure also has a 1-bit `valid` and 1-bit `dirty` field.
+    In addition to `tag`, the `meta` structure also has a 1-bit `live` and 1-bit `dirty` field.
     
 How do I find a byte in a block of a line of a set of a `Cache *c`{.c}?
 :   First, get the `Line` structure:
