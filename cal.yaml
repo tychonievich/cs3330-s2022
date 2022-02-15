@@ -46,16 +46,16 @@ lectures:
     - kernel mode
     - review
     
-    - Y86-86
+    - Y86
     - SIGCSE
 
-    - Y86
     - seq part 1
     - seq part 2
     - seq part 3
     - pipe part 1
     - pipe part 2
     - pipe part 3
+    - beyond pipelining
     - review
 
     - performance
