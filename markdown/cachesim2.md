@@ -177,7 +177,7 @@ What should `void getBlock(Cache *c, u64 address, u8 *dst, size_t bytes)`{.c} do
 What should `void setBlock(Cache *c, u64 address, const u8 *src, size_t bytes)`{.c} do?
 :   What `setByte` does, except:
     
-    - instead of modifying one byte, modify `bytes` bytes from the `src` array
+    - instead of modifying one byte, modify `bytes` bytes in the block to be equal to values in the `src` array
 
 What should `u64 getLong(Cache *c, u64 address)`{.c} do?
 :   It's like `getBlock`, but
