@@ -2,6 +2,14 @@
 title: Cache Simulator Homework
 ...
 
+
+> Change log
+>
+> - <small>2022-02-10 12:59</small> added `cachesim1.o` file
+> - <small>2022-02-15 09:40</small> added debugging section and more coding help
+> - <small>2022-02-15 10:05</small> updated `cachesim2.tar` to have more forgiving tests for oversized addresses
+> - <small>2022-02-15 11:51</small> added more coding help
+
 This homework builds off of the [associated lab](cachesim1.html) and cannot be completed without completing that lab first.
 
 If you are unsure of your cachesim1 code, my solution can be downloaded as a compiled Linux binary [cachesim1.o](files/cachesim1.o)
@@ -82,6 +90,19 @@ For example, there's no test with an L3 cache, nor a writeback L2 and writethrou
 For 100% credit, you'll need to make sure your cache works for all of those cases too.
 
 
+## Debugging
+
+If `make test` is saying something like `WRONG keys/basic-01.txt` you probably want to try that test by running `./cachesim2_test tests/basic-01.txt` to see what your code is doing. 
+
+The output of the tester is
+
+- One line for each RAM action and cache access return value from your cache
+- A printout of the entire cache
+
+You can compare this to the expected output in the corresponding `keys/` file.
+
+
+
 # Coding help
 
 The `Cache` structure is doing some fancy things under the hood to be able to handle multiple cache sizes with a single structure. You are welcome to read how that is happening in `cachesim2_lib.c` if you want, but we recommend just using it instead.
@@ -112,3 +133,59 @@ How do I find a byte in a block of a line of a set of a `Cache *c`{.c}?
     so I'd use `myLine.block[block_offset]` to get a particular byte out of it.
     Note that this array's length is determined by `c->block_bits`.
 
+How do I use `void readFromRAM(u64 address, size_t bytes, u8* data)`{.c}?
+:   1. Call it at most once per cache access
+        - only on a cache miss
+        - and only if `backing == NULL`, otherwise use `getBlock(backing, ...)` instead
+    2. With `bytes` being the number of bytes per block
+    3. And `data` being where you want to store the result -- i.e., `myline.block`
+    4. And `address` being the starting address of the block
+        - This is like the given address, except the unused and block offset bits are zero.
+
+How do I use `void writeToRAM(u64 address, size_t bytes, const u8* data)`{.c}?
+:   1. Call it at most once per cache access
+        - for write-through, immediately after modifying a block
+        - for write-back, immediately before evicting a dirty live line
+        - and only if `backing == NULL`, otherwise use `setBlock(backing, ...)` instead
+    2. With `bytes` being the number of bytes per block
+    3. And `data` being where you want to copy to RAM -- i.e., `myline.block`
+    4. And `address` being the starting address of the block
+        - This is like the given address, except the unused and block offset bits are zero.
+
+What should `u8 getByte(Cache *c, u64 address)` do?
+:   1. parse out the parts of the address, like in the lab
+    2. check every line of the appropriate set to see if there's a cache hit
+    3. if there is a cache miss,
+        a. pick the least-recently-used line to evict, as defined by the PLRU information and the lab code
+        b. if the line is dirty and live, write it out before eviction
+        c. load a new block and tag into the line
+    4. mark the line (either the hit line or the new line) as the most-recently used, using the lab code
+    5. return the appropriate byte of the block of the line (either the hit line or the new line)
+
+What should `void setBlock(Cache *c, u64 address, u8 value)` do?
+:   What `getByte` does, except:
+    
+    - modify the byte of the block instead of returning it
+    - either mark the line as dirty (write-back) or write the entire block to the backing (write-through)
+
+What should `void getBlock(Cache *c, u64 address, u8 *dst, size_t bytes)` do?
+:   What `getByte` does, except:
+
+    - instead of returning one byte, copy `bytes` bytes from the line's block into the `dst` array
+
+What should `void setBlock(Cache *c, u64 address, const u8 *src, size_t bytes)` do?
+:   What `setByte` does, except:
+    
+    - instead of modifying one byte, modify `bytes` bytes from the `src` array
+
+What should `u64 getLong(Cache *c, u64 address)` do?
+:   It's like `getBlock`, but
+    
+    - the 8 bytes it reads are a (little-endian) `u64` that is returned
+    - the bytes might span two lines instead of just one
+
+What should `void setLong(Cache *c, u64 address, u64 value)` do?
+:   It's like `setBlock`, but
+    
+    - the 8 bytes it writes are from a (little-endian) `u64`
+    - the bytes might span two lines instead of just one
