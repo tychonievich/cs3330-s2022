@@ -232,7 +232,7 @@ Why am I getting a segfault?
         
         - Any `Cache *` value we provide is a pointer to a single value; so is `myline.metadata`.
         - Any `u8 *` or `u16 *` value we provide is a pointer to an array of values; so `myline.block`, `c->plru`, and the `src` variable in `setBlock` are all pointers to arrays.
-        - You should never need to create additional variables of either type, but will need to use those provided as intended.
+        - You shouldn't need to create additional variables of either type, but will need to use those provided as intended.
         - Several placeholder implementations use `&value` to treat `value` like a single-entry array, but you'll need to replace those with appropriate multi-entry arrays instead.
         
         
