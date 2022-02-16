@@ -5,12 +5,13 @@ title: Cache Simulator Homework
 
 > Change log
 >
-> - <small>2022-02-10 12:59</small> added `cachesim1.o` file
-> - <small>2022-02-15 09:40</small> added debugging section and more coding help
-> - <small>2022-02-15 10:05</small> updated `cachesim2.tar` to have more forgiving tests for oversized addresses
-> - <small>2022-02-15 11:51</small> added more coding help
+> - <small>2022-02-10 12:59</small> added [cachesim2.tar](files/cachesim1.o) file
+> - <small>2022-02-15 09:40</small> added [Debugging] section and more [Coding Help]
+> - <small>2022-02-15 10:05</small> updated [cachesim2.tar](files/cachesim2.tar) to have more forgiving tests for oversized addresses
+> - <small>2022-02-15 11:51</small> added more [Coding Help]
 > - <small>2022-02-15 13:41</small> that referred to a field `valid` when it should have been `live` instead
-> - <small>2022-02-15 17:35</small> updated `cachesim2.tar` to fix mistakes introduced in previous update
+> - <small>2022-02-15 17:35</small> updated [cachesim2.tar](files/cachesim2.tar) to fix mistakes introduced in previous update
+> - <small>2022-02-16 11:05</small> added [Coding Help] about segfaults
 
 This homework builds off of the [associated lab](cachesim1.html) and cannot be completed without completing that lab first.
 
