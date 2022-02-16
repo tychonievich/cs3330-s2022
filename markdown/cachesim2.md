@@ -201,3 +201,38 @@ What should `void setLong(Cache *c, u64 address, u64 value)`{.c} do?
     
     - the 8 bytes it writes are from a (little-endian) `u64`
     - the bytes might span two lines instead of just one
+
+Why am I getting a segfault?
+:   There are many possible causes, but a few likely reasons:
+    
+    - Confusing the `u64 address`, a value we are working with, with the C/C++ notion of "address"/"pointer".
+        The (cache) address of a line in the cache is a value you are given or compute from the parts of a (cache)  address,
+        not something you can find with the `&` (C) address-of operator.
+        
+        If your code has `&` in any of the \_etbyte or \_etBlock functions, there's a high chance you are doing something wrong.
+    
+    - Confusing the block size (the length of an array, derived from `c->block_bits`)
+        and the C/C++ notion of "sizeof" (the bytes used by the language to store a datatype).
+
+        If your code has `sizeof` in any of the \_etbyte or \_etBlock functions, there's a high chance you are doing something wrong.
+
+    - Confusing what `=` does when given pointers as values.
+        `myline.block = something`{.c} does *not* copy values from array `something` into array `myline.block`;
+        rather, it changes the block pointer inside the line, which is supposed to indicate part of the cache, to point to something else instead.
+        
+        To copy arrays, use a loop (`for(size_t i=0; i<size; i+=1) myline.block[i] = something[i];`{.c}) or the `memcpy` standard library function from `<string.h>`.
+        
+        Note that `readFromRAM` and `getBlock` accept as a parameter the array to put data into, so you might be able to avoid most array copies by giving them the final destination array directly.
+    
+    - Treating a single value like an array.
+        In C/C++, a pointer can point to a single value or to an array of values;
+        the only way to tell those apart is by how you create them.
+        
+        In this assignment,
+        
+        - Any `Cache *` value we provide is a pointer to a single value; so is `myline.metadata`.
+        - Any `u8 *` or `u16 *` value we provide is a pointer to an array of values; so `myline.block`, `c->plru`, and the `src` variable in `setBlock` are all pointers to arrays.
+        - You should never need to create additional variables of either type, but will need to use those provided as intended.
+        - Several placeholder implementations use `&value` to treat `value` like a single-entry array, but you'll need to replace those with appropriate multi-entry arrays instead.
+        
+        
