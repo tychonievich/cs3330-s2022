@@ -14,7 +14,16 @@ title: Cache Simulator Homework
 
 This homework builds off of the [associated lab](cachesim1.html) and cannot be completed without completing that lab first.
 
-If you are unsure of your cachesim1 code, my solution can be downloaded as a compiled Linux binary [cachesim1.o](files/cachesim1.o)
+If you are unsure of your cachesim1 code, my solution can be downloaded[^using] as a compiled Linux binary [cachesim1.o](files/cachesim1.o).
+
+[^using]:
+    To use my cachesim1.o:
+
+    - Rename your `cachesim1.c` to be `cachesim1.c.backup` instead
+    - Download my `cachesim1.o`, as e.g. `curl http://www.cs.virginia.edu/luther/3330/S2022/files/cachesim1.o > cachesim1.o`{.sh}
+    - Change the `Makefile` to include `cachesim1.o` at the end of the `objects :=` line; i.e. `objects := $(patsubst %.c,%.o,$(wildcard *.c)) cachesim1.o`{.makefile}
+    - The reference assumes `global_init` has been called *after* the global variables are set, so you'll need to do that to get correct results
+
 
 # Task
 
