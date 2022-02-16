@@ -62,3 +62,12 @@
   files:
     - lectures/2022-02-14-anonymous.txt
     - lectures/2022-02-14-slides.pdf
+2022-02-16:
+  video:
+    - lectures/2022-02-16-recording-1.webm
+  audio:
+    - lectures/2022-02-16-audio-1.mp3
+  files:
+    - lectures/2022-02-16-anonymous.txt
+    - lectures/2022-02-16-pagetable.txt
+    - lectures/2022-02-16-slides.pdf
