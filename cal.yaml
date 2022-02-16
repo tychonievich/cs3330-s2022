@@ -42,7 +42,7 @@ lectures:
     - caches
     - virtual memory
     - [page tables, tlb]
-    - multi-level page tables
+    - [multi-level page tables, kernel mode]
     - kernel mode
     - review
     
