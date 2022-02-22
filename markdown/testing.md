@@ -2,13 +2,9 @@
 title: Midterm scope
 ...
 
-This is a list of 
+This is a list of topics that I expect familiarity on and that are small enough to be tested in a timed, closed-notes test. In some cases I also note items that we covered that do *not* fit these criteria rule, such as content we'll only test in open-notes ways or content that was an informational aside, not core to the course itself.
 
-- topics that I expect familiarity on
-- topics that we mentioned but were supplemental, not core, and I do not expect familarity on
-- topics that are important, but too time-consuming to evaluate in a test
-
-I have not intentionally omitted anything, but summaries are not always understood the same way by everyone who reads them.
+*Caveat lector*: I have not intentionally omitted anything, but summaries are not always understood the same way by everyone who reads them. It is possible I thought some specific was implied by something I wrote here that you did not recognize as such.
 
 # Midterm 1
 
