@@ -236,6 +236,10 @@ Note that this example maps 16-bit virtual addresses
 to 19-bit physical addresses:
 each *process* is limited to 64KB of addressable memory
 but the hardware can support 512KB physical RAM.
+
+Also note that this example is wasteful,
+in the sense that a page table is 2^8^ bytes and a page is 2^9^ so whatever page has the page table is only half used.
+Engineers are interested in efficiency, so we'd expect those two numbers to be the same in any production system.
 :::
 
 Single-level page tables are inefficient for 32-bit addresses
