@@ -23,7 +23,7 @@ You should be able to
 - (in re indexes and sizes)
 	- apply the principle that $2^b = N$ where $b$ is the bits in an index and $N$ is the number of values in the array that it indexes
 	- handle power-of-two element sizes, such as converting between indexes into byte arrays and indexes into PTE arrays
-	- do $\log_2(x)$ for power-of-2 $x$ and $2^x$ for positive integer $x$ by hand, up to and including $2^{39} = 512G$ and its inverse, and larger values if we provide the appropriate keys (e.g. if we tell you $2^{80} is written "Yi" (short for "yotta"), you should be able to convert $64YiB$ to $2^{86}B$)
+	- do $\log_2(x)$ for power-of-2 $x$ and $2^x$ for positive integer $x$ by hand, up to and including $2^{39} = 512$G and its inverse, and larger values if we provide the appropriate keys (e.g. if we tell you $2^{80}$ is written "Yi" (short for "yotta"), you should be able to convert $64$YiB to $2^{86}$B)
 - (in re caches)
 	- know and apply the rule "cache size = ways × sets × block size"
 	- know how direct mapped and fully associative caches relate to set associative caches
