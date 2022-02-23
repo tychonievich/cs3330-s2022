@@ -45,3 +45,4 @@ You should be able to
 	- articulate the differences and similarities between faults, traps, and interrupts and identify which one a given scenario is, even if the scenario described is one we never referenced in class or readings
 	- articulate how page tables and kernel mode inter-operate, including how page tables are needed to have kernel-mode memory; how kernel-mode memory is required for safe exception handling; and how kernels can edit page tables while still using virtual addresses to do so
 	
+Note that one quiz mentioned flags, but those will be covered in more detail later in the course and will not appear on this midterm.
