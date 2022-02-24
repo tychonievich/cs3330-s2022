@@ -340,3 +340,52 @@ otherwise the switch is connected when there's voltage.
 </figcaption>
 </figure>
 
+Many circuit diagrams will draw gates using special symbols instead of drawing their component transistors directly.
+The most common gates are:
+
+Not
+:
+    --------------- -----------
+    Formal logic    ¬P *or* <span style="text-decoration:overline">P</span>
+    Code, bitwise   `~p`
+    Code, logical   `!p`
+    Circuits[^not]  ![](img/not.svg){height=2em}
+    --------------- -----------
+
+[^not]: Technically, the small circle is the "not" part; the triangle is sort of like a filler for when there is no other gate to which the circle may be adjoined. 
+
+And
+:
+   ---------------         -----------
+    Formal logic            P∧Q
+    Code, bitwise           `p & q`
+    Code, logical[^short]   `p && q`
+    Circuits                ![](img/and.svg){height=2em}
+    ---------------         -----------
+
+Or
+:
+    ---------------         -----------
+    Formal logic            P∨Q
+    Code, bitwise           `p | q`
+    Code, logical[^short]   `p || q`
+    Circuits                ![](img/or.svg){height=2em}
+    ---------------         -----------
+
+Exclusive Or
+:
+    --------------- -----------
+    Formal logic    P⊕Q *or* P⊻Q
+    Code, bitwise   `p ^ q`
+    Circuits        ![](img/xor.svg){height=2em}
+    --------------- -----------
+
+Nand and Nor
+:   The "Nand" and "nor" operations are equivalent to the "and" and "or" operations followed by a "not" operation.
+
+    --------------- -----------
+    Circuits (nor)  ![](img/nor.svg){height=2em}
+    Circuits (nand) ![](img/nand.svg){height=2em}
+    --------------- -----------
+
+
