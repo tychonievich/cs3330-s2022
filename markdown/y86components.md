@@ -334,9 +334,9 @@ an electrical source and an electrical sink.
 </center>
 <figcaption>
 An example NOT gate (left) and NAND gate (right) made of transistors.
-Each offset wire with a T-shaped wire next to it is a transistor:
-the offset wire is open if there is voltage (on the lower T-shaped transistor)
-or if there is no voltage (the upper T-shaped transistor with a circle).
+Each offset wire with a T-shaped wire next to it is a transistor, implementing an electricity-powered switch.
+If the offset wire has a circle on it, the switch is disconnected when there's voltage on the T;
+otherwise the switch is connected when there's voltage.
 </figcaption>
 </figure>
 
