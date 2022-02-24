@@ -31,7 +31,7 @@ It also requires not special logic to take several small wire groups and run the
 
 In HCLRS, we have special notation to represent this splitting and concatenating
 
-```c
+```hclrs
 wire2 = wire1[1..4];    # selects bits 1, 2, and 3 from wire1
 wire3 = wire1 .. wire2; # concatenates two wire groups
 ```
@@ -62,7 +62,7 @@ Typically we'd do these bypasses on all the registers in a register back togethe
 
 In HLCRS, we have special notation for register banks that use two-letter naming to match the textbook's notation:
 
-```
+```hclrs
 register fE { hi:3 = 2; there:5 = 0; }
 f_hi = 5;   # the input value hi will assume next cycle
 x = E_hi;   # reads the value hi is currently outputting
@@ -151,7 +151,7 @@ mux_result = input_values[selector];
 Muxes will appear *everywhere* in our processor design.
 HCLRS has a special syntax just for them, one which is also able to use non-power-of-two input counts and to do fancier comparisons in picking an input.
 
-```
+```hclrs
 some_wire = [
     x == 1 : 3; 
     x == 2 && y < 3 : 4;
@@ -269,7 +269,7 @@ The next step up from a transistor is a gate.
 Gates are made by attaching a few transistors in a special arrangement to both a source of 1 and 0:
 an electrical source and an electrical sink.
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.916673 63.500004">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.916673 63.500004" style="max-width:12em;">
 <g transform="translate(-5.2916703,-26.458334)">
   <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
   <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
