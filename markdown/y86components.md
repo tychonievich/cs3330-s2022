@@ -270,6 +270,7 @@ Gates are made by attaching a few transistors in a special arrangement to both a
 an electrical source and an electrical sink.
 
 <figure>
+<center>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.916673 63.500004" style="max-width:12em;">
 <g transform="translate(-5.2916703,-26.458334)">
   <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
@@ -330,6 +331,7 @@ an electrical source and an electrical sink.
 <text y="7.9374967" x="29.104176" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583" xml:space="preserve"><tspan y="7.9374967" x="29.104176" style="stroke-width:0.264583">source of voltage</tspan></text>
 <text y="78.316696" x="50.270824" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583" xml:space="preserve"><tspan y="78.316696" x="50.270824" style="stroke-width:0.264583">ground</tspan></text>
 </svg>
+</center>
 <figcaption>
 An example NOT gate (left) and NAND gate (right) made of transistors.
 Each offset wire with a T-shaped wire next to it is a transistor:
