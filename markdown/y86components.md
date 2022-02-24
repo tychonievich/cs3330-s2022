@@ -360,7 +360,7 @@ You may recall from *Theory of Computation* or *Discrete Mathematics and Theory 
 that the class of finite functions includes all deterministic functions with a finite domain.
 To get to infinite functions we need to add a notion of time steps, such as is provided by the clock input to registers.
 ].
-If we add cycles, we can also create storage, which combined with a clock signal can allow us to implement infinite functions with finite state^[Including anything a Finite Automaton, Mealy machine, or Moore machine can compute.].
+If we add cycles, we can also create storage, which combined with a clock signal can allow us to implement infinite functions with finite state^[Including anything a Finite Automaton, Mealy machine, or Moore machine can compute, and any algorithm that uses *O*(1) space.].
 
 A few circuit components we often want include:
 
