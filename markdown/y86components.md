@@ -294,14 +294,6 @@ an electrical source and an electrical sink.
 <text y="57.150032" x="23.812489" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583" xml:space="preserve"><tspan y="57.150032" x="23.812489" style="stroke-width:0.264583">ground</tspan></text>
 <path d="m 15.875,31.75 c 0,10.583333 0,10.583333 0,10.583333" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
 </svg>
-<figcaption>An example NOT gate made of transistors.
-Each offset wire with a T-shaped wire next to it is a transistor:
-the offset wire is open if there is voltage (on the lower T-shaped transistor)
-or if there is no voltage (the upper T-shaped transistor with a circle).
-The total effect is that when there is that putting voltage on A removes voltage from B and vice-versa.</figcaption>
-</figure>
-
-<figure>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.083341 84.666672" style="max-width:18em;">
 <g transform="translate(21.166664,-26.458334)">
 <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
@@ -338,5 +330,11 @@ The total effect is that when there is that putting voltage on A removes voltage
 <text y="7.9374967" x="29.104176" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583" xml:space="preserve"><tspan y="7.9374967" x="29.104176" style="stroke-width:0.264583">source of voltage</tspan></text>
 <text y="78.316696" x="50.270824" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583" xml:space="preserve"><tspan y="78.316696" x="50.270824" style="stroke-width:0.264583">ground</tspan></text>
 </svg>
-<figcaption>An example NAND gate made of transistors.</figcaption>
+<figcaption>
+An example NOT gate (left) and NAND gate (right) made of transistors.
+Each offset wire with a T-shaped wire next to it is a transistor:
+the offset wire is open if there is voltage (on the lower T-shaped transistor)
+or if there is no voltage (the upper T-shaped transistor with a circle).
+</figcaption>
 </figure>
+
