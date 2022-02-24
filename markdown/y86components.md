@@ -302,7 +302,7 @@ The total effect is that when there is that putting voltage on A removes voltage
 </figure>
 
 <figure>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.916673 63.500004" style="max-width:12em;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.083341 84.666672" style="max-width:18em;">
 <g transform="translate(21.166664,-26.458334)">
 <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
 <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
