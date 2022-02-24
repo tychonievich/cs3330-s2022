@@ -273,58 +273,58 @@ an electrical source and an electrical sink.
 <center>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.916673 63.500004" style="max-width:12em;">
 <g transform="translate(-5.2916703,-26.458334)">
-  <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-  <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-  <path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+  <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
+  <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
+  <path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.5" />
 </g>
 <g transform="translate(-5.2916633,-47.625002)">
-  <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-  <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-  <path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+  <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
+  <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
+  <path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.5" />
   <circle r="1.3229166" cy="68.791664" cx="27.781248" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-opacity:1" />
 </g>
-<path d="m 31.749998,31.749995 7.937492,1e-6" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="m 31.749998,31.749995 7.937492,1e-6" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <rect y="31.220839" x="15.345847" height="1.0583333" width="1.0583333" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
 <rect y="30.956259" x="15.081267" height="1.587497" width="1.587497" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
 <rect y="41.804173" x="-11.112493" height="1.0583333" width="1.0583333" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
 <rect y="41.539593" x="-11.377088" height="1.5874995" width="1.587502" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
-<path d="M 15.874998,21.166662 V 31.74999 H 7.9374983" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="M 15.874998,21.166662 V 31.74999 H 7.9374983" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <text y="33.337502" x="4.2333293" style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583" xml:space="preserve"><tspan y="33.337502" x="4.2333293" style="font-size:4.23333px;stroke-width:0.264583">A</tspan></text>
 <text y="33.337502" x="41.275005" style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583" xml:space="preserve"><tspan y="33.337502" x="41.275005" style="font-size:4.23333px;stroke-width:0.264583">B</tspan></text>
 <text y="7.9374967" x="13.229177" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583" xml:space="preserve"><tspan y="7.9374967" x="13.229177" style="stroke-width:0.264583">source of voltage</tspan></text>
 <text y="57.150032" x="23.812489" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583" xml:space="preserve"><tspan y="57.150032" x="23.812489" style="stroke-width:0.264583">ground</tspan></text>
-<path d="m 15.875,31.75 c 0,10.583333 0,10.583333 0,10.583333" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="m 15.875,31.75 c 0,10.583333 0,10.583333 0,10.583333" style="fill:none;stroke:#000000;stroke-width:0.5" />
 </svg>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.083341 84.666672" style="max-width:18em;">
 <g transform="translate(21.166664,-26.458334)">
-<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.5" />
 </g>
 <g transform="translate(21.166664,-5.2916667)">
-<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.5" />
 </g>
 <g transform="translate(-5.2916653,-47.625002)">
-<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <circle r="1.3229166" cy="68.791664" cx="27.781248" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-opacity:1" />
 </g>
 <g transform="translate(21.166671,-47.625002)">
-<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
-<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="m 21.166667,68.791667 7.937499,-10e-7" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <circle r="1.3229166" cy="68.791664" cx="27.781248" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-opacity:1" />
 </g>
-<path d="m 31.75,31.749995 34.395825,1e-6" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="m 31.75,31.749995 34.395825,1e-6" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <rect y="31.220839" x="41.80418" height="1.0583333" width="1.0583333" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
 <rect y="30.956259" x="41.5396" height="1.587497" width="1.587497" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
-<path d="M 42.333333,63.499981 H 15.874999 V 21.166662 l -7.9374992,3e-6" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="M 42.333333,63.499981 H 15.874999 V 21.166662 l -7.9374992,3e-6" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <rect y="41.804173" x="15.345841" height="1.0583333" width="1.0583333" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
 <rect y="41.539593" x="15.081246" height="1.5874995" width="1.587502" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1" />
-<path d="M 42.333333,21.166662 V 42.333323 H 7.9374998" style="fill:none;stroke:#000000;stroke-width:0.264583px" />
+<path d="M 42.333333,21.166662 V 42.333323 H 7.9374998" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <text y="22.754169" x="4.2333293" style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583" xml:space="preserve"><tspan y="22.754169" x="4.2333293" style="font-size:4.23333px;stroke-width:0.264583">A</tspan></text>
 <text y="43.920837" x="4.2333293" style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583" xml:space="preserve"><tspan y="43.920837" x="4.2333293" style="font-size:4.23333px;stroke-width:0.264583">B</tspan></text>
 <text y="33.337502" x="67.733345" style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583" xml:space="preserve"><tspan y="33.337502" x="67.733345" style="font-size:4.23333px;stroke-width:0.264583">C</tspan></text>
