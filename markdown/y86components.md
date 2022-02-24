@@ -343,49 +343,40 @@ otherwise the switch is connected when there's voltage.
 Many circuit diagrams will draw gates using special symbols instead of drawing their component transistors directly.
 The most common gates are:
 
-Not
-:
-    --------------- -----------
-    Formal logic    ¬P *or* <span style="text-decoration:overline">P</span>
-    Code, bitwise   `~p`
-    Code, logical   `!p`
-    Circuits[^not]  ![](img/not.svg){height=2em}
-    --------------- -----------
-
-[^not]: Technically, the small circle is the "not" part; the triangle is sort of like a filler for when there is no other gate to which the circle may be adjoined. 
-
-And
-:
-   ---------------         -----------
-    Formal logic            P∧Q
-    Code, bitwise           `p & q`
-    Code, logical[^short]   `p && q`
-    Circuits                ![](img/and.svg){height=2em}
-    ---------------         -----------
-
-Or
-:
-    ---------------         -----------
-    Formal logic            P∨Q
-    Code, bitwise           `p | q`
-    Code, logical[^short]   `p || q`
-    Circuits                ![](img/or.svg){height=2em}
-    ---------------         -----------
-
-Exclusive Or
-:
-    --------------- -----------
-    Formal logic    P⊕Q *or* P⊻Q
-    Code, bitwise   `p ^ q`
-    Circuits        ![](img/xor.svg){height=2em}
-    --------------- -----------
-
-Nand and Nor
-:   The "Nand" and "nor" operations are equivalent to the "and" and "or" operations followed by a "not" operation.
-
-    --------------- -----------
-    Circuits (nor)  ![](img/nor.svg){height=2em}
-    Circuits (nand) ![](img/nand.svg){height=2em}
-    --------------- -----------
+Name    Symbol                          Notes
+-----   ----------------------          -----------------
+Not     ![](img/not.svg){height=2em}    The small circle is the "not" part; the triangle a filler for when there is no other gate to which the circle may be adjoined.
+And     ![](img/and.svg){height=2em}    
+Or      ![](img/or.svg){height=2em}     inclusive or, `|` (bitwise) or `||` (Boolean) in code
+Xor     ![](img/xor.svg){height=2em}    exclusive or, `^` (bitwise) or `!=` (Boolean) in code
+Nand    ![](img/nand.svg){height=2em}   same as "not (... and ...)"
+Nor     ![](img/nor.svg){height=2em}    same as "not (... or ...)"
 
 
+## Combining Gates
+
+With an acyclic circuit of gates and wires, we can implement any finite function^[
+You may recall from *Theory of Computation* or *Discrete Mathematics and Theory 2*
+that the class of finite functions includes all deterministic functions with a finite domain.
+To get to infinite functions we need to add a notion of time steps, such as is provided by the clock input to registers.
+].
+If we add cycles, we can also create storage, which combined with a clock signal can allow us to implement infinite functions with finite state^[Including anything a Finite Automaton, Mealy machine, or Moore machine can compute.].
+
+A few circuit components we often want include:
+
+Mux
+:   Conceptually, we *and* each data input with a *mask* that is only 1 if the selector input matches the data input's position, and then *or* all the results.
+
+    ![2-input Mum](img/mux.svg){height=5em}
+
+Register
+:   There are multiple arrangements of gates that have register-like behavior if connected to a clock input;
+    the one we usually discuss in computing is known as a "rising-edge-triggered gated flip-flop" or "D-type flip-flop" and is built out of six *nand* gates.
+    
+    ![D-type Flip-Flop](img/dflipflop.svg){height=10em}
+
+Adder
+:   We can also derive the logic that expresses each bit of the result of binary arithmetic.
+    A common example of this is the ripple-carry adder, one way of implementing integer addition.
+    
+    ![Ripple-Carry Adder](img/adder.svg){width=30em}
