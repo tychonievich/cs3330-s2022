@@ -47,7 +47,7 @@ lectures:
     - review
     
     - Y86
-    - recorded lecture
+    - pre-recorded lecture
 
     - seq part 1
     - seq part 2
@@ -137,7 +137,7 @@ reading:
         - txt: "CS:APP §4.1–4.1.3, 4.1.5–6"
         - txt: Y86 Summary
           lnk: y86.html
-    recorded lecture:
+    pre-recorded lecture:
         - txt: Processor building blocks
           lnk: y86components.html
         - txt: HCLRS
