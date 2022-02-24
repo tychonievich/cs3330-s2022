@@ -367,16 +367,16 @@ A few circuit components we often want include:
 Mux
 :   Conceptually, we *and* each data input with a *mask* that is only 1 if the selector input matches the data input's position, and then *or* all the results.
 
-    ![2-input Mux](img/mux.svg){height=7em}
+    ![2-input mux](img/mux.svg){height=7em}
 
 Register
 :   There are multiple arrangements of gates that have register-like behavior if connected to a clock input;
     the one we usually discuss in computing is known as a "rising-edge-triggered gated flip-flop" or "D-type flip-flop" and is built out of six *nand* gates.
     
-    ![D-type Flip-Flop](img/dflipflop.svg){height=20em}
+    ![D-type flip-flop](img/dflipflop.svg){height=20em}
 
 Adder
 :   We can also derive the logic that expresses each bit of the result of binary arithmetic.
     A common example of this is the ripple-carry adder, one way of implementing integer addition.
     
-    ![Ripple-Carry Adder](img/adder.svg){width=24em}
+    ![Low-order bits of a ripple-carry adder](img/adder.svg){width=24em}
