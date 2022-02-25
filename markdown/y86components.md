@@ -218,7 +218,7 @@ This seems to suggest that more precise voltage generators and sensors allow mor
 The problem with this assumption is that it takes longer to transmit higher-resolution data.
 This is partly a consequence of fundamental mathematical and physical laws, like the Heisenberg uncertainty principle,
 but it is also more tellingly a consequence of living in a noisy world.
-To tell the difference between 8.35 and 8.34 volts, you need to ensure that the impact of wire quality and the environment through which it passes contributes significantly less than 0.01 voltage error to the measurement; generally this requires watching the line for long enough to see what part of the voltage is noisy variations and what part is the true signal.
+To tell the difference between 8.35 and 8.34 volts, you need to ensure that the impact of wire quality and the environment through which it passes contributes significantly less than 0.01 voltage error to the measurement; generally this requires watching the wire for long enough to see what part of the voltage is noisy variations and what part is the true signal.
 By contrast, telling the difference between 10 volts and 0 volts is much simpler and much more robust against noise.
 It is quite possible to make several good 1-bit measurements in the time it'd take to make one 10-bit measurement.
 
