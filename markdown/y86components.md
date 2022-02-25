@@ -203,11 +203,10 @@ log~2~(*g* ÷ *r*).
 Not all languages have the same information per character.
 Shannon suggested English had roughly 1 bit per letter^[Shannon, Cluade E. (1950), "Prediction and Entropy of Printed English", *Bell Systems Technical Journal* (3) pp. 50--64.],
 while languages that use ideograms have many more.
-
-It is likely that bits per second of speaking is more constant across languages,
+It is likely that bits per second of speaking is more constant than bits per character across languages,
 which could probably be tested by measuring the bits per character of subtitles
 and combing it with the timing information the subtitles contain,
-but I am unaware of any published effort to do this or any related measurement.
+but I am unaware of any published effort to do this.
 :::
 
 How many bits of information can we transmit over a wire?
