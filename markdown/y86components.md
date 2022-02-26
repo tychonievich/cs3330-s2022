@@ -382,4 +382,4 @@ Adder
 :   We can also derive the logic that expresses each bit of the result of binary arithmetic.
     A common example of this is the ripple-carry adder, one way of implementing integer addition.
     
-    ![Low-order bits of a ripple-carry adder](img/adder.svg){width=24em}
+    ![Low-order bits of a ripple-carry adder computing `z = x+y`](img/adder.svg){width=24em}
