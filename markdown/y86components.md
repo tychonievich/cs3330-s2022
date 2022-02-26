@@ -270,7 +270,7 @@ an electrical source and an electrical sink.
 
 <figure>
 <center>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.916673 63.500004" style="max-width:12em;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.916673 63.500004" style="max-width:12em;vertical-align:middle">
 <g transform="translate(-5.2916703,-26.458334)">
   <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
   <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
@@ -294,7 +294,7 @@ an electrical source and an electrical sink.
 <text y="57.150032" x="23.812489" style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.5" xml:space="preserve"><tspan y="57.150032" x="23.812489" style="stroke-width:0.5">ground</tspan></text>
 <path d="m 15.875,31.75 c 0,10.583333 0,10.583333 0,10.583333" style="fill:none;stroke:#000000;stroke-width:0.5" />
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.083341 84.666672" style="max-width:18em;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.083341 84.666672" style="max-width:18em;vertical-align:middle">
 <g transform="translate(21.166664,-26.458334)">
 <path d="m 37.041667,58.208334 v 5.291667 h -5.291666 v 10.583333 h 5.291666 V 79.375" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <path d="M 29.104166,63.499999 V 74.083332" style="fill:none;stroke:#000000;stroke-width:0.5" />
@@ -367,8 +367,8 @@ Mux
 :   Conceptually, we *and* each data input with a *mask* that is only 1 if the selector input matches the data input's position, and then *or* all the results.
 
     <figure>
-    ![](img/mux.svg){height=7em}
-    ![](img/mux2.svg){height=21em}
+    ![](img/mux.svg){style="height:7em; vertical-align:middle"}
+    ![](img/mux2.svg){style="height:21em; vertical-align:middle"}
     <figcaption>2-input and 4-input muxes</figcaption>
     </figure>
 
