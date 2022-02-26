@@ -2,7 +2,7 @@
 title: HCLRS
 ...
 
-You can [download `hclrs.tar` here](files/hclrs.tar). (Last updated 23 August 2021.)
+You can [download `hclrs.tar` here](files/hclrs.tar). (Last updated 26 Febriary 2022.)
 
 # Using HCLRS
 
