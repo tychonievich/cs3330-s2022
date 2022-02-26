@@ -87,13 +87,16 @@
     - lectures/2022-02-23-anonymous.md
     - lectures/2022-02-23-qa.txt
     - lectures/2022-02-23-slides.pdf
-2022-02-26:
+2022-03-03:
   video:
+    - lectures/2022-02-26-recording-0.webm
     - lectures/2022-02-26-recording-1.webm
     - lectures/2022-02-26-recording-2.webm
   audio:
+    - lectures/2022-02-26-audio-0.mp3
     - lectures/2022-02-26-audio-1.mp3
     - lectures/2022-02-26-audio-2.mp3
   files:
-    - lectures/2022-02-26-audio-0.mp3
-    - lectures/2022-02-26-recording-0.webm
+    - lectures/2022-02-26-slides0.pdf
+    - lectures/2022-02-26-slides1.pdf
+    - lectures/2022-02-26-slides2.pdf
