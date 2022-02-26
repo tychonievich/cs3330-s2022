@@ -366,7 +366,11 @@ A few circuit components we often want include:
 Mux
 :   Conceptually, we *and* each data input with a *mask* that is only 1 if the selector input matches the data input's position, and then *or* all the results.
 
-    ![2-input mux](img/mux.svg){height=7em}
+    <figure>
+    ![](img/mux.svg){height=7em}
+    ![](img/mux2.svg){height=21em}
+    <figcaption>2-input and 4-input muxes</figcaption>
+    </figure>
 
 Register
 :   There are multiple arrangements of gates that have register-like behavior if connected to a clock input;
