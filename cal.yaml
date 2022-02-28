@@ -47,7 +47,7 @@ lectures:
     - review
     
     - Y86
-    - pre-recorded lecture
+    - [pre-recorded lecture, processor parts, HCLRS]
 
     - seq part 1
     - seq part 2
@@ -138,10 +138,26 @@ reading:
         - txt: Y86 Summary
           lnk: y86.html
     pre-recorded lecture:
-        - txt: Processor building blocks
+        - txt: No in-person meetings today
+    processor parts:
+        - txt: Parts
           lnk: y86components.html
+        - txt: Parts video1
+          lnk: player.html#2022-03-02-recording-0.webm
+        - txt: video1 drawings
+          lnk: lectures/2022-03-02-slides0.pdf
+        - txt: "(Optional) parts video2"
+          lnk: player.html#2022-03-02-recording-1.webm
+        - txt: Video2 drawings
+          lnk: lectures/2022-03-02-slides1.pdf
+          lnk: lectures/2022-03-02-slides2.pdf
+    HCLRS:
         - txt: HCLRS
           lnk: hclrs.html
+        - txt: HCLRS video
+          lnk: player.html#2022-03-02-recording-2.webm
+        - txt: Video drawings
+          lnk: lectures/2022-03-02-slides2.pdf
     seq part 1:
         - txt: "CS:APP §4.2–4.2.5"
     seq part 2:
