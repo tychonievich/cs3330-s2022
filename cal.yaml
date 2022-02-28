@@ -154,9 +154,9 @@ reading:
     HCLRS:
         - txt: HCLRS
           lnk: hclrs.html
-        - txt: HCLRS video
+        - txt: HCLRS video3
           lnk: player.html#2022-03-02-recording-2.webm
-        - txt: Video drawings
+        - txt: Video3 drawings
           lnk: lectures/2022-03-02-slides2.pdf
     seq part 1:
         - txt: "CS:APP §4.2–4.2.5"
