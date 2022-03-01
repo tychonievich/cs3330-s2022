@@ -59,7 +59,7 @@ Note that one quiz mentioned flags, but those will be covered in more detail lat
     In a question about counting pages, that typo was significant enough to invalidate the question as a measure of learning.
     
     If the text had said three pages to match the bullets, then the correct answer would have been 13.
-    If it had given the VPNs of a fourth page, the answer would have been between 14 and 17, depending on what the fourth VPN was.
+    If it had given the VPN of a fourth page, the answer would have been between 14 and 17, depending on what the fourth VPN was.
 
 
 [^gamma]:
