@@ -2,6 +2,8 @@
 title: Office Hours
 ...
 
+Normal office hours are not held during Spring Break, reading days, and the final exam period. Instead, office hours in those times (if any) will be listed on the `#announcements` channel on Discord.
+
 Sunday 1–5pm
 :   1–3pm, [Online] – Noah, Andrew
 
