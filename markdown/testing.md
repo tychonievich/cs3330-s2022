@@ -49,6 +49,32 @@ Note that one quiz mentioned flags, but those will be covered in more detail lat
 
 # Past Exams
 
-Name    Blank                   Key                      Min     Mean    Max
-------- -------                 ----------              -----   ------  -----
-Exam 1  [pdf](files/mt1.pdf)    [pdf](files/mt1key.pdf)  42%     76%     97%
+| Name | Blank | Key | Min | Mean | Max | Gamma correction[^gamma] |
+|------|-------|-----|:---:|:----:|:---:|:------------------------:|
+| Exam 1 | [pdf](files/mt1.pdf)[^typo1] | [pdf](files/mt1key.pdf) | 42% | 76% | 97% | awarded = raw^0.7^ |
+
+[^typo1]:
+    The last question has a typo.
+    If says there are four pages, but then only gives three.
+    In a question about counting pages, that typo was significant enough to invalidate the question as a measure of learning.
+    
+    If the text had said three pages to match the bullets, then the correct answer would have been 13.
+
+
+[^gamma]:
+    Exams are a finite precision encoding (because they have a finite number of questions) of a bounded-range but continuous number (student understanding of course material, from nothing (0%) to everything we covered (100%)).
+    Linear encodings ("raw score") waste most of that precision on distinguishing between small numbers (more than half of the precision in distinguishing between different kinds of "F"), leaving few points left to distinguish between more common scores like A and B.
+    I instead use a gamma-corrected encoding, a standard technique to encode numbers between 0 and 1 that keeps the full range (0 and 1 are unchanged) while putting more precision at either the low (gamma > 1) or high (gamma < 1) end of the range.
+    
+    For optimal precision, I'd want the raw score of a student who should pass but has significant room for improvement (i.e., C-level knowledge) to be 40–50%, adjusted by a gamma around 0.35–0.4.
+    That will put most of the precision in the passing range and make the results for passing students relatively robust against small errors.
+    However, that kind of test is very disheartening to take.
+    On the other extreme, using a gamma of 1.0 makes the test feel easy and boosts confidence, but reduces precision for most students and means a mistake on just a question or two can change your grade by a full letter.
+    
+    I generally try to split the difference, aiming for a gamma somewhere around 0.65 when writing the test: every question should be tricky enough to reveal depth of student knowledge, and C-level knowledge should be enough earn about ⅔ of the available points.
+    I then go through the questions and count up the raw score I expect a C-level understanding to earn and find the actual gamma needed to bring that raw score into the C range.
+    
+    Only after picking the gamma do we begin grading.
+    Picking the gamma first ensures I focus on *adequate* rather than *average* understanding.
+    Average-based grading makes it impossible for the entire class can earn an A and that creates perverse incentives where self-interest is served by ensuring other students do poorly.
+    I don't like those incentives, hence the predetermined gamma correction instead.
