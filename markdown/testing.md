@@ -46,3 +46,9 @@ You should be able to
 	- articulate how page tables and kernel mode inter-operate, including how page tables are needed to have kernel-mode memory; how kernel-mode memory is required for safe exception handling; and how kernels can edit page tables while still using virtual addresses to do so
 	
 Note that one quiz mentioned flags, but those will be covered in more detail later in the course and will not appear on this midterm.
+
+# Past Exams
+
+Name    Blank                   Key                      Min     Mean    Max
+------- -------                 ----------              -----   ------  -----
+Exam 1  [pdf](files/mt1.pdf)    [pdf](files/mt1key.pdf)  42%     76%     97%
