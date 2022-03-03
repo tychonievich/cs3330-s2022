@@ -276,44 +276,52 @@ assignments:
 
     Lab05:
         open: 2022-03-02 17:00:00
-        due: 2022-03-03 23:59:00
+        due: 2022-03-13 23:59:00
         title: HCL1 – SEQ part 1
         link: hcl1.html
+        files: [pc.hcl]
     HW05:
         open: 2022-03-02 23:59:00
         due: 2022-03-16 14:30:00
         title: HCL2 – SEQ part 2
         link: hcl2.html
+        files: [irrr.hcl]
     Lab06:
         open: 2022-03-16 17:00:00
         due: 2022-03-17 23:59:00
         title: HCL3 – SEQ part 3
         link: hcl3.html
+        files: [seqlab.hcl]
     HW06:
         open: 2022-03-16 23:59:00
         due: 2022-03-23 14:30:00
         title: HCL4 – SEQ part 4
         link: hcl4.html
+        files: [seqhw.hcl]
     Lab07:
         open: 2022-03-23 17:00:00
         due: 2022-03-24 23:59:00
         title: HCL5 – PIPE part 1
         link: hcl5.html
+        files: [pipelab1.hcl]
     HW07:
         open: 2022-03-23 23:59:00
         due: 2022-03-30 14:30:00
         title: HCL6 – PIPE part 2
         link: hcl6.html
+        files: [pipehw1.hcl]
     Lab08:
         open: 2022-03-30 17:00:00
         due: 2022-03-31 23:59:00
         title: HCL7 – PIPE part 3
         link: hcl7.html
+        files: [pipelab2.hcl]
     HW08:
         open: 2022-03-30 23:59:00
         due: 2022-04-06 14:30:00
         title: HCL8 – PIPE part 4
         link: hcl8.html
+        files: [pipehw2.hcl]
 
     Lab09:
         open: 2022-04-13 17:00:00
