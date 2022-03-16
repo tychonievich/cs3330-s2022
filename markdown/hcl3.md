@@ -2,6 +2,14 @@
 title: "HCL3 (seqlab)"
 ...
 
+
+# Fix permissions
+
+Some student accounts were set up with the wrong file permissions.
+
+Please visit [the permission checker page](https://www.cs.virginia.edu/luther/permcheck/) and follow any instructions it gives you.
+
+
 # Your task
 
 1.  Start with your [HCL2](hcl2.html) solution that implements `irmovq`, `rrmovq`, `halt`, and unconditional `jmp`. (If you don't have a working HCL2 solution, fix it first.)
