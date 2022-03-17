@@ -20,6 +20,8 @@ title: "HCL4 (seqhw)"
 
 # Advice/Hints
 
+You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.html) as well as chapter 4 of the textbook.
+
 ## `Stat`
 
 The `Stat` should be

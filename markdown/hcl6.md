@@ -23,6 +23,8 @@ title: "HCL6 (pipehw1)"
 
 # Hints/Approach
 
+You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.html) as well as chapter 4 of the textbook.
+
 ## General Approach
 
 1.  Get to know and love figure 4.41 (page 424 of the 3rd edition, page 403 of the 2nd). To match the textbook's text, the name of these registers would be `fF`, `fD`, `dE`, `eM`, and `mW`.

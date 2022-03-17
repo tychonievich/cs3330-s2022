@@ -20,6 +20,8 @@ title: "HCL2 (irmovq + rrmovq + jmp)"
 
 # Hints
 
+You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.html) as well as chapter 4 of the textbook.
+
 ## Suggested method
 
 1.  We suggest implementing and testing one instruction at a time, in the order they're listed above.

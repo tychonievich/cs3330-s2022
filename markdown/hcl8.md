@@ -30,6 +30,8 @@ title: "HCL8 (pipehw2)"
 
 # Hints/Approach
 
+You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.html) as well as chapter 4 of the textbook.
+
 ## General Approach
 
 You may approach this however you wish, but I suggest the following flow:

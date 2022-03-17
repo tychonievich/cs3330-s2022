@@ -21,6 +21,8 @@ title: "HCL7 (pipelab 2)"
 
 # Approach
 
+You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.html) as well as chapter 4 of the textbook.
+
 ## Add the registers
 
 We can use the existing `fF` register, since predicting the PC is not needed for these instructions.

@@ -19,6 +19,8 @@ title: "HCL5 (pipelab1)"
 
 # Suggested Approach
 
+You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.html) as well as chapter 4 of the textbook.
+
 We suggest the following steps:
 
 1.  Add a pipeline register bank. Identify where the **two pipeline stages** will split your processor, then identify all wires which cross that point and put them in a pipeline register

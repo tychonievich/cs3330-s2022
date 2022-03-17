@@ -16,13 +16,15 @@ Please visit [the permission checker page](https://www.cs.virginia.edu/luther/pe
 
 2.  Copy your HCL2 solution to new HCL file called `seqlab.hcl` in the `hclrs` directory.
 
-3.  Add `OPq`, `cmovXX`, and `rmmovq` to the single-cycle processor in that HCL file. For `OPq` and `cmovXX`, you only need to implement the `SF` and ZF\` condition codes. (We don't care about overflow.)
+3.  Add `OPq`, `cmovXX`, and `rmmovq` to the single-cycle processor in that HCL file. For `OPq` and `cmovXX`, you only need to implement the `SF` and `ZF` condition codes. (We don't care about overflow.)
 
 4.  Test your solution with `make test-seqlab`.
 
 5.  Submit your `seqlab.hcl` to the [submission site](https://kytos.cs.virginia.edu/cs3330/).
 
 # Advice/Hints
+
+You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.html) as well as chapter 4 of the textbook.
 
 ## Implementing `OPq`
 
