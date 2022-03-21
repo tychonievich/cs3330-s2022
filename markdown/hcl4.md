@@ -4,7 +4,7 @@ title: "HCL4 (seqhw)"
 
 # Your task
 
-1.  Start from the single-cycle processor you implemented in the [previous lab](hcl3.html). Make a copy of this file called `seqhw.hcl`.
+1.  Start from the single-cycle processor you implemented in the [previous lab](hcl3.html). Alternately, we will supply a seqlab solution (in Collab under the resources folder; within 24 hours after the lab is due) in case you did not finish all of the lab. Make a copy of this file called `seqhw.hcl`.
 
 2.  Implement all the remaining Y86 instructions in `seqhw.hcl`:
     -   `jXX` (conditional jumps)
