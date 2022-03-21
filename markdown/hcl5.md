@@ -23,7 +23,16 @@ You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.htm
 
 We suggest the following steps:
 
-1.  Add a pipeline register bank. Identify where the **two pipeline stages** will split your processor, then identify all wires which cross that point and put them in a pipeline register
+1.  Reorganize your solution to the previous assignments as follows:
+    - Add comment labeling each of the five stages
+    - Move the existing code into the appropriate stage
+    - Verify the reorganized code still works
+1.  Add a pipeline register bank. 
+    1. Identify where the **two pipeline stages** will split your processor
+    2. Name the register bank with two letters:
+        - lower-case, a letter representing the stage before the bank
+        - upper-case, a letter representing the stage after the bank
+    3. Identify all wires which cross that point and put them in a pipeline register
 2.  Replace wires with pipeline register inputs and outputs wires.
 3.  Look for hazards and solve them with forwarding (if possible) or stalling
 
