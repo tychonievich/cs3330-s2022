@@ -121,3 +121,10 @@
     - lectures/2022-03-16-audio-1.mp3
   files:
     - lectures/2022-03-16-slides.pdf
+2022-03-21:
+  video:
+    - lectures/2022-03-21-recording-1.webm
+  audio:
+    - lectures/2022-03-21-audio-1.mp3
+  files:
+    - lectures/2022-03-21-slides.pdf
