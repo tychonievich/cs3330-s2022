@@ -166,6 +166,9 @@ reading:
         - txt: "CS:APP §4.4–4.5.7, 4.5.9"
     pipe part 3:
         - txt: "CS:APP §4.4–4.5.7, 4.5.9"
+    beyond pipelining
+        - txt: "Out-of-order outline"
+          lnk: "ooo.html"
 
 assignments:
     ".groups":
