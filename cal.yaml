@@ -322,6 +322,7 @@ assignments:
         title: HCL8 – PIPE part 4
         link: hcl8.html
         files: [pipehw2.hcl]
+        late-policy: [0.95, 0.95, 0.95, 0.95, 0.95, 0.95, 0.95, 0.9, 0.9, 0.85]
 
     Lab09:
         open: 2022-04-13 17:00:00
