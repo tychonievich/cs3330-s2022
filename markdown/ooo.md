@@ -23,7 +23,7 @@ broadcasting the results onto the [common data bus].
 If there is no such instruction, it will do nothing.
 
 When the issue stage wants to put an instruction into the adder's issue queue,
-it will fist make sure there's an open slot;
+it will first make sure there's an open slot;
 if not, the issue stage will stall until the adder has room for the next instruction.
 
 There's nothing special about an adder here; we'll also have other functional units, like a multiplier, a memory reader, a memory writer, etc.
@@ -41,7 +41,7 @@ So we'll do a special renaming process, changing program registers like `%rax` i
 
 The main hardware data structure we'll need for this is a **remap file**; this is an array of entries, one per program register, each entry of which contains two fields: a **tag** which is a hardware register number and a **ready bit** which tells us if some pending instruction will overwrite this (`0`, not ready) or not (`1`, ready).
 
-{.example ...}
+:::example
 The x86-64 registers RAX through R15 are internally register numbers 0 through 15, so we'll need a 16-entry remap file.
 If we have 64 hardware registers and no pending instructions, this file might look like
 
@@ -56,11 +56,12 @@ If we have 64 hardware registers and no pending instructions, this file might lo
 15 = R15    1       2
 
 This means that, e.g., the program register value for `%rcx` is currently stored in hardware register number 11.
-{/}
+:::
 
 Every time we issue an instruction, we'll change its source operands into the tags from the file, then allocate a new unused tag for its destination operand and update the remap file to have that new tag and to be marked as not ready.
 
-{.example ...} Continuing the example from above,
+:::example
+Continuing the example from above,
 assume that hardware registers 18 and 19 are unused right now (not in the rename file)
 
 We'd change the instruction `addq %rax, %rcx`
@@ -89,7 +90,7 @@ into `h19 = h18 + h9*`
 ⋮           ⋮       ⋮
 
 and so on
-{/}
+:::
 
 This process ensures that each hardware register has at most one pending instruction that is writing to it, while still maintaining the dependency graph of the original instructions.
 
