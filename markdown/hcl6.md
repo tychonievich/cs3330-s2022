@@ -40,7 +40,7 @@ You might wish to consult the guides to [HCLRS](hclrs.html) and [Y86-64](y86.htm
     2. Name each register bank with two letters:
         - lower-case, a letter representing the stage before the bank
         - upper-case, a letter representing the stage after the bank
-    3. Identify all wires which cross that point and put them in a pipeline register.
+        
         To match the textbook's text, the name of these registers would be `fF`, `fD`, `dE`, `eM`, and `mW`.
 
 3.  Work through one instruction at a time, replacing SEQ wires involved in that instruction with PIPE registers and their input and output wires.
