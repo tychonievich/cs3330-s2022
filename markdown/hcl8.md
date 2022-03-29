@@ -2,6 +2,12 @@
 title: "HCL8 (pipehw2)"
 ...
 
+Because this HW is due the day of our midterm, we will accept it with an extended late period:
+
+- 1--7 days late: −5%
+- 8--9 days late: −10%
+- 10 days late: −15%
+
 # Your task
 
 1.  Combine your solution from [the previous HW](hcl6.html) and [the previous lab](hcl7.html) into a new file called `pipehw2.hcl` to create a five-stage pipelined processor with forwarding and branch prediction as described in the textbook that implements:
