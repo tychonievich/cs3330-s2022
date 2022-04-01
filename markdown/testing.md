@@ -45,7 +45,38 @@ You should be able to
 	- articulate the differences and similarities between faults, traps, and interrupts and identify which one a given scenario is, even if the scenario described is one we never referenced in class or readings
 	- articulate how page tables and kernel mode inter-operate, including how page tables are needed to have kernel-mode memory; how kernel-mode memory is required for safe exception handling; and how kernels can edit page tables while still using virtual addresses to do so
 	
-Note that one quiz mentioned flags, but those will be covered in more detail later in the course and will not appear on this midterm.
+# Midterm 2
+
+You should be able to
+
+- (in re Y86)
+	- given the maching code layout of the current Y86-64 instructions, answer questions about encoding new instructions
+	- know the operation of each instruction, including what it does in each stage of the 5-stage processor
+	- understand the relationship between instructions and condition codes
+- (in re SEQ)
+	- explain how registers and acyclic logic differ, and how they combine to make a general-purpose computer
+	- given a new instruction, explain how its implementation differs from that of Y86-64 instructions
+	- given a proposed change to the runtime of one functional unit (the ALU, memory, etc), explain how that changes the clock speed and instruction throughput
+- (in re pipelining generally)
+	- discuss latency, throughput, and the impact of pipelines on both
+	- explain the diminishing returns of deep pipelines, including misprediction penalties, register and forwarding overheads, and unequal division of work
+	- apply concepts of forwarding and stalling to track the cycles used by instruction sequences for any given set of pipeline stages, including filling in pipeline diagrams
+	- apply per-register-bank stall and bubble signals to stall and/or squash specific instructions in a pipeline
+	- explain the difference and relationships between hazards, control dependencies, and data dependencies
+- (in re PIPE)
+	- know, identify, and explain the pipeline performance of the load-use and return hazards and branch misprediction
+	- apply the "always taken", "never taken", and "backward-taken forward-not-taken" branch prediction heuristics
+	- discuss the impact of proposed changes to PIPE, such as
+		- splitting a stage into several stages
+		- merging stages into a single stage
+		- modifying forwarding logic
+		- adding functional units to accomodate new instructions
+		- giving some stages a variable-number-of-cycles runtime, such as the cache hierachy might create
+	- identify specifically what is forwarded from what stage to what stage
+	- discuss how PIPE would adapt to adding or removing instructions from its ISA
+- (other)
+	- discuss the basics of multiple issue, including applying relevant concepts from pipelines (such as data and control dependencies) to them
+
 
 # Past Exams
 
