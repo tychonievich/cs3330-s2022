@@ -152,3 +152,10 @@
   files:
     - lectures/2022-03-30-anonymous.txt
     - lectures/2022-03-30-slides.pdf
+2022-04-04:
+  video:
+    - lectures/2022-04-04-recording-1.webm
+  audio:
+    - lectures/2022-04-04-audio-1.mp3
+  files:
+    - lectures/2022-04-04-slides.pdf
