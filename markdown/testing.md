@@ -76,6 +76,7 @@ You should be able to
 	- discuss how PIPE would adapt to adding or removing instructions from its ISA
 - (other)
 	- discuss the basics of multiple issue, including applying relevant concepts from pipelines (such as data and control dependencies) to them
+    - given a sequence of Y86-64 instructions, a mapping between architectural and physical registers, and a list of free registers, perform register renaming
 
 
 # Past Exams
