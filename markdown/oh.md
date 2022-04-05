@@ -13,9 +13,7 @@ Monday 6–8pm
 :   6–8pm, [Online] – Austin, Sehoan
 
 Tuesday 2:30–10pm
-:   9–10am, [Professor in Person] – March 22 only
-
-    2:30–4pm, [Professor in Person]
+:   2:30–4pm, [Professor in Person]
     
     4–6pm, [TA in Person] – Nat
     
@@ -27,14 +25,12 @@ Wednesday
 :   No office hours
 
 Thursday 9–11am and 5–7pm
-:   9–11am, [Professor in Person] – but not March 24
+:   9–11am, [Professor in Person]
     
     5–7pm, [Online] – Ishaan
 
 Friday 2–4pm
-:   9:30–10:30am, [Professor in Person] – March 25 only
-
-    2–4pm, [TA in Person] – Nat, Noah
+:   2–4pm, [TA in Person] – Nat, Noah
     
 Saturday 1–5pm
 :   1–3, [Online] – Katie, Sidhardh
