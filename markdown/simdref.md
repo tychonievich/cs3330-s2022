@@ -2,11 +2,6 @@
 title: "A quick guide to SSE/SIMD"
 ...
 
-{:.changelog}
-Changelog:
-
-{:.changelog}
-*  12 November 2020: correct `_mm256_permute2x128_si128` to the (actually existing) `_mm256_permute2x128_si256`
 
 # Introduction
 

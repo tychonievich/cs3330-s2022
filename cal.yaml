@@ -58,12 +58,12 @@ lectures:
     - beyond pipelining
     - review
 
-    - performance
-    - performance
-    - performance
-    - performance
-    - performance
-    - performance
+    - cache performance
+    - cache performance
+    - optimization
+    - optimization
+    - SIMD
+    - SIMD
     - review
 
 labs: 
@@ -169,6 +169,13 @@ reading:
     beyond pipelining:
         - txt: "Out-of-order outline"
           lnk: "ooo.html"
+    cache performance:
+        - txt: "CS:APP §6.5"
+    optimization:
+        - txt: "CS:APP §5"
+    SIMD:
+        - txt: Intel SIMD intrinsics
+          lnk: "simdref.html"
 
 assignments:
     ".groups":

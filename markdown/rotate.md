@@ -18,7 +18,7 @@ title: Rotate
     You also need to supply a scoreboard name.
     We will publicly post the *last* performance results on a [scoreboard](rotateboard.html),
     which will use whatever scoreboard name you supply. (There will also be a 
-    [more detailed result viewer](https://kytos.cs.virginia.edu/cs3330/rotateviewer/){:target="_top"}
+    [more detailed result viewer](https://kytos.cs.virginia.edu/cs3330/rotateviewer/){.target="_top"}
     only visible to you.)
 
 4.  In `rotate.c`, create new implementations of `rotate` that perform the same calculation
@@ -48,9 +48,9 @@ title: Rotate
         You should always do this before submitting something for our
         server to run to make sure your new version of rotate performs the correct calculation.
 
-    2.  If you submit `rotate.c` to [kytos](https://kytos.cs.virginia.edu/cs3330/){:target="_top"}, we
+    2.  If you submit `rotate.c` to [kytos](https://kytos.cs.virginia.edu/cs3330/){.target="_top"}, we
         will time it on our machine and post the results
-        [here](https://kytos.cs.virginia.edu/cs3330/rotateviewer/){:target="_top"}.
+        [here](https://kytos.cs.virginia.edu/cs3330/rotateviewer/){.target="_top"}.
         It may take 30-60 miuntes for us to run your submission, and perhaps more if we receive
         a lot of submissions in a short amount of time.
 
