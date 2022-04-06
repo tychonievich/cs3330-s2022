@@ -327,15 +327,18 @@ assignments:
     Lab09:
         open: 2022-04-13 17:00:00
         due: 2022-04-14 23:59:00
-        title: cache lab
+        title: cacheprog lab
+        link: cache-programs.html
     HW09:
         open: 2022-04-13 23:59:00
         due: 2022-04-20 14:30:00
-        title: cache programs
+        title: cacheprog programs
+        link: cache-programs.html
     Lab10:
         open: 2022-04-20 17:00:00
         due: 2022-04-21 23:59:00
         title: loop lab
+        link: looplab.html
     HW10:
         open: 2022-04-20 23:59:00
         due: 2022-04-27 14:30:00
