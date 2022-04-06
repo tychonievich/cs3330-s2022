@@ -329,28 +329,43 @@ assignments:
         due: 2022-04-14 23:59:00
         title: cacheprog lab
         link: cache-programs.html
+        files: [prog1.c]
     HW09:
         open: 2022-04-13 23:59:00
         due: 2022-04-20 14:30:00
         title: cacheprog programs
         link: cache-programs.html
+        files: ["cache-progs-submit-*.tar"]
     Lab10:
         open: 2022-04-20 17:00:00
         due: 2022-04-21 23:59:00
         title: loop lab
         link: looplab.html
+        files: [looplab-submit.tar]
     HW10:
         open: 2022-04-20 23:59:00
         due: 2022-04-27 14:30:00
-        title: rotate and smooth checkpoint
+        title: rotate
+        link: rotate.html
+        files: [rotate.c]
+    HW11:
+        open: 2022-04-20 23:59:00
+        due: 2022-04-27 14:30:00
+        title: smooth checkpoint (no SIMD)
+        link: smooth.html
+        files: [smooth.c]
     Lab11:
         open: 2022-04-27 17:00:00
         due: 2022-04-28 23:59:00
         title: SIMD lab
-    HW11:
+        link: simdlab.html
+        files: [simdlab-submit.tar]
+    HW12:
         open: 2022-04-27 23:59:00
         due: 2022-05-03 23:59:59
-        title: rotate and smooth
+        title: smooth
+        link: smooth.html
+        files: [smooth.c]
 
     Exam 3:
         open: 2022-05-10 14:00:00

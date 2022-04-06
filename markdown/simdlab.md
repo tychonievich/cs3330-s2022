@@ -2,13 +2,6 @@
 title: "SIMD lab"
 ...
 
-{:.changelog}
-Changelog:
-
-{:.changelog}
-*  17 Nov 2021: correct comment on `add_AVX` assembly code to match C code
-*  17 Nov 2021: correct `_mm_setzero_si256` to `_mm256_setzero_si256`
-
 # Task
 
 0.  Compatibility note: If you have an processor too old to support AVX2, then this lab may not work on your machine. In that case, please use
