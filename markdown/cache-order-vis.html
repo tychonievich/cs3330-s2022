@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Loop order test</title>
+    <style>
+        body, textarea, input { font-size: 12pt; }
+        #miss:before { content: "misses "; }
+        .box { 
+            stroke-width: 0.1;
+            stroke: #FFFFFFFF;
+            fill: #0000FF30;
+        }
+    </style>
+</head>
+<body>
+    <svg viewBox="0 0 63 19">
+<!-- markers -->
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5"
+        markerWidth="5" markerHeight="5">
+      <circle cx="5" cy="5" r="5" fill="red" opacity="0.35" />
+    </marker>
+<!-- brackets -->
+    <path d="M 1,-1 -1,-1 -1,16 1,16 M 14,16 16,16 16,-1 14,-1" transform="translate(2,2)"
+        fill="none" stroke="black" stroke-width="0.2" />
+    <text x="10" y="15" text-anchor="middle" opacity="0.05">D</text>
+    <path d="M 1,-1 -1,-1 -1,16 1,16 M 14,16 16,16 16,-1 14,-1" transform="translate(24,2)"
+        fill="none" stroke="black" stroke-width="0.2" />
+    <text x="32" y="15" text-anchor="middle" opacity="0.05">L</text>
+    <path d="M 1,-1 -1,-1 -1,16 1,16 M 14,16 16,16 16,-1 14,-1" transform="translate(46,2)"
+        fill="none" stroke="black" stroke-width="0.2" />
+    <text x="54" y="15" text-anchor="middle" opacity="0.05">R</text>
+<!-- operators -->
+    <path d="M -1,-.5 1,-.5 M -1,.5 1,.5" transform="translate(20.5,9.5)"
+        fill="none" stroke="black" stroke-width="0.2" />
+    <path d="M -1,-1 1,1 M -1,1 1,-1" transform="translate(42.5,9.5)"
+        fill="none" stroke="black" stroke-width="0.2" />
+    <g id="boxes"></g>
+<!-- paths -->  
+    <path id="D" d="M" transform="translate(2,2)"
+        fill="none" stroke="#00000070" stroke-width="0.1"
+        marker-start="url(#dot)" marker-mid="url(#dot)"  marker-end="url(#dot)" />
+    <path id="L" d="M" transform="translate(24,2)"
+        fill="none" stroke="#00000070" stroke-width="0.1"
+        marker-start="url(#dot)" marker-mid="url(#dot)"  marker-end="url(#dot)" />
+    <path id="R" d="M" transform="translate(46,2)"
+        fill="none" stroke="#00000070" stroke-width="0.1"
+        marker-start="url(#dot)" marker-mid="url(#dot)"  marker-end="url(#dot)" />
+    <circle id="Da" cx="-5" cy="-5" r="0.5" fill="none" stroke-width="0.1" stroke="green"  transform="translate(2,2)"/>
+    <circle id="La" cx="-5" cy="-5" r="0.5" fill="none" stroke-width="0.1" stroke="green"  transform="translate(24,2)"/>
+    <circle id="Ra" cx="-5" cy="-5" r="0.5" fill="none" stroke-width="0.1" stroke="green"  transform="translate(46,2)"/>
+    </svg>
+    <textarea id="text" rows="8" cols="50" onchange="reset()">
+for(r=0; r<N; r+=1)
+ for(c=0; c<N; c+=1)
+  for(i=0; i<N; i+=1)
+   D[r,c] += L[r,i] * R[i,c];
+</textarea>
+    <span style="display:inline-block">
+    <input type="text" id="dc" value="24" size="4" onchange="repace()"/>dots<br/>
+    <input type="text" id="ms" value="500" size="4" onchange="repace()"/>ms<br/>
+    <input type="text" id="cs" value="0" size="4" onchange="reset()"/>lines<br/>
+    <input type="text" id="ls" value="8" size="4" onchange="reset()"/>E/line<br/>
+    step <span id="frame">0</span><br/>
+    <span id="miss">0</span>
+    </span>
+<script>
+var facache = new Map();
+var linelen = 7;
+function linebox(r,c) {
+    if (c+linelen <= 16) return `m ${c-0.5},${r+0.5} 0,-1 ${linelen},0 0,1 Z`;
+    if (r == 15) return `M ${c-0.5},14.5 15.5,14.5 15.5,15.5 ${c-0.5},15.5 Z`;
+    let c2 = (c+linelen)%16-0.5;
+    return `M 15.5,${r-0.5} ${c-0.5},${r-0.5} ${c-0.5},${r+0.5} 15.5,${r+0.5} M -0.5,${r+0.5} ${c2},${r+0.5} ${c2},${r+1.5}, -0.5,${r+1.5}`;
+}
+
+var cache = new Map()
+var cachelen = 5
+function cachelookup(key,val) {
+    let hit = cache.has(key)
+    let old = null
+    if (hit) {
+        old = cache.get(key)
+        if (!val) val = old
+        cache.delete(key)
+    } else if (!val) {
+        return old
+    } else if (cache.size >= cachelen) {
+        let delme =  cache.keys().next().value
+        old = cache.get(delme)
+        cache.delete(delme)
+    }
+    cache.set(key,val)
+    return old
+}
+
+
+
+var tail = 16*1.5;
+function access(array,r,c) {
+    let A = document.getElementById(array);
+    let Aa = document.getElementById(array+'a');
+    let d = A.getAttribute('d').split(' ');
+    while (d.length > tail) d.splice(1,1);
+    A.setAttribute('d',d.join(' ')+' '+c+','+r)
+    Aa.setAttribute('cx',c)
+    Aa.setAttribute('cy',r)
+    
+    if (!(cachelen && linelen)) return;
+    let idx = ((r*16+c)/linelen)|0
+    let key = `${array},${idx}`
+    if (!cache.has(key)) {
+        let s = document.getElementById('miss');
+        s.innerHTML = 1 + Number(s.innerHTML);
+        let r1 = ((idx*linelen)/16)|0
+        let c1 = ((idx*linelen)%16)|0
+        let box = linebox(r1,c1)
+        let path = document.createElementNS('http://www.w3.org/2000/svg','path');
+        path.id = key;
+        path.setAttribute('class','box');
+        path.setAttribute('d',box);
+        path.setAttribute('transform', A.getAttribute('transform'));
+        document.getElementById('boxes').append(path);
+        let old = cachelookup(key, path);
+        if (old) {
+            old.remove()
+        }
+    } else {
+        cachelookup(key)
+    }
+}
+
+var assign = /D\[(.*?),(.*?)\]\s*\+=\s*L\[(.*?),(.*?)\]\s*\*\s*R\[(.*?),(.*?)\]\s*;?/g;
+function codeFix(code) {
+    code = `var vars = {};
+`+code.replace(/[_a-zA-Z]\w*/g, w=>{
+        if (w == 'for' || w == 'D' || w == 'L' || w == 'R') return w;
+        if (w == 'N') return 16;
+        if (w == 'int') return '';
+        return 'vars.'+w;
+    })
+    code = code.replace(assign, (_,d1,d2,l1,l2,r1,r2)=>{
+        return `{
+access('D',${d1},${d2})
+access('L',${l1},${l2})
+access('R',${r1},${r2})
+yield 0}`
+    })
+    return 'function* clicker() {' + code + '}';
+}
+
+function tick() {
+    let it = x.next();
+    if (!it.done) {
+        let s = document.getElementById('frame');
+        s.innerHTML = 1 + Number(s.innerHTML);
+        window.pending = setTimeout(tick, delay);
+    }
+}
+
+function repace() {
+    clearTimeout(window.pending)
+    window.delay = Number(document.getElementById('ms').value)
+    window.tail = Math.max(1,Number(document.getElementById('dc').value)|0);
+    setTimeout(tick, window.delay);
+}
+
+function reset() {
+    let code = document.getElementById('text').value;
+    if (!code) return
+    
+    eval(codeFix(code));
+    window.x = clicker();
+
+    cachelen = Number(document.getElementById('cs').value);
+    linelen = Number(document.getElementById('ls').value);
+    
+    let s = document.getElementById('frame');
+    s.innerHTML = 0;
+    s = document.getElementById('miss');
+    s.innerHTML = 0;
+    s.style.display = (cachelen && linelen) ? '' : 'none';
+    
+    document.querySelectorAll('.box').forEach(x=>x.remove());
+    cache.clear()
+    
+    var D = document.getElementById('D');
+    var L = document.getElementById('L');
+    var R = document.getElementById('R');
+    D.setAttribute('d','M')
+    L.setAttribute('d','M')
+    R.setAttribute('d','M')
+    
+    repace()
+}
+
+reset();
+</script>
+</body>
+</html>

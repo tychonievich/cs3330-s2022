@@ -171,6 +171,8 @@ reading:
           lnk: "ooo.html"
     cache performance:
         - txt: "CS:APP §6.5"
+        - txt: "visualization"
+          lnk: "cache-order-vis.html"
     optimization:
         - txt: "CS:APP §5"
     SIMD:
