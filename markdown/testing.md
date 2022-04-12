@@ -84,7 +84,7 @@ You should be able to
 | Name | Blank | Key | Min | Mean | Max | Gamma correction[^gamma] |
 |------|-------|-----|:---:|:----:|:---:|:------------------------:|
 | Exam 1 | [pdf](files/mt1.pdf)[^typo1] | [pdf](files/mt1key.pdf) | 42% | 76% | 97% | awarded = raw^0.7^ |
-| Exam 2 | [pdf](files/mt2.pdf) | [pdf](s2022mt2key.html) | 53% | 80% | 96% | awarded = raw^0.7^ |
+| Exam 2 | [pdf](files/mt2.pdf) | [html](s2022mt2key.html) | 53% | 80% | 96% | awarded = raw^0.7^ |
 
 [^typo1]:
     The last question has a typo.
