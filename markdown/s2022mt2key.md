@@ -15,7 +15,7 @@ title: Key to spring 2022 midterm 2
           ret                F D E M W
 4.
     a. option A
-    b. options A and B
+    b. options A and B; accept both with and without C (two ways of reading the question)
 5.
     a. options A and D
     b. 18, 18, 1, 2
@@ -27,7 +27,9 @@ title: Key to spring 2022 midterm 2
 9. option A
 10.
     a. option E
-    b. none, none, `%rcv`, none, `%rax*`
+    b. none, none, `%rcx`, `%rcx`, `%rax`
+        
+        If you forgot about forwarding from writeback, none, none, `%rcx`, none, `%rax*`
     c. option E only
 11. option D only
 12. 
