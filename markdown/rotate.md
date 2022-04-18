@@ -16,7 +16,7 @@ title: Rotate
 
 3.  Edit `rotate.c` to make the `who_t` structure to include the your name and computing ID.
     You also need to supply a scoreboard name.
-    We will publicly post the *last* performance results on a [scoreboard](rotateboard.html),
+    We will publicly post the *last* performance results on a [scoreboard](http://www.cs.virginia.edu/~cr4bd/3330/S2022/rotateboard.html),
     which will use whatever scoreboard name you supply. (There will also be a 
     [more detailed result viewer](https://kytos.cs.virginia.edu/cs3330/rotateviewer/){target="_top"}
     only visible to you.)
@@ -163,7 +163,7 @@ We will periodically scan for new submissions and run them on our grading server
 
 You can view detailed results [here](https://kytos.cs.virginia.edu/cs3330/rotateviewer/), which include the times for each version you submitted.
 
-In addition, your last result will appear on a [public scoreboard](rotateboard.html).
+In addition, your last result will appear on a [public scoreboard](http://www.cs.virginia.edu/~cr4bd/3330/S2022/rotateboard.html).
 
 ## Correctness Testing
 

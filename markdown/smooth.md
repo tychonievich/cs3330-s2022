@@ -10,7 +10,7 @@ title: "Smooth"
 
 3.  Edit `smooth.c` to make the `who_t` structure to include the your name and computing ID.
     You also need to supply a scoreboard name.
-    We will publicly post the *last* performance results on a [scoreboard](smoothboard.html),
+    We will publicly post the *last* performance results on a [scoreboard](http://www.cs.virginia.edu/~cr4bd/3330/S2022/smoothboard.html),
     which will use whatever scoreboard name you supply. (There will also be a 
     [more detailed result viewer](https://kytos.cs.virginia.edu/cs3330/smoothviewer)
     only visible to you. This will update for checkpoint submissions, but the estimated score
@@ -397,7 +397,7 @@ We will periodically scan for new submissions and run them on our grading server
 
 You can view detailed results [here](https://kytos.cs.virginia.edu/cs3330/smoothviewer/), which include the times for each version you submitted.
 
-In addition, your last result will appear on a [public scoreboard](smoothboard.html).
+In addition, your last result will appear on a [public scoreboard](http://www.cs.virginia.edu/~cr4bd/3330/S2022/smoothboard.html).
 
 ## Correctness Testing
 
