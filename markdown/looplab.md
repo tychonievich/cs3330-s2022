@@ -8,7 +8,7 @@ title: Looplab
     see the [compatiblity note](#compat) below.
     
     If you experience issues with "Illegal instruction" errors either use a department machine
-    (via NX or via [SSHing into portal.cs.virginia.edu](sshscp.html)) or remove the GCC7 and Clang
+    (via NX or via [SSHing into portal.cs.virginia.edu](../../tips/ssh.html)) or remove the GCC7 and Clang
     versions of sum from `sum_benchmarks.c`.
 
 1.  Download the lab tarball [here](files/looplab.tar). Extract the tarball.
@@ -25,8 +25,7 @@ title: Looplab
         }
 
 3.  Create a copy of `sum_simple.s`, which contains a commented assembly implementation of
-    the above sum function, called `sum_unrolled2.s`. ([See below](#sum_simple) for an
-    explanation.)  Modify this copy to rename
+    the above sum function, called `sum_unrolled2.s`. Modify this copy to rename
     the sum function to `sum_unrolled2` and unroll the loop to
     handle two elements per iteration. You do not need to handle
     `size`s that are not multiples of 16.
@@ -57,7 +56,7 @@ title: Looplab
 
 8.  Run `make looplab-submit.tar` to create an archive of all your `.s` files and the text file. Submit
     this file to [the submission site](https://kytos.cs.virginia.edu/cs3330/). If you are working remotely
-    on a department machine, our guide to [using SSH and SCP or other file transfer tools](sshscp.html) may be
+    on a department machine, our guide to [using SSH and SCP or other file transfer tools](../../tips/ssh.html) may be
     helpful.
 
 # Files in the tarball
@@ -87,7 +86,7 @@ OS X requires that function names have an additional leading underscore in assem
 On OS X, the assmebly code we have supplied from Clang and GCC uses directives that the default OS X assembler does not support. You can deal with this by moving the corresponding assembly files out of the directory (so the Makefile doesn't try to assemble them) and editing the function list in `sum_benchmarks.c` to not list them. (They are not needed to do the lab; they're just provided for comparison.)
 
 If you experience issues with "Illegal instruction" errors, this means that your processor is a little older than we expected.
-Either use a department machine (via NX or via [SSHing into portal.cs.virginia.edu](sshscp.html)) or remove the GCC7 and Clang
+Either use a department machine (via NX or via [SSHing into portal.cs.virginia.edu](../../tips/ssh.html)) or remove the GCC7 and Clang
 versions of sum from `sum_benchmarks.c`.
 
 # Dealing with large output
