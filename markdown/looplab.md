@@ -39,7 +39,7 @@ title: Looplab
 
 5.  Create a copy of your `sum_unrolled4.s` called `sum_multiple_accum.s`. Rename
     the function in this copy to `sum_multiple_accum` and modify it to use multiple accumulators.
-    (That is, multiple variables to store intermediate results, like in the example from 3 November's slides
+    (That is, multiple variables to store intermediate results, like in the example from 18 April's lecture
     or Figure 5.21 in the textbook.)
     Make sure you obey the calling convention when choosing where to store
     the additional accumulators.
