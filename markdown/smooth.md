@@ -474,7 +474,7 @@ Additionally, the following rules may result in grade penalties within this assi
 *	You must write valid C code. (But you may use GCC-specific extensions.)
 *	You should not turn in code that contains print statements.
 *	Your code must work (i.e., the same functionality as the provided naive implementations) for any image of any multiple-of-32 dimension (32, 64, 96, etc).
-*       You must not override command-line optimization options we pass to mostly prevent the compiler from generating vector instructions other than when vector intrinsic are used. That is, you must not use GCC extensions that allow C code in a file to temporarily change the command-line compiler optimizations flags in order to the make the optimizer generate more vector instructions for code that does not use vector intrinsics or otherwise explicitly identify how to use vector instructions.
+*   You must not override command-line optimization options we pass to mostly prevent the compiler from generating vector instructions other than when vector intrinsic are used. That is, you must not use GCC extensions that allow C code in a file to temporarily change the command-line compiler optimizations flags in order to the make the optimizer generate more vector instructions for code that does not use vector intrinsics or otherwise explicitly identify how to use vector instructions.
 
 # About our Testing Server
 
