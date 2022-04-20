@@ -108,8 +108,8 @@ There are some steps we recommend taking when implementing smooth, with steps 1 
 2.  Then, focus on the loop over the pixels in the middle of the image. Fully unroll the nested loop over the 3x3 square of pixels.
 3.  Then, convert that fully unrolled loop to use vector instructions to add whole pixels (arrays of 4 values) at a time rather than adding one value at a time. Make sure the vector instructions use multiple accumulators (the processor can start multiple vector-adds at a time).
 4.  Then, do one or more of the following:
-    *  A. Convert your loop over each pixel to compute values for four pixels in a single vector register, or
-    *  B. Perform the division by 9 and conversion from 16-bit intermediate values to 8-bit intermediate values using the AVX intrinsics, or 
+    a. Convert your loop over each pixel to compute values for four pixels in a single vector register, or
+    b. Perform the division by 9 and conversion from 16-bit intermediate values to 8-bit intermediate values using the AVX intrinsics, or 
 5.  If things still aren't fast enough, try unrolling the loop over each destination pixel (more). When doing this, in each iteration, it may be helpful to load values from the source image before storing any values to the destination image so the compiler's optimizer is not hampered by aliasing when trying to do optimizations like common subexpression elimination.
 
 On our test machine with our reference implementations:
