@@ -189,3 +189,15 @@
     - lectures/2022-04-18-audio-1.mp3
   files:
     - lectures/2022-04-18-slides.pdf
+    - lectures/2022-04-18-01_sum1.c
+    - lectures/2022-04-18-02_sum1.s
+    - lectures/2022-04-18-03_sum2.s
+    - lectures/2022-04-18-04_sum2.c
+    - lectures/2022-04-18-05_sum4.c
+    - lectures/2022-04-18-06_sumperf.txt
+    - lectures/2022-04-18-07_beyond_pipeline.s
+    - lectures/2022-04-18-09_unroll_block_2.c
+    - lectures/2022-04-18-10_pipeline-alu.txt
+    - lectures/2022-04-18-12_sum2.c
+    - lectures/2022-04-18-13-dataflow.png
+    - lectures/2022-04-18-15-dataflow-assumulators.png
