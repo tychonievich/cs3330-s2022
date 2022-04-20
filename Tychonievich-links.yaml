@@ -201,3 +201,19 @@
     - lectures/2022-04-18-12_sum2.c
     - lectures/2022-04-18-13-dataflow.png
     - lectures/2022-04-18-15-dataflow-assumulators.png
+2022-04-20:
+  video:
+    - lectures/2022-04-20-recording-1.webm
+  audio:
+    - lectures/2022-04-20-audio-1.mp3
+  files:
+    - lectures/2022-04-20-01_sum1.c
+    - lectures/2022-04-20-02_sum2.c
+    - lectures/2022-04-20-03_sumperf.txt
+    - lectures/2022-04-20-04_sum2ma.c
+    - lectures/2022-04-20-05_sum2ma_perf1.txt
+    - lectures/2022-04-20-06_sum2ma_perf2.txt
+    - lectures/2022-04-20-07_ma_problem.s
+    - lectures/2022-04-20-08_ma_problem.s
+    - lectures/2022-04-20-09_optimizations.txt
+    - lectures/2022-04-20-slides.pdf
