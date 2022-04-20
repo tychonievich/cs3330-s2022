@@ -127,7 +127,7 @@ Images are provided in flattened arrays and can be accessed by `RIDX`, defined a
 #define RIDX(i,j,n) ((i)*(n)+(j))
 ```
 
-by the code `nameOfImage[RIDX(index1, index2, dimensionOfImage)]`.
+by the code `nameOfImage[RIDX(index1, index2, dimensionOfImage)]`{.c}.
 
 All images will be square and have a size that is a multiple of 32.
 

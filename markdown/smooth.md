@@ -197,29 +197,33 @@ but loading 128-bits now will make future steps easier.)
 
 Loading 128 bits will load 4 pixels, though, as mentioned earlier, for now, we'll only use one. For example:
 
-    // load 128 bits (4 pixels)
-    __m128i the_pixel = _mm_loadu_si128((__m128i*) &src[RIDX(i, j, dim)]);
+```c
+// load 128 bits (4 pixels)
+__m128i the_pixel = _mm_loadu_si128((__m128i*) &src[RIDX(i, j, dim)]);
+```
 
 will make `the_pixel` contain, when interpreted as **8-bit** integers:
 
-    {
-      src[RIDX(i, j, dim)].red,
-      src[RIDX(i, j, dim)].green,
-      src[RIDX(i, j, dim)].blue,
-      src[RIDX(i, j, dim)].alpha,
-      src[RIDX(i, j+1, dim)].red,
-      src[RIDX(i, j+1, dim)].green,
-      src[RIDX(i, j+1, dim)].blue,
-      src[RIDX(i, j+1, dim)].alpha
-      src[RIDX(i, j+2, dim)].red,
-      src[RIDX(i, j+2, dim)].green,
-      src[RIDX(i, j+2, dim)].blue,
-      src[RIDX(i, j+2, dim)].alpha
-      src[RIDX(i, j+3, dim)].red,
-      src[RIDX(i, j+3, dim)].green,
-      src[RIDX(i, j+3, dim)].blue,
-      src[RIDX(i, j+3, dim)].alpha
-    }
+```c
+{
+  src[RIDX(i, j, dim)].red,
+  src[RIDX(i, j, dim)].green,
+  src[RIDX(i, j, dim)].blue,
+  src[RIDX(i, j, dim)].alpha,
+  src[RIDX(i, j+1, dim)].red,
+  src[RIDX(i, j+1, dim)].green,
+  src[RIDX(i, j+1, dim)].blue,
+  src[RIDX(i, j+1, dim)].alpha
+  src[RIDX(i, j+2, dim)].red,
+  src[RIDX(i, j+2, dim)].green,
+  src[RIDX(i, j+2, dim)].blue,
+  src[RIDX(i, j+2, dim)].alpha
+  src[RIDX(i, j+3, dim)].red,
+  src[RIDX(i, j+3, dim)].green,
+  src[RIDX(i, j+3, dim)].blue,
+  src[RIDX(i, j+3, dim)].alpha
+}
+```
 
 For now, we will simply ignore the last 12 values we loaded. (Also, you do not need to worry about exceeding the bounds of the source
 array; going past the end of the array by 12 bytes should never segfault.)
@@ -236,15 +240,17 @@ To do this most efficiently, recall our discussion of **reassocaition and multip
 
 After you've added the pixel values together into a vector of 16-bit values extract the values by storing to a temporary array on the stack:
 
-    __m256i sum_of_pixels = ...;
+```c
+__m256i sum_of_pixels = ...;
 
-    unsigned short pixel_elements[16];
-    _mm256_storeu_si256((__m256i*) pixel_elements, sum_of_pixels);
-    // pixel_elements[0] is the red component
-    // pixel_elements[1] is the green component
-    // pixel_elements[2] is the blue component
-    // pixel_elements[3] is the alpha component
-    // pixel_elements[4] through pixel_elements[15] are extra values we had stored
+unsigned short pixel_elements[16];
+_mm256_storeu_si256((__m256i*) pixel_elements, sum_of_pixels);
+// pixel_elements[0] is the red component
+// pixel_elements[1] is the green component
+// pixel_elements[2] is the blue component
+// pixel_elements[3] is the alpha component
+// pixel_elements[4] through pixel_elements[15] are extra values we had stored
+```
 
 Use the values you extracted to perform the division and store the result in the destination array. Below, we have hints
 if you want to perform the division and final storing of the result using vector instructions instead of one pixel component at a time.
@@ -260,6 +266,7 @@ To fix this, let's consider computing several adjacent destination pixels at onc
     M N O P Q R
 
 we could compute all of the following **at the same time**:
+
 *  ***A + B*** + C + G + H + I + M + N + O (destination pixel H) 
 *  ***B + C*** + D + H + I + J + N + O + P (destination pixel I)
 *  ***C + D*** + E + I + J + K + O + P + Q (destination pixel J)
@@ -342,12 +349,14 @@ In addition to the above optimization, there are ways that can probably get more
 
 A pixel is defined in `defs.h` as
 
-	typedef struct {
-	    unsigned char red;
-	    unsigned char green;
-	    unsigned char blue;
-            unsigned char alpha;
-	} pixel;
+```c
+typedef struct {
+    unsigned char red;
+    unsigned char green;
+    unsigned char blue;
+        unsigned char alpha;
+} pixel;
+```
 
 (The "alpha" component represents transparency.)
 
@@ -355,7 +364,9 @@ In memory, this takes up 4 bytes, one byte for red, followed by one byte for gre
 
 Images are provided in flattened arrays and can be accessed by `RIDX`, defined as
 
-	#define RIDX(i,j,n) ((i)*(n)+(j))
+```c
+#define RIDX(i,j,n) ((i)*(n)+(j))
+```
 
 by the code `nameOfImage[RIDX(index1, index2, dimensionOfImage)]`.
 
@@ -371,15 +382,21 @@ In `smooth.c` you will see several rotate and several smooth functions.
 
 The source code you will write will be linked with object code that we supply into a `benchmark` binary. To create this binary, you will need to execute the command
 
-        $ make
+```bash
+make
+```
 
 You will need to re-make the benchmark program each time you change code in `rotate.c`. To test your implementations, you can run the command:
-    
-        $ ./benchmark
+
+```bash    
+./benchmark
+```
 
 If you want to only run a particular function, you can run
 
-        $ ./benchmark 'foo'
+```bash
+./benchmark 'foo'
+```
 
 to only run benchmark functions whose name contains "foo".
 
@@ -406,11 +423,15 @@ which will show you its complete input and output.
 
 To run this, first build it by running
 
-        $ make
+```bash
+make
+```
 
 then choose a size to test (e.g. `4`), and to test your smooth function named `smooth_bar` use:
 
-        $ ./test "smooth_bar" 4
+```bash
+./test "smooth_bar" 4
+```
 
 The `./test` program will run all test functions whose description contains the supplied string. For example,
 the above command would run a function whose description was `smooth_bar: version A` 
