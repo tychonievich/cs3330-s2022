@@ -232,3 +232,8 @@
     - lectures/a.out
     - lectures/arraysum.c
     - lectures/avx.txt
+2022-04-27:
+  files:
+    - lectures/2022-04-27-anonymous.txt
+    - lectures/2022-04-27-arraysum.c
+    - lectures/2022-04-27-avx.txt
