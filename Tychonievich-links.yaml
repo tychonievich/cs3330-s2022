@@ -224,3 +224,11 @@
     - lectures/2022-04-25-audio-1.mp3
   files:
     - lectures/2022-04-25-slides.pdf
+2022-04-27:
+  files:
+    - lectures/2022-04-27-slides.pdf
+    - lectures/2022-04-27:
+    - lectures/anonymous.txt
+    - lectures/a.out
+    - lectures/arraysum.c
+    - lectures/avx.txt
