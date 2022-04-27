@@ -281,7 +281,7 @@ assignments:
 
     Lab05:
         open: 2022-03-02 17:00:00
-        due: 2022-03-13 23:59:00
+        due: 2022-03-14 00:00:00
         title: HCL1 – SEQ part 1
         link: hcl1.html
         files: [pc.hcl]
