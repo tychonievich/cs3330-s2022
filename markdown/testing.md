@@ -76,7 +76,7 @@ You should be able to
     - discuss how PIPE would adapt to adding or removing instructions from its ISA
 - (other)
     - discuss the basics of multiple issue, including applying relevant concepts from pipelines (such as data and control dependencies) to them
-- given a sequence of Y86-64 instructions, a mapping between architectural and physical registers, and a list of free registers, perform register renaming
+    - given a sequence of Y86-64 instructions, a mapping between architectural and physical registers, and a list of free registers, perform register renaming
 
 # Final
 
@@ -116,7 +116,7 @@ You should be able to
 | Exam 1 | [pdf](files/mt1.pdf)[^typo1] | [pdf](files/mt1key.pdf) | 42% | 76% | 97% | awarded = raw^0.7^ |
 | Exam 2 | [pdf](files/mt2.pdf) | [html](s2022mt2key.html) | 52% | 80% | 98% | awarded = raw^0.7^ |
 
-See also [Charles Reiss's old exams](https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html)
+See also [Charles Reiss's old exams](https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html) and [our old quizzes](https://kytos.cs.virginia.edu/cs3330/
 
 [^typo1]:
     The last question has a typo.
