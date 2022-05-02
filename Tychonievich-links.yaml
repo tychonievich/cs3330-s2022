@@ -230,3 +230,10 @@
     - lectures/2022-04-27-anonymous.txt
     - lectures/2022-04-27-avx.txt
     - lectures/2022-04-27-arraysum.c
+2022-05-02:
+  video:
+    - lectures/2022-05-02-recording-1.webm
+  audio:
+    - lectures/2022-05-02-audio-1.mp3
+  files:
+    - lectures/2022-05-02-slides.pdf
