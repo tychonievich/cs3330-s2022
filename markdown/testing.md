@@ -83,6 +83,7 @@ You should be able to
 You should be able to
 
 - do anything you could do on a midterm
+    - note: I always ask corrected versions of any questions I had to drop or grade leniently due to ambiguities in the question text on the midterm
 - (cache performance)
     - count the hits and misses of cache accesses for a given piece of code and cache structure
     - analyze the locality of code before and after loop reorderings and blocking
@@ -92,6 +93,20 @@ You should be able to
     - discuss the benefits and tradeoffs of loop unrolling and multiple accumulators
 - (SIMD)
     - discuss the semantics and performance of generic vector operations (note: Intel SIMD intrinsics are not going to appear on the exam)
+- (optimization synthesis)
+    - discuss and compare the following and their impact on run-time
+        - loop unrolling
+        - multiple accumulators
+        - cache blocking
+        - reassociation
+        - SIMD
+        - parallelism
+        - novel optimizations we introduce and explain on the exam itself
+    - discuss the purpose of the following
+        - Amdahl's law
+        - moving work outside of loops
+        - reducing aliasing
+        - using local variables instead of memory
 
 
 # Past Exams
