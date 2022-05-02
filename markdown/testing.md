@@ -101,6 +101,8 @@ You should be able to
 | Exam 1 | [pdf](files/mt1.pdf)[^typo1] | [pdf](files/mt1key.pdf) | 42% | 76% | 97% | awarded = raw^0.7^ |
 | Exam 2 | [pdf](files/mt2.pdf) | [html](s2022mt2key.html) | 52% | 80% | 98% | awarded = raw^0.7^ |
 
+See also [Charles Reiss's old exams](https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html)
+
 [^typo1]:
     The last question has a typo.
     If says there are four pages, but then only gives three.
