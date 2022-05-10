@@ -167,3 +167,73 @@
   files:
     - lectures/2022-04-06-qa.txt
     - lectures/2022-04-06-slides.pdf
+2022-04-11:
+  video:
+    - lectures/2022-04-11-recording-1.webm
+  audio:
+    - lectures/2022-04-11-audio-1.mp3
+  files:
+    - lectures/2022-04-11-slides.pdf
+2022-04-13:
+  video:
+    - lectures/2022-04-13-recording-1.webm
+  audio:
+    - lectures/2022-04-13-audio-1.mp3
+  files:
+    - lectures/2022-04-13-anon.txt
+    - lectures/2022-04-13-slides.pdf
+2022-04-18:
+  video:
+    - lectures/2022-04-18-recording-1.webm
+  audio:
+    - lectures/2022-04-18-audio-1.mp3
+  files:
+    - lectures/2022-04-18-slides.pdf
+    - lectures/2022-04-18-01_sum1.c
+    - lectures/2022-04-18-02_sum1.s
+    - lectures/2022-04-18-03_sum2.s
+    - lectures/2022-04-18-04_sum2.c
+    - lectures/2022-04-18-05_sum4.c
+    - lectures/2022-04-18-06_sumperf.txt
+    - lectures/2022-04-18-07_beyond_pipeline.s
+    - lectures/2022-04-18-09_unroll_block_2.c
+    - lectures/2022-04-18-10_pipeline-alu.txt
+    - lectures/2022-04-18-12_sum2.c
+    - lectures/2022-04-18-13-dataflow.png
+    - lectures/2022-04-18-15-dataflow-assumulators.png
+2022-04-20:
+  video:
+    - lectures/2022-04-20-recording-1.webm
+  audio:
+    - lectures/2022-04-20-audio-1.mp3
+  files:
+    - lectures/2022-04-20-01_sum1.c
+    - lectures/2022-04-20-02_sum2.c
+    - lectures/2022-04-20-03_sumperf.txt
+    - lectures/2022-04-20-04_sum2ma.c
+    - lectures/2022-04-20-05_sum2ma_perf1.txt
+    - lectures/2022-04-20-06_sum2ma_perf2.txt
+    - lectures/2022-04-20-07_ma_problem.s
+    - lectures/2022-04-20-08_ma_problem.s
+    - lectures/2022-04-20-09_optimizations.txt
+    - lectures/2022-04-20-slides.pdf
+2022-04-25:
+  video:
+    - lectures/2022-04-25-recording-1.webm
+  audio:
+    - lectures/2022-04-25-audio-1.mp3
+  files:
+    - lectures/2022-04-25-slides.pdf
+2022-04-27:
+  files:
+    - lectures/2022-04-27-slides.pdf
+    - lectures/2022-04-27-anonymous.txt
+    - lectures/2022-04-27-avx.txt
+    - lectures/2022-04-27-arraysum.c
+2022-05-02:
+  video:
+    - lectures/2022-05-02-recording-1.webm
+  audio:
+    - lectures/2022-05-02-audio-1.mp3
+  files:
+    - lectures/2022-05-02-slides.pdf

@@ -16,7 +16,7 @@ title: Rotate
 
 3.  Edit `rotate.c` to make the `who_t` structure to include the your name and computing ID.
     You also need to supply a scoreboard name.
-    We will publicly post the *last* performance results on a [scoreboard](rotateboard.html),
+    We will publicly post the *last* performance results on a [scoreboard](http://www.cs.virginia.edu/~cr4bd/3330/S2022/rotateboard.html),
     which will use whatever scoreboard name you supply. (There will also be a 
     [more detailed result viewer](https://kytos.cs.virginia.edu/cs3330/rotateviewer/){target="_top"}
     only visible to you.)
@@ -99,8 +99,8 @@ This combination is illustrated in the following figure:
 
 Note that:
 
-*       Performance of the baseline implementation is substantially worse at some sizes.
-*       Most benchmarked sizes have been chosen to be very large to emphasize certain kinds of performance effects.
+*   Performance of the baseline implementation is substantially worse at some sizes.
+*   Most benchmarked sizes have been chosen to be very large to emphasize certain kinds of performance effects.
 
 # Code
 
@@ -108,12 +108,14 @@ Note that:
 
 A pixel is defined in `defs.h` as
 
-	typedef struct {
-	    unsigned char red;
-	    unsigned char green;
-	    unsigned char blue;
-            unsigned char alpha;
-	} pixel;
+```c
+typedef struct {
+    unsigned char red;
+    unsigned char green;
+    unsigned char blue;
+        unsigned char alpha;
+} pixel;
+```
 
 (The "alpha" component represents transparency.)
 
@@ -121,9 +123,11 @@ In memory, this takes up 4 bytes, one byte for red, followed by one byte for gre
 
 Images are provided in flattened arrays and can be accessed by `RIDX`, defined as
 
-	#define RIDX(i,j,n) ((i)*(n)+(j))
+```c
+#define RIDX(i,j,n) ((i)*(n)+(j))
+```
 
-by the code `nameOfImage[RIDX(index1, index2, dimensionOfImage)]`.
+by the code `nameOfImage[RIDX(index1, index2, dimensionOfImage)]`{.c}.
 
 All images will be square and have a size that is a multiple of 32.
 
@@ -137,15 +141,21 @@ In `rotate.c` you will see several rotate functions.
 
 The source code you will write will be linked with object code that we supply into a `benchmark` binary. To create this binary, you will need to execute the command
 
-        $ make
+```bash
+make
+```
 
 You will need to re-make the benchmark program each time you change code in `rotate.c`. To test your implementations, you can run the command:
-    
-        $ ./benchmark
+   
+```bash
+./benchmark
+```
 
 If you want to only run a particular function, you can run
 
-        $ ./benchmark 'foo'
+```bash
+./benchmark 'foo'
+```
 
 to only run benchmark functions whose name contains "foo".
 
@@ -163,7 +173,7 @@ We will periodically scan for new submissions and run them on our grading server
 
 You can view detailed results [here](https://kytos.cs.virginia.edu/cs3330/rotateviewer/), which include the times for each version you submitted.
 
-In addition, your last result will appear on a [public scoreboard](rotateboard.html).
+In addition, your last result will appear on a [public scoreboard](http://www.cs.virginia.edu/~cr4bd/3330/S2022/rotateboard.html).
 
 ## Correctness Testing
 
@@ -172,11 +182,15 @@ which will show you its complete input and output.
 
 To run this, first build it by running
 
-        $ make
+```bash
+make
+```
 
 then choose a size to test (e.g. `4`), and to test your rotate function named `rotate_bar` use:
 
-        $ ./test "rotate_bar" 4
+```bash
+./test "rotate_bar" 4
+```
 
 The `./test` program will run all test functions whose description contains the supplied string. For example,
 the above command would run a function whose description was `rotate_bar: version A` 
@@ -247,36 +261,44 @@ which may or may not be applicable to this assignment:
 *  using multiple accumulators;
 *  using temporary variables so the compiler can know there is no aliasing; e.g. instead of
 
-        for (int i = 0; i < N; ++i) {
-            result[i] = 0;
-            for (int j = 0; j < N; ++j)
-                result[i] += matrix[i*N+j];
-        }
+    ````c
+    for (int i = 0; i < N; ++i) {
+        result[i] = 0;
+        for (int j = 0; j < N; ++j)
+            result[i] += matrix[i*N+j];
+    }
+    ````
 
     writing
 
-        for (int i = 0; i < N; ++i) {
-            int row_sum = 0;
-            for (int j = 0; j < N; ++j)
-                row_sum += matrix[i*N+j];
-            result[i] = row_sum;
-        }
+    ````c
+    for (int i = 0; i < N; ++i) {
+        int row_sum = 0;
+        for (int j = 0; j < N; ++j)
+            row_sum += matrix[i*N+j];
+        result[i] = row_sum;
+    }
+    ````
 
 *  function inlining (copying the body of a function into where it is used to avoid function call overhead)
 *  encouraging reused values to be kept in registers by using temporary variables;
 *  using instructions that act on more data at once (e.g. instructions that load/store multiple values at once or add multiple values at once), like the SIMD instructions;
 *  removing redundant operations from a loop, e.g. converting code like
 
-        for (int i = 0; i < strlen(foo); ++i) {
-            ...
-        }
+    ````c
+    for (int i = 0; i < strlen(foo); ++i) {
+        ...
+    }
+    ````
 
     to code like
 
-        int len = strlen(foo);
-        for (int i = 0; i < len; ++i) {
-            ...
-        }
+    ````c
+    int len = strlen(foo);
+    for (int i = 0; i < len; ++i) {
+        ...
+    }
+    ````
 
 *  simplifying address calculations
     
@@ -307,9 +329,11 @@ which may or may not be applicable to this assignment:
    to write more explicit address computation code that
    *  avoids most multiplications in computing addresses; and/or
    *  compute the address of one element by adding to the address of the previous as in
-        
-            int *x = &array[i * N + j];
-            int *y = x + N; /* instead of &array[(i+1) * N + j] */
+      
+      ````c
+      int *x = &array[i * N + j];
+      int *y = x + N; /* instead of &array[(i+1) * N + j] */
+      ````
 
 *  We provide you with performance numbers at each of the sizes we test. Observe that
    some optimizations may have little effect on certain sizes, but very large
