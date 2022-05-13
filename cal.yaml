@@ -235,11 +235,11 @@ assignments:
     Exam 1:
         open: 2022-02-23 17:00:00
         due: 2022-02-23 19:45:00
-        link: https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html
+        link: testing.html
     Exam 2:
         open: 2022-04-06 17:00:00
         due: 2022-04-06 19:45:00
-        link: https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html
+        link: testing.html
       
     Lab01:
         due: 2022-01-27 23:59:00
@@ -378,4 +378,4 @@ assignments:
         open: 2022-05-10 14:00:00
         due: 2022-05-10 17:00:00
         weight: 1.5
-        link: https://www.cs.virginia.edu/~cr4bd/3330/F2021/oldexams.html
+        link: testing.html
