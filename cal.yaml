@@ -190,7 +190,7 @@ assignments:
             drop: 1
             rubric: {"kind":"percentage"}
         Exam:
-            portion: "40"
+            portion: "35"
             rubric: {"kind":"percentage"}
         Quiz:
             portion: "10"
